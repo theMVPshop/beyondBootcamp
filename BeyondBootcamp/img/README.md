@@ -1,6 +1,6 @@
 # beyondBootcamp.info website
 
-![Website_comp](/img/comp01.jpg)
-![Website_comp](/img/comp02.jpg)
-![Website_comp](/img/comp03.jpg)
-![Website_comp](/img/comp04.jpg)
+![Website_comp](comp01.jpg)
+![Website_comp](comp02.jpg)
+![Website_comp](comp03.jpg)
+![Website_comp](comp04.jpg)
