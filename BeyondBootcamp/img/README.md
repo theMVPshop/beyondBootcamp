@@ -8,6 +8,10 @@ It needs a password protected dashboard that allows for link post creation.  The
 
 The email associated with the site is beyondbootcampinfo@gmail.com
 
+peekalink login
+user: beyondbootcampinfo@gmail.com
+pass: %TGB6yhn&UJM
+
 ------------------------------------
 # Design comp Inspiration
 
