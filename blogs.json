@@ -1,0 +1,128 @@
+[
+  {
+    "date": "April 2, 2019",
+    "title": "This free AI reads X-rays as well as doctors",
+    "description": "What happens when free, open-source software can diagnose us as well as doctors?",
+    "url": "https://www.fastcompany.com/90326445/this-free-ai-reads-x-rays-as-well-as-doctors",
+    "image": "./Zollege Chat_files/p-1-90326445-this-free-ai-reads-x-rays-as-well-as-doctors.jpg"
+  },
+  {
+    "date": "April 2, 2019",
+    "title": "The Well-Balanced Developer",
+    "description": "Some developers are worth more than others. The bigger impact you can make on the organization, the higher is your worth. To make a significant impact on the organization, the developer must keep 5 essential skills in balance: Technical skills Mentoring skills Process Organization skills Business skills Communication skills",
+    "url": "https://sizovs.net/2019/03/09/the-well-balanced-developer/",
+    "image": "./Zollege Chat_files/me.png"
+  },
+  {
+    "date": "April 2, 2019",
+    "title": "McDonald's Bites on Big Data With $300 Million Acquisition",
+    "description": "The fast-food giant's largest acquisition in 20 years is bringing machine learning to the drive-thru.",
+    "url": "https://www.wired.com/story/mcdonalds-big-data-dynamic-yield-acquisition",
+    "image": "./Zollege Chat_files/McDonalds-462767668.jpg"
+  },
+  {
+    "date": "April 2, 2019",
+    "title": "DIY Career Development for Startups",
+    "description": "Just because you’ve joined a startup, doesn’t mean you’ve been relegated to the career development wild west.",
+    "url": "https://medium.com/@joshsassoon/diy-career-development-for-startups-bff364f00c16",
+    "image": "./Zollege Chat_files/1_Gest-rbyt0ZMGhqMY0E59Q.png"
+  },
+  {
+    "date": "April 2, 2019",
+    "title": "How To Align Things In CSS — Smashing Magazine",
+    "description": " ",
+    "url": "https://www.smashingmagazine.com/2019/03/css-alignment/",
+    "image": "undefined"
+  },
+  {
+    "date": "April 2, 2019",
+    "title": "40+ Amazing CSS3 Animation Examples For Inspiration - Templatefor",
+    "description": "we have picked up an amazing gathering of Creative CSS3 Animation Example. CSS3  is an interesting topic that most developers find out more about it and also have a developer do the projects on CSS3.",
+    "url": "https://templatefor.net/css3-animation-examples-for-inspiration/",
+    "image": "./Zollege Chat_files/CSS-Preloader.jpg"
+  },
+  {
+    "date": "April 2, 2019",
+    "title": "How to create a dark or light mode switch in CSS and Javascript | CodyHouse",
+    "description": "In this tutorial, we'll take a look at how to create a dark color theme by updating the values of your color variables {CSS custom properties}, and how to apply this new theme to a web project.",
+    "url": "https://codyhouse.co/blog/post/dark-light-switch-css-javascript",
+    "image": "./Zollege Chat_files/dark-switch-article-preview.gif"
+  },
+  {
+    "date": "April 2, 2019",
+    "title": "The Truth About UX/UI Designers",
+    "description": " ",
+    "url": "https://mailchi.mp/uie/what-is-your-mvp-214269",
+    "image": "undefined"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "The Business of Your Face",
+    "description": "While you weren't looking, tech companies helped themselves to your photos to power a facial recognition boom. Here's how.",
+    "url": "http://fortune.com/longform/facial-recognition/",
+    "image": "./Zollege Chat_files/gettyimages-892452252.jpg"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "Managing Z-Index In A Component-Based Web Application — Smashing Magazine",
+    "description": " ",
+    "url": "https://www.smashingmagazine.com/2019/04/z-index-component-based-web-application/",
+    "image": "undefined"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "Advanced Synthwave Scene",
+    "description": " ",
+    "url": "https://codepen.io/H2xDev/pen/YMPJeP",
+    "image": "./Zollege Chat_files/large{1}.png"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "xtrct.io - Get ecommerce data now",
+    "description": "Extract relevant product data from any ecommerce site in seconds. No selectors or coding required.",
+    "url": "https://xtrct.io/",
+    "image": "undefined"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "Deepfakes may ruin the world. And they can come for you, too",
+    "description": "But -- bright side! -- videos with your face on somebody else’s body usually aren't as tantalizing to bad guys as, say, creating political chaos.",
+    "url": "https://www.cnet.com/news/deepfakes-may-ruin-the-world-and-they-can-come-for-you-too/#ftag=CAD590a51e",
+    "image": "./Zollege Chat_files/gettyimages-102133016.jpg"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "Web inventor Tim Berners-Lee says you should own your data — not Facebook, Google or advertisers",
+    "description": "But in his internet vision, you'll have to pay for services no longer subsidized by advertising.",
+    "url": "https://www.cnet.com/news/web-inventor-tim-berners-lee-wants-to-give-you-your-data-back/#ftag=CAD590a51e",
+    "image": "./Zollege Chat_files/20190402-web-inventor-tim-berners-lee-01.jpg"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "My Opinionated git Cheat Sheet",
+    "description": "Ben Nadel creates a git cheat sheet for himself so that he can refer to it when he forgets how to execute certain git use cases. This git cheat sheet will also serve as a repository of the git information that he gathers over time.",
+    "url": "https://www.bennadel.com/blog/3587-my-opinionated-git-cheat-sheet.htm",
+    "image": "undefined"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "5 React Performance Tips",
+    "description": "Improve your React app performance with these simple tips",
+    "url": "https://www.strilliant.com/2019/03/25/5-react-performance-tips/",
+    "image": "https://www.strilliant.com/ms-icon-144x144.png"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "Make your Google Fonts render faster",
+    "description": "A tiny script that helps your text to appear a couple seconds earlier",
+    "url": "https://googlefonts.3perf.com/",
+    "image": "./Zollege Chat_files/social.png"
+  },
+  {
+    "date": "April 3, 2019",
+    "title": "Sophisticated Partitioning with CSS Grid | Rob Weychert",
+    "description": "Create compelling grid patterns by harnessing specificity.",
+    "url": "https://v6.robweychert.com/blog/2019/03/css-grid-sophisticated-partitioning/",
+    "image": "./Zollege Chat_files/generic-social.gif"
+  }
+]

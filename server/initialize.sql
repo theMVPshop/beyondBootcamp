@@ -1,77 +1,65 @@
 DROP TABLE IF EXISTS usersContact, usersAddress, users;
 
 CREATE TABLE users (
-  id INT NOT NULL AUTO_INCREMENT,
-  first_name VARCHAR(50),
-  last_name VARCHAR(50),
-  PRIMARY KEY (id)
-);
-
-CREATE TABLE usersContact (
-  id INT NOT NULL AUTO_INCREMENT,
-  user_id INT NOT NULL,
-  phone1 VARCHAR(50),
-  phone2 VARCHAR(50),
+  -- id INT NOT NULL AUTO_INCREMENT,
   email VARCHAR(50),
-  PRIMARY KEY (id),
-  FOREIGN KEY (user_id)
-  REFERENCES users (id)
+  password VARCHAR(50),
+  PRIMARY KEY (email)
 );
 
-CREATE TABLE usersAddress (
-  id INT NOT NULL AUTO_INCREMENT,
-  user_id INT NOT NULL,
-  address VARCHAR(100),
-  city VARCHAR(50),
-  county VARCHAR(50),
-  state VARCHAR(50),
-  zip VARCHAR(50),
-  PRIMARY KEY (id),
-  FOREIGN KEY (user_id)
-  REFERENCES users (id)
+CREATE TABLE emails (
+  -- id INT NOT NULL AUTO_INCREMENT,
+  email VARCHAR(50),
+  PRIMARY KEY (email),
+);
+
+CREATE TABLE blogs (
+  -- id INT NOT NULL AUTO_INCREMENT,
+  date VARCHAR(50),
+  title VARCHAR(500),
+  description VARCHAR(5000),
+  url,
+  image,
+  category,
+  keyword,
+  likes,
+  PRIMARY KEY (url),
 );
 
 INSERT INTO users
-	(first_name, last_name)
+	(email, password)
 VALUES 
-  ("James","Butt"),
-  ("Josephine","Darakjy"),
-  ("Art","Venere"),
-  ("Lenna","Paprocki"),
-  ("Donette","Foller"),
-  ("Simona","Morasca"),
-  ("Mitsue","Tollner"),
-  ("Leota","Dilliard"),
-  ("Sage","Wieser"),
-  ("Kris","Marrier"),
-  ("Minna","Amigon");
+  ("Ariel@gmail.com","Ariel123"),
+  ("json@istheman.com","JsOn1234"),
+  ("Dest@iny.com","ArielIsAwesome1"),
+  ("Keith@indahouse.com","Papar0ach01");
 
-INSERT INTO usersContact
-	(user_id, phone1, phone2, email)
-VALUES 
-  (92,"626-572-1096","626-696-2777","cory.gibes@gmail.com"),
-  (332,"607-407-3716","607-350-7690","kirk.herritt@aol.com"),
-  (177,"510-677-9785","510-942-5916","joesph_degonia@degonia.org"),
-  (495,"415-423-3294","415-926-6089","lai@gmail.com"),
-  (207,"415-306-7897","415-874-2984","norah.waymire@gmail.com"),
-  (398,"508-456-4907","508-658-7802","levi.munis@gmail.com"),
-  (201,"817-765-5781","817-577-6151","barrett.toyama@toyama.org"),
-  (237,"703-322-4041","703-938-7939","taryn.moyd@hotmail.com"),
-  (496,"208-709-1235","208-206-9848","bgillaspie@gillaspie.com"),
-  (421,"973-210-3994","973-491-8723","catarina_gleich@hotmail.com"),
-  (28,"410-669-1642","410-235-8738","ezekiel@chui.com");
+INSERT INTO emails
+	(email)
+VALUES
+  ("Ariel@gmail.com"),
+  ("json@istheman.com"),
+  ("Dest@iny.com"),
+  ("Keith@indahouse.com");
 
-INSERT INTO usersAddress
-	(user_id, address, city, county, state, zip)
-VALUES 
-  (92,"6649 N Blue Gum St","New Orleans","Orleans","LA",70116),
-  (332,"4 B Blue Ridge Blvd","Brighton","Livingston","MI",48116),
-  (177,"8 W Cerritos Ave #54","Bridgeport","Gloucester","NJ","08014"),
-  (495,"639 Main St","Anchorage","Anchorage","AK",99501),
-  (207,"34 Center St","Hamilton","Butler","OH",45011),
-  (398,"3 Mcauley Dr","Ashland","Ashland","OH",44805),
-  (201,"7 Eads St","Chicago","Cook","IL",60632),
-  (237,"7 W Jackson Blvd","San Jose","Santa Clara","CA",95111),
-  (496,"5 Boston Ave #88","Sioux Falls","Minnehaha","SD",57105),
-  (421,"228 Runamuck Pl #2808","Baltimore","Baltimore City","MD",21224),
-  (28,"2371 Jerrold Ave","Kulpsville","Montgomery","PA",19443);
+INSERT INTO blogs
+	(date, title, description, url, image)
+VALUES
+  ("April 2, 2019", "This free AI reads X-rays as well as doctors", "What happens when free, open-source software can diagnose us as well as doctors?", "https://www.fastcompany.com/90326445/this-free-ai-reads-x-rays-as-well-as-doctors", "./Zollege Chat_files/p-1-90326445-this-free-ai-reads-x-rays-as-well-as-doctors.jpg"),
+  ("April 2, 2019", "The Well-Balanced Developer", "Some developers are worth more than others. The bigger impact you can make on the organization, the higher is your worth. To make a significant impact on the organization, the developer must keep 5 essential skills in balance: Technical skills Mentoring skills Process Organization skills Business skills Communication skills", "https://sizovs.net/2019/03/09/the-well-balanced-developer/", "./Zollege Chat_files/me.png"),
+  ("April 2, 2019", "McDonald's Bites on Big Data With $300 Million Acquisition", "The fast-food giant's largest acquisition in 20 years is bringing machine learning to the drive-thru.", "https://www.wired.com/story/mcdonalds-big-data-dynamic-yield-acquisition", "./Zollege Chat_files/McDonalds-462767668.jpg"),
+  ("April 2, 2019", "DIY Career Development for Startups", "Just because you’ve joined a startup, doesn’t mean you’ve been relegated to the career development wild west.", "https://medium.com/@joshsassoon/diy-career-development-for-startups-bff364f00c16" , "./Zollege Chat_files/1_Gest-rbyt0ZMGhqMY0E59Q.png"),
+  ("April 2, 2019", "How To Align Things In CSS — Smashing Magazine", " " , "https://www.smashingmagazine.com/2019/03/css-alignment/", "undefined"),
+  ("April 2, 2019", "40+ Amazing CSS3 Animation Examples For Inspiration - Templatefor", "we have picked up an amazing gathering of Creative CSS3 Animation Example. CSS3  is an interesting topic that most developers find out more about it and also have a developer do the projects on CSS3.", "https://templatefor.net/css3-animation-examples-for-inspiration/' , './Zollege Chat_files/CSS-Preloader.jpg"),
+  ("April 2, 2019", "How to create a dark\light mode switch in CSS and Javascript | CodyHouse", "In this tutorial, we'll take a look at how to create a dark color theme by updating the values of your color variables (CSS custom properties), and how to apply this new theme to a web project.", "https://codyhouse.co/blog/post/dark-light-switch-css-javascript", "./Zollege Chat_files/dark-switch-article-preview.gif"),
+  ("April 2, 2019", "The Truth About UX/UI Designers" , " " , "https://mailchi.mp/uie/what-is-your-mvp-214269" , "undefined"),
+  ("April 3, 2019", "The Business of Your Face", "While you weren't looking, tech companies helped themselves to your photos to power a facial recognition boom. Here's how.", "http://fortune.com/longform/facial-recognition/", "./Zollege Chat_files/gettyimages-892452252.jpg"),
+  ("April 3, 2019", "Managing Z-Index In A Component-Based Web Application — Smashing Magazine", " " , "https://www.smashingmagazine.com/2019/04/z-index-component-based-web-application/" , "undefined"),
+  ("April 3, 2019", "Advanced Synthwave Scene" , " " , "https://codepen.io/H2xDev/pen/YMPJeP" , "./Zollege Chat_files/large(1).png"),
+  ("April 3, 2019", "xtrct.io - Get ecommerce data now", "Extract relevant product data from any ecommerce site in seconds. No selectors or coding required.", "https://xtrct.io/","undefined"),
+  ("April 3, 2019", "Deepfakes may ruin the world. And they can come for you, too", "But -- bright side! -- videos with your face on somebody else’s body usually aren't as tantalizing to bad guys as, say, creating political chaos.", "https://www.cnet.com/news/deepfakes-may-ruin-the-world-and-they-can-come-for-you-too/#ftag=CAD590a51e", "./Zollege Chat_files/gettyimages-102133016.jpg"),
+  ("April 3, 2019", "Web inventor Tim Berners-Lee says you should own your data — not Facebook, Google or advertisers", "But in his internet vision, you'll have to pay for services no longer subsidized by advertising.", "https://www.cnet.com/news/web-inventor-tim-berners-lee-wants-to-give-you-your-data-back/#ftag=CAD590a51e", "./Zollege Chat_files/20190402-web-inventor-tim-berners-lee-01.jpg"),
+  ("April 3, 2019", "My Opinionated git Cheat Sheet", "Ben Nadel creates a git cheat sheet for himself so that he can refer to it when he forgets how to execute certain git use cases. This git cheat sheet will also serve as a repository of the git information that he gathers over time.", "https://www.bennadel.com/blog/3587-my-opinionated-git-cheat-sheet.htm", "undefined"),
+  ("April 3, 2019", "5 React Performance Tips", "Improve your React app performance with these simple tips", "https://www.strilliant.com/2019/03/25/5-react-performance-tips/", "https://www.strilliant.com/ms-icon-144x144.png"),
+  ("April 3, 2019", "Make your Google Fonts render faster", "A tiny script that helps your text to appear a couple seconds earlier", "https://googlefonts.3perf.com/", "./Zollege Chat_files/social.png"),
+  ("April 3, 2019", "Sophisticated Partitioning with CSS Grid | Rob Weychert", "Create compelling grid patterns by harnessing specificity.", "https://v6.robweychert.com/blog/2019/03/css-grid-sophisticated-partitioning/", "./Zollege Chat_files/generic-social.gif");
