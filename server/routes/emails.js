@@ -5,14 +5,13 @@ const router = express.Router();
 //
 // File Import
 
-const usersController = require("../controllers/users");
+const emailsController = require("../controllers/emails");
 
 //
 //
 // Router Paths
 
-router.get("/users/:id", usersController.show);
-router.post("/users", usersController.create);
+router.post("/emails", emailsController.create);
 
 //
 //
