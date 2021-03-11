@@ -1,26 +1,68 @@
 const mysql = require("mysql");
 const pool = require("../sql/connection");
 const { handleSQLError } = require("../sql/error");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
+// for bycrypt
+const saltRounds = 10;
+
 //
 //
 //
 //// Code
 
-const show = (req, res) => {
-  // SELECT USERS WHERE ID = <REQ PARAMS ID>
-  const email = req.params.email;
-  console.log(email);
-  let sql = `SELECT ?? FROM ?? WHERE ?? = ?`;
-  // WHAT GOES IN THE BRACKETS
+const signIn = (req, res) => {
+  const { email, password } = req.body;
+
+  let sql = "SELECT ?? FROM ?? WHERE ?? = ?";
   sql = mysql.format(sql, ["*", "users", "email", email]);
 
   pool.query(sql, (err, rows) => {
     if (err) return handleSQLError(res, err);
-    return res.json(rows);
+    if (!rows.length) return res.status(404).send("No matching users");
+
+    const hash = rows[0].password;
+    bcrypt.compare(password, hash).then((result) => {
+      if (!result) return res.status(400).send("Invalid password");
+
+      const data = { ...rows[0] };
+      const userData = getUserFromSignIn(data.id);
+      data.password = "REDACTED";
+
+      const token = jwt.sign(data, "secret");
+      res.status(200).json({
+        msg: "Login successful",
+        token,
+        data: { ...data },
+      });
+    });
   });
 };
 
-const create = (req, res) => {
+const getUserFromSignIn = (id) => {
+  let sql = "SELECT ?? FROM ?? WHERE ?? = ?";
+  sql = mysql.format(sql, ["*", "users", "id", id]);
+
+  pool.query(sql, (err, rows) => {
+    return rows;
+  });
+};
+
+// const signIn = (req, res) => {
+//   const { email, password } = req.body;
+
+//   let sql = `SELECT ?? FROM ?? WHERE ?? = ?`;
+
+//   sql = mysql.format(sql, ["*", "users", "email", email]);
+
+//   pool.query(sql, (err, rows) => {
+//     if (err) return handleSQLError(res, err);
+//     if (!rows.length) return res.status(404).send("No matching users");
+//   });
+// };
+
+const createUser = (req, res) => {
   let email = req.email;
   let password = newUser.password;
 
@@ -41,4 +83,4 @@ const create = (req, res) => {
   });
 };
 
-module.exports = { show, create };
+module.exports = { signIn, createUser };

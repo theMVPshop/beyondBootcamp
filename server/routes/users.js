@@ -11,8 +11,8 @@ const usersController = require("../controllers/users");
 //
 // Router Paths
 
-router.get("/users/:id", usersController.show);
-router.post("/users", usersController.create);
+router.get("/users/:id", usersController.signIn);
+router.post("/users", usersController.createUser);
 
 //
 //
