@@ -1,20 +1,20 @@
-DROP TABLE IF EXISTS usersContact, usersAddress, users;
+DROP TABLE IF EXISTS users, emails, blogs;
 
 CREATE TABLE users (
-  -- id INT NOT NULL AUTO_INCREMENT,
+  id INT NOT NULL AUTO_INCREMENT,
   email VARCHAR(50),
-  password VARCHAR(50),
-  PRIMARY KEY (email)
+  password VARCHAR(150),
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE emails (
-  -- id INT NOT NULL AUTO_INCREMENT,
+  id INT NOT NULL AUTO_INCREMENT,
   email VARCHAR(50),
-  PRIMARY KEY (email),
+  PRIMARY KEY (id),
 );
 
 CREATE TABLE blogs (
-  -- id INT NOT NULL AUTO_INCREMENT,
+  id INT NOT NULL AUTO_INCREMENT,
   date VARCHAR(50),
   title VARCHAR(500),
   description VARCHAR(5000),
@@ -23,12 +23,12 @@ CREATE TABLE blogs (
   category,
   keyword,
   likes,
-  PRIMARY KEY (url),
+  PRIMARY KEY (id),
 );
 
 INSERT INTO users
 	(email, password)
-VALUES 
+VALUES
   ("Ariel@gmail.com","Ariel123"),
   ("json@istheman.com","JsOn1234"),
   ("Dest@iny.com","ArielIsAwesome1"),
