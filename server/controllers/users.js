@@ -10,7 +10,8 @@ const saltRounds = 10;
 //
 //
 //
-//// Code
+//// Queries for user to sign in.  First, the signIn command reaches out to DB and verifies that the password entered matches the hashed password in the DB.
+//// Second, we user the getUserFromSignIn command to retrieve all the information (password redacted) from the DB and allow user to sign in.
 
 const signIn = (req, res) => {
   const { email, password } = req.body;
@@ -49,38 +50,40 @@ const getUserFromSignIn = (id) => {
   });
 };
 
-// const signIn = (req, res) => {
-//   const { email, password } = req.body;
-
-//   let sql = `SELECT ?? FROM ?? WHERE ?? = ?`;
-
-//   sql = mysql.format(sql, ["*", "users", "email", email]);
-
-//   pool.query(sql, (err, rows) => {
-//     if (err) return handleSQLError(res, err);
-//     if (!rows.length) return res.status(404).send("No matching users");
-//   });
-// };
-
+//
+//
+//// Queries to create a new user and hash the password.  This also will return the new user Id in the process.
 const createUser = (req, res) => {
-  let email = req.email;
-  let password = newUser.password;
+    const { email, password } = req.body;
+    let sql =
+      "INSERT INTO ?? (??, ??) VALUES (?, ?); ";
 
-  // INSERT INTO USERS FIRST AND LAST NAME
-  let sql = "INSERT INTO ?? (??, ??) VALUES (?, ?)";
-  // WHAT GOES IN THE BRACKETS???
-  sql = mysql.format(sql, [
-    "users",
-    "email",
-    "password",
-    `${email}`,
-    `${password}`,
-  ]);
+    let getID = "SELECT MAX(id) FROM users;";
 
-  pool.query(sql, (err, results) => {
-    if (err) return handleSQLError(res, err);
-    return res.json({ newId: results.insertId });
-  });
-};
+    bcrypt.hash(password, saltRounds, function (err, hash) {
+      sql = mysql.format(sql, [
+        "users",
+        "email",
+        "password",
+        email,
+        hash,
+      ]);
+
+      pool.query(getID, (err, rows) => {
+        if (err) {
+          return handleSQLError(err);
+        }
+        const userId = rows[0]["MAX(businessOwnerId)"];
+        return res.json({ userId: userId });
+      });
+      pool.query(sql, (err, rows) => {
+        if (err) {
+          if (err.code === "ER_DUP_ENTRY")
+            return res.status(409).send("UserName is taken");
+          return handleSQLError(res, err);
+        }
+      });
+    });
+  };
 
 module.exports = { signIn, createUser };
