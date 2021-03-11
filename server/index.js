@@ -1,22 +1,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-require('dotenv').config()
+require("dotenv").config();
 const app = express();
 
-const employeesRouter = require("./routes/employees")
-const departmentsRouter = require("./routes/departments")
-const titlesRouter = require("./routes/titles")
-const salariesRouter = require("./routes/salaries")
-
-
+const usersRouter = require("./routes/users");
+const blogsRouter = require("./routes/blogs");
+const emailsRouter = require("./routes/emails");
 
 // express.static line 15 tells host what to run regarding the react app
 // app.use(express.static("client/build"));
 app.use(bodyParser.json());
-app.use('/employees', employeesRouter)
-app.use('/departments', departmentsRouter)
-app.use('/titles', titlesRouter)
-app.use('/salaries', salariesRouter)
+app.use("/users", usersRouter);
+app.use("/blogs", blogsRouter);
+app.use("/emails", emailsRouter);
 
 //Server Port 4001
 
