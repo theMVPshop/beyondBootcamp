@@ -10,7 +10,7 @@ CREATE TABLE users (
 CREATE TABLE emails (
   id INT NOT NULL AUTO_INCREMENT,
   email VARCHAR(50),
-  PRIMARY KEY (id),
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE blogs (
@@ -18,12 +18,12 @@ CREATE TABLE blogs (
   date VARCHAR(50),
   title VARCHAR(500),
   description VARCHAR(5000),
-  url,
-  image,
-  category,
-  keyword,
-  likes,
-  PRIMARY KEY (id),
+  url VARCHAR(500),
+  image VARCHAR(500),
+  category VARCHAR(50),
+  keyword VARCHAR(50),
+  likes VARCHAR(50),
+  PRIMARY KEY (id)
 );
 
 INSERT INTO users
@@ -50,7 +50,7 @@ VALUES
   ("April 2, 2019", "McDonald's Bites on Big Data With $300 Million Acquisition", "The fast-food giant's largest acquisition in 20 years is bringing machine learning to the drive-thru.", "https://www.wired.com/story/mcdonalds-big-data-dynamic-yield-acquisition", "./Zollege Chat_files/McDonalds-462767668.jpg"),
   ("April 2, 2019", "DIY Career Development for Startups", "Just because you’ve joined a startup, doesn’t mean you’ve been relegated to the career development wild west.", "https://medium.com/@joshsassoon/diy-career-development-for-startups-bff364f00c16" , "./Zollege Chat_files/1_Gest-rbyt0ZMGhqMY0E59Q.png"),
   ("April 2, 2019", "How To Align Things In CSS — Smashing Magazine", " " , "https://www.smashingmagazine.com/2019/03/css-alignment/", "undefined"),
-  ("April 2, 2019", "40+ Amazing CSS3 Animation Examples For Inspiration - Templatefor", "we have picked up an amazing gathering of Creative CSS3 Animation Example. CSS3  is an interesting topic that most developers find out more about it and also have a developer do the projects on CSS3.", "https://templatefor.net/css3-animation-examples-for-inspiration/' , './Zollege Chat_files/CSS-Preloader.jpg"),
+  ("April 2, 2019", "40+ Amazing CSS3 Animation Examples For Inspiration - Templatefor", "we have picked up an amazing gathering of Creative CSS3 Animation Example. CSS3  is an interesting topic that most developers find out more about it and also have a developer do the projects on CSS3.", "https://templatefor.net/css3-animation-examples-for-inspiration/", "./Zollege Chat_files/CSS-Preloader.jpg"),
   ("April 2, 2019", "How to create a dark\light mode switch in CSS and Javascript | CodyHouse", "In this tutorial, we'll take a look at how to create a dark color theme by updating the values of your color variables (CSS custom properties), and how to apply this new theme to a web project.", "https://codyhouse.co/blog/post/dark-light-switch-css-javascript", "./Zollege Chat_files/dark-switch-article-preview.gif"),
   ("April 2, 2019", "The Truth About UX/UI Designers" , " " , "https://mailchi.mp/uie/what-is-your-mvp-214269" , "undefined"),
   ("April 3, 2019", "The Business of Your Face", "While you weren't looking, tech companies helped themselves to your photos to power a facial recognition boom. Here's how.", "http://fortune.com/longform/facial-recognition/", "./Zollege Chat_files/gettyimages-892452252.jpg"),
