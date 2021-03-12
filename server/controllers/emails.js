@@ -6,7 +6,15 @@ const { handleSQLError } = require("../sql/error");
 //
 //// Code
 
-const create = (req, res) => {
+const getAllEmails = (req, res) => {
+  // SELECT ALL USERS
+  pool.query("SELECT * FROM emails", (err, rows) => {
+    if (err) return handleSQLError(res, err);
+    return res.json(rows);
+  });
+};
+
+const addToEmailList = (req, res) => {
   let email = req.email;
 
   // INSERT INTO USERS FIRST AND LAST NAME
@@ -20,4 +28,4 @@ const create = (req, res) => {
   });
 };
 
-module.exports = { create };
+module.exports = { getAllEmails, addToEmailList };

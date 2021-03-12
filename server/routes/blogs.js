@@ -11,8 +11,8 @@ const blogsController = require("../controllers/blogs");
 //
 // Router Paths
 
-router.get("/blogs", blogsController.list);
-router.post("/blogs", blogsController.create);
+router.get("/blogs", blogsController.getAllBlogs);
+router.post("/blogs", blogsController.createBlog);
 
 //
 //

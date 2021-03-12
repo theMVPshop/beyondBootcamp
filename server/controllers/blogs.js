@@ -5,7 +5,7 @@ const { handleSQLError } = require("../sql/error");
 //
 //
 //// Code
-const list = (req, res) => {
+const getAllBlogs = (req, res) => {
   // SELECT ALL USERS
   pool.query("SELECT * FROM blogs", (err, rows) => {
     if (err) return handleSQLError(res, err);
@@ -13,7 +13,7 @@ const list = (req, res) => {
   });
 };
 
-const create = (req, res) => {
+const createBlog = (req, res) => {
   let blog = req.body;
   let date = blog.date;
   let title = blog.title;
@@ -54,4 +54,4 @@ const create = (req, res) => {
   });
 };
 
-module.exports = { list, create };
+module.exports = { getAllBlogs, createBlog };

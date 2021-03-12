@@ -11,7 +11,8 @@ const emailsController = require("../controllers/emails");
 //
 // Router Paths
 
-router.post("/emails", emailsController.create);
+router.get("/emails", emailsController.getAllEmails);
+router.post("/emails", emailsController.addToEmailList);
 
 //
 //
