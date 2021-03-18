@@ -15,11 +15,10 @@ const getAllEmails = (req, res) => {
 };
 
 const addToEmailList = (req, res) => {
-  let email = req.email;
+  let email = req.body.email;
 
-  // INSERT INTO USERS FIRST AND LAST NAME
   let sql = "INSERT INTO ?? (??) VALUES (?)";
-  // WHAT GOES IN THE BRACKETS???
+
   sql = mysql.format(sql, ["emails", "email", `${email}`]);
 
   pool.query(sql, (err, results) => {

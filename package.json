@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "node beyond-bootcamp/server/index.js",
+    "server": "nodemon server/index.js",
     "start-dev": "concurrently \"npm run server\" \"react-scripts start\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
