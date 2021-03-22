@@ -14,7 +14,9 @@ const saltRounds = 10;
 //// Second, we user the getUserFromSignIn command to retrieve all the information (password redacted) from the DB and allow user to sign in.
 
 const signIn = (req, res) => {
-  const { email, password } = req.body;
+  // const { email, password } = req.body;
+  const email = req.body.email;
+  const password = req.body.password;
 
   let sql = "SELECT ?? FROM ?? WHERE ?? = ?";
   sql = mysql.format(sql, ["*", "users", "email", email]);
