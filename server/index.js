@@ -10,9 +10,9 @@ const emailsRouter = require("./routes/emails");
 // express.static line 15 tells host what to run regarding the react app
 // app.use(express.static("client/build"));
 app.use(bodyParser.json());
-app.use("/users", usersRouter);
-app.use("/blogs", blogsRouter);
-app.use("/emails", emailsRouter);
+app.use(usersRouter);
+app.use(blogsRouter);
+app.use(emailsRouter);
 
 //Server Port 4001
 

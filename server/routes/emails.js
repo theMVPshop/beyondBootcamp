@@ -5,14 +5,14 @@ const router = express.Router();
 //
 // File Import
 
-const usersController = require("../controllers/users");
+const emailsController = require("../controllers/emails");
 
 //
 //
 // Router Paths
 
-router.get("/users", usersController.signIn);
-router.post("/users", usersController.createUser);
+router.get("/emails", emailsController.getAllEmails);
+router.post("/emails", emailsController.addToEmailList);
 
 //
 //

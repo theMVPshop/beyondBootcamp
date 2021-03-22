@@ -5,14 +5,14 @@ const router = express.Router();
 //
 // File Import
 
-const usersController = require("../controllers/users");
+const blogsController = require("../controllers/blogs");
 
 //
 //
 // Router Paths
 
-router.get("/users", usersController.signIn);
-router.post("/users", usersController.createUser);
+router.get("/blogs", blogsController.getAllBlogs);
+router.post("/blogs", blogsController.createBlog);
 
 //
 //
