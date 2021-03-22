@@ -1,27 +1,24 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import blogs from "./../../blogs.json";
+import blogs from "./../blogs.json";
 
-function ArticleCard(props) {
-  const id = parseInt(props.match.params.id);
-  const blog = blogs.find((b) => b.id === id);
-  console.log(blogs);
+const ArticleCard = () => {
+  console.log('BLOGS', blogs)
   return (
     <div>
-      <Card style={{ width: "18rem" }} className="bg-dark text-white">
+      {blogs.map((blog, id) => (
+      <Card key={id} style={{ width: "18rem", height: "14rem" }} className="bg-dark text-white">
         <Card.Img style={{ width: "18rem", borderRadius: "5px" }}>
-          {blog.image}
+          {/* {blog.image} */}
         </Card.Img>
-        <Card.ImgOverlay>
+        <Card.ImgOverlay className="card-overlay">
           <Card.Title>{blog.title}</Card.Title>
-          {Object.keys(blog).map((key, idx) => {
-            return <Card.Text label={`${key}: ${blog[key]}`}></Card.Text>;
-          })}
-          <Card.Text>{blog.description}</Card.Text>
+          <Card.Text style={{height:"50px", overflow: "hidden"}}>{blog.description}</Card.Text>
           <Card.Text>{blog.date}</Card.Text>
         </Card.ImgOverlay>
       </Card>
-    </div>
+      ))}
+      </div>
   );
 }
 
