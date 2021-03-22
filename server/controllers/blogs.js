@@ -26,18 +26,9 @@ const createBlog = (req, res) => {
 
   // INSERT INTO USERS FIRST AND LAST NAME
   let sql =
-    "INSERT INTO ?? (??, ??, ??, ??, ??, ??, ??, ??) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    "INSERT INTO blogs (date, title, description, url, image, category, keyword, likes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
   // WHAT GOES IN THE BRACKETS???
   sql = mysql.format(sql, [
-    "blogs",
-    "date",
-    "title",
-    "description",
-    "url",
-    "image",
-    "category",
-    "keyword",
-    "likes",
     `${date}`,
     `${title}`,
     `${description}`,

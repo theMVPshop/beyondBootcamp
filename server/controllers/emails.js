@@ -17,9 +17,9 @@ const getAllEmails = (req, res) => {
 const addToEmailList = (req, res) => {
   let email = req.body.email;
 
-  let sql = "INSERT INTO ?? (??) VALUES (?)";
+  let sql = "INSERT INTO emails (email) VALUES (?)";
 
-  sql = mysql.format(sql, ["emails", "email", `${email}`]);
+  sql = mysql.format(sql, [`${email}`]);
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);
