@@ -1,5 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav"
 
 
 const NavCard = () => {
@@ -10,9 +12,14 @@ const NavCard = () => {
           <Card.Title>Beyond Bootcamp</Card.Title>
           <Card.Text>nav stuff nav stuff</Card.Text>
           <div className="main-nav">
-          <Card.Link href="#">About</Card.Link>
-          <Card.Link href="#">Tutorials</Card.Link>
-          <Card.Link href="#">Tweeters</Card.Link>
+          <Navbar bg="dark" variant="dark">
+    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link href="#home">About</Nav.Link>
+      <Nav.Link href="#features">Tutorials</Nav.Link>
+      <Nav.Link href="#pricing">Social Links</Nav.Link>
+    </Nav>
+  </Navbar>
           </div>
           </Card.Body>
       </Card>
