@@ -10,7 +10,7 @@ const NavCard = () => {
       <Card style={{ width: "36rem", height: "20rem" }} className="bg-dark text-white">
           <Card.Body>
           <Card.Title>Beyond Bootcamp</Card.Title>
-          <Card.Text>nav stuff nav stuff</Card.Text>
+          <Card.Text>f</Card.Text>
           <div className="main-nav">
           <Navbar bg="dark" variant="dark">
     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
