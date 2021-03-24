@@ -10,7 +10,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import SignIn from "./components/SignIn/SignIn";
 import YouTube from "./components/YouTube/YouTube";
 //Once Landing page is complete, we can delete article card from being imported
-import ArticleCard from './components/LandingPage/ArticleCard';
+import LandingPage from './components/LandingPage/LandingPage';
 
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
@@ -32,7 +32,7 @@ const Router = () => {
   return (
     <Switch>
       {/* Once Landing page is complete, we need to replace ArticleCard with LandingPage */}
-      <Route exact path="/" component={ArticleCard} />
+      <Route exact path="/" component={LandingPage} />
       <Route path="/about" component={About} />
       <Route path="/youtube" component={YouTube} />
       {/* <ProtectedRoute path="/dashboard" component={Dashboard} /> */}
