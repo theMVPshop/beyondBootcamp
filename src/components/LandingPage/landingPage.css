@@ -1,0 +1,18 @@
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  grid-gap: 20px;
+}
+
+.box1 {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.box2 {
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  outline: 2px solid red;
+  z-index: 10;
+}
