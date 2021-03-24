@@ -1,13 +1,16 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import blogs from "./../blogs.json";
+import NavCard from "./NavCard"
+import './landingPage.css'
 
 const ArticleCard = () => {
   console.log('BLOGS', blogs)
   return (
-    <div className="row">
+    <div className="wrapper">
+      <NavCard />
       {blogs.map((blog, id) => (
-      <Card key={id} style={{width: "18rem", height: "14rem", margin:"10px", display: "flex", justifyContent:"center"}} className="bg-dark text-white">
+      <Card key={id} style={{height: "14rem", margin:"10px"}} className="bg-dark text-white box1">
         <Card.Img style={{ width: "18rem", borderRadius: "5px" }}>
           {/* {blog.image} */}
         </Card.Img>

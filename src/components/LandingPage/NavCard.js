@@ -6,13 +6,13 @@ import Nav from "react-bootstrap/Nav"
 
 const NavCard = () => {
   return (
-    <div>
-      <Card style={{ width: "37rem", height: "28rem"}} className="bg-dark text-white">
+    <div className="box2">
+      <Card className="bg-dark text-white">
           <Card.Body>
           <Card.Title>Beyond Bootcamp</Card.Title>
           <Card.Text>nada nada nada</Card.Text>
           <div className="main-nav">
-          <Navbar sticky="top" bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark">
     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="#home">About</Nav.Link>
