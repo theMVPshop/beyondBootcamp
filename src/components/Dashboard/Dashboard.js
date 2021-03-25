@@ -26,7 +26,7 @@ export default function Dashboard() {
   };
 
   return (
-    <Form>
+    <Form className="dash-body">
       <Form.Group controlId="exampleForm.ControlInput1">
         <Form.Label>URL</Form.Label>
         <Form.Control
