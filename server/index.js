@@ -8,6 +8,7 @@ const usersRouter = require("./routes/users");
 const blogsRouter = require("./routes/blogs");
 const emailsRouter = require("./routes/emails");
 const peekalinkRouter = require("./routes/peekALink");
+const youtubeRouter = require("./routes/youtube");
 
 //Server Port 4001
 
@@ -37,12 +38,9 @@ app.use(
   usersRouter,
   blogsRouter,
   emailsRouter,
-  peekalinkRouter
+  peekalinkRouter,
+  youtubeRouter
 );
-
-// app.use(usersRouter);
-// app.use(blogsRouter);
-// app.use(emailsRouter);
 
 app.listen(port, () => {
   console.log(`Web server is listening on port ${port}!`);
