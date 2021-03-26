@@ -13,11 +13,11 @@ const NavCard = () => {
           <Card.Text></Card.Text>
           <div className="main-nav">
             <Navbar bg="dark" variant="dark">
-              <Navbar.Brand href="#home">BB</Navbar.Brand>
+              <Navbar.Brand href="">BB</Navbar.Brand>
               <Nav className="mr-auto">
-                <Nav.Link href="#home">About</Nav.Link>
-                <Nav.Link href="#features">Tutorials</Nav.Link>
-                <Nav.Link href="#pricing">Social Links</Nav.Link>
+                <Nav.Link href="">About</Nav.Link>
+                <Nav.Link href="">Tutorials</Nav.Link>
+                <Nav.Link href="">Social Links</Nav.Link>
                 <NavDropdown title="Search" id="collapsible-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
