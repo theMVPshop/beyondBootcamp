@@ -12,7 +12,7 @@ const ArticleCard = () => {
       {blogs.map((blog, id) => (
         <Card
           key={id}
-          style={{ height: "14rem", margin: "10px" }}
+          style={{ height: "20vh", margin: "10px" }}
           className="bg-dark text-white box1"
         >
           <Card.Img style={{ width: "18rem", borderRadius: "5px" }}>
