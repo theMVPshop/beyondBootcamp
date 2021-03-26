@@ -1,13 +1,13 @@
 import React from "react";
-import ArticleCard from "./ArticleCard"
-import './landingPage.css'
+import ArticleCard from "./ArticleCard";
+import "./landingPage.css";
 
 const LandingPage = () => {
   return (
     <div>
-     <ArticleCard/>
-      </div>
+      <ArticleCard />
+    </div>
   );
-}
+};
 
 export default LandingPage;
