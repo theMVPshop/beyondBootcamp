@@ -4,7 +4,7 @@
   height: 100vh;
   justify-content: center;
   grid-template-columns: repeat(4, 23%);
-  grid-gap: 20px;
+  grid-gap: 10px;
 }
 
 .box1 {
@@ -16,4 +16,10 @@
   grid-column: 2 / 4;
   grid-row: 2 / 4;
   z-index: 10;
+}
+
+.main-nav {
+  position:absolute;
+  bottom:0;
+  right:0;
 }
