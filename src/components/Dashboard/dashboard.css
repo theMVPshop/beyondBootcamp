@@ -1,3 +1,172 @@
+/* ************** */
+/* Dashboard CSS */
+/* ************** */
+
 .dash-body {
+  padding: 2% 25%;
+}
+
+.dash-image {
+  height: 150px;
+  margin: 1% 45%;
+}
+
+.dash-title {
+  text-align: center;
+  padding: 1rem;
+}
+
+.blog-url-input-group {
+  display: flex;
+}
+
+.dash-form-submit-button {
+  width: 15rem;
+  padding: 3% 5%;
+}
+
+.dash-example-tiles-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dash-example-tile {
+  margin: 20px 10px 20px 0px;
+  border: #d6d8da solid 1px;
+  padding: 80px 15px;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 0.25rem;
+}
+
+.dash-form-submit-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+#dash-blog-url{
+  background-image: none;
+}
+
+.dash-blog-url-form-control{
+  background-image: none;
+}
+
+/* ************** */
+/* KeywordTag CSS */
+/* ************** */
+
+.tags-input {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: calc(1.5em + 0.75rem + 2px);
+  width: 100%;
+  padding: 0 8px;
+  border: 1px solid #d6d8da;
+  border-radius: 6px;
+  background-color: white;
+}
+.tags-input:focus-within {
+  border-color: #80bdff;
+  color: #495057;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #cee6ff;
+}
+.tags-input input {
+  flex: 1;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.375rem 0.75rem;
+}
+.tags-input input:focus {
+  outline: transparent;
+}
+
+#tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+
+.tag {
+  width: auto;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0 8px;
+  font-size: 14px;
+  list-style: none;
+  border-radius: 6px;
+  margin: 0 8px 8px 0;
+  background: #0052cc;
+}
+.tag .tag-title {
+  margin-top: 3px;
+}
+.tag .tag-close-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 8px;
+  color: #0052cc;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* ************** */
+/* Scheduler CSS */
+/* ************** */
+
+[type="date"] {
+  background: #fff
+    url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+    97% 50% no-repeat;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+/* custom styles */
+.scheduler-input {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  padding: 3px 5px;
+  width: 220px;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+}
+
+.scheduler-input:focus-within {
+  border-color: #80bdff;
+  color: #495057;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #cee6ff;
+}
+
+#blog-url-input-button {
+  background-color: #e5e5e5;
+}
+
+#blog-url-input-button:hover {
+  color: #fff;
+  background-color: #343a40;
   padding: 10% 30%;
 }
