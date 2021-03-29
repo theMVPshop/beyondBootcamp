@@ -6,32 +6,33 @@ export default function YouTubeVideos() {
   const [backendData, setBackendData] = useState([]);
   const [videoIds, setVideoIds] = useState([]);
 
-  // Use useEffect to call the function that will fetch data from backend and set state with response.  Now we have access to all our businesses and can filter through them as needed.
+  // Use useEffect to call the function that will fetch data from backend and set state with response.  Now we have access to all our businesses and can filter through them as needed.  We then call setIdToState() to got through each item in backendData array and pull out the videoId and set it to its own state.
   useEffect(() => {
+    // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
+    const callBackendAPI = async () => {
+      const response = await fetch("/youtube");
+      const body = await response.json();
+
+      if (response.status !== 200) {
+        throw Error(body.message);
+      }
+      return body;
+    };
     callBackendAPI()
       .then((res) => setBackendData(res.items))
-      .then(
-        backendData.map((video) => {
-          const id = video.snippet.resourceId.videoId;
-          setVideoIds(...videoIds, id);
-        })
-      )
+      .then(setIdToState())
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(videoIds);
-
-  // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
-  const callBackendAPI = async () => {
-    const response = await fetch("/youtube");
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message);
-    }
-    console.log(body);
-    return body;
+  const setIdToState = () => {
+    backendData.forEach((item) => {
+      const id = item.snippet.resourceId.videoId;
+      setVideoIds((videoIds) => [...videoIds, id]);
+    });
   };
+
+  console.log(backendData);
+  console.log(videoIds);
 
   return (
     <div className="youtube-body">
