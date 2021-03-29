@@ -1,11 +1,11 @@
 import React from "react";
-import ArticleCard from "./ArticleCard";
+import LandingContainer from "./LandingContainer";
 import "./landingPage.css";
 
 const LandingPage = () => {
   return (
     <div>
-      <ArticleCard />
+      <LandingContainer />
     </div>
   );
 };

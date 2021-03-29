@@ -5,6 +5,7 @@ import "./dashboard.css";
 import axios from "axios";
 import DV from "./DarthVader.png";
 import KeywordTag from "./KeywordTag";
+import BlogCard from "../LandingPage/BlogCard";
 
 export default function Dashboard() {
   const [url, setUrl] = useState();
@@ -89,7 +90,7 @@ export default function Dashboard() {
             id="dateofbirth"
           />
           <div className="dash-example-tiles-container">
-            <h2 className="dash-example-tile">Post Tile 1</h2>
+            <BlogCard/>
             <h2 className="dash-example-tile">Post Tile 2</h2>
           </div>
           <div className="dash-form-submit-button-container">

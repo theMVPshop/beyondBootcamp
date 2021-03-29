@@ -1,3 +1,9 @@
+/* text: #E8E8E8
+background: #0F0F0F
+secondary background: #1D1D1D
+active: #36CFBA
+highlight: #F05454 */
+
 .wrapper {
   display: grid;
   width: 100vw;
@@ -5,6 +11,7 @@
   justify-content: center;
   grid-template-columns: repeat(4, 23%);
   grid-gap: 10px;
+  font-family: 'Jost', sans-serif;
 }
 
 .box1 {
