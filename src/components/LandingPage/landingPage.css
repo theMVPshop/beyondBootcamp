@@ -8,10 +8,16 @@ highlight: #F05454 */
   display: grid;
   width: 100vw;
   height: 100vh;
-  justify-content: center;
+  margin: 2%;
   grid-template-columns: repeat(4, 23%);
+  grid-template-rows: 21.5% 21.5% 21.5% 5% repeat(21.5%);
   grid-gap: 10px;
   font-family: 'Jost', sans-serif;
+}
+
+.main-nav {
+  grid-column: span 4;
+  grid-row: 4/5;
 }
 
 .box1 {
@@ -23,10 +29,4 @@ highlight: #F05454 */
   grid-column: 2 / 4;
   grid-row: 2 / 4;
   z-index: 10;
-}
-
-.main-nav {
-  position:absolute;
-  bottom:0;
-  right:0;
 }
