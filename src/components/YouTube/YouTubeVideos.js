@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import YouTube from "react-youtube-embed";
+// import YouTube from "react-youtube-embed";
+import YouTube from "react-youtube";
 import "./youTubeVideos.css";
 
 export default function YouTubeVideos() {
@@ -18,28 +19,37 @@ export default function YouTubeVideos() {
       }
       return body;
     };
+
     callBackendAPI()
       .then((res) => setBackendData(res.items))
-      .then(setIdToState())
       .catch((err) => console.log(err));
   }, []);
 
-  const setIdToState = () => {
+  useEffect(() => {
     backendData.forEach((item) => {
       const id = item.snippet.resourceId.videoId;
       setVideoIds((videoIds) => [...videoIds, id]);
     });
-  };
+  }, [backendData]);
 
   console.log(backendData);
   console.log(videoIds);
+
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
 
   return (
     <div className="youtube-body">
       <div className="youtube-bigVideoCont">
         <div className="youtube-bigVideo">
           <div>
-            <YouTube id="KDBP4FKXOXs" />
+            <YouTube videoId={videoIds[0]} opts={opts} />
           </div>
         </div>
       </div>
@@ -47,13 +57,13 @@ export default function YouTubeVideos() {
         <div>
           <div className="youtube-smallVideos">
             <div className="youtube-smallVid">
-              <YouTube id="KDBP4FKXOXs" />
+              <YouTube videoId={videoIds[1]} opts={opts} />
             </div>
             <div className="youtube-smallVid">
-              <YouTube id="KDBP4FKXOXs" />
+              <YouTube videoId={videoIds[2]} opts={opts} />
             </div>
             <div className="youtube-smallVid">
-              <YouTube id="KDBP4FKXOXs" />
+              <YouTube videoId={videoIds[3]} opts={opts} />
             </div>
           </div>
         </div>
