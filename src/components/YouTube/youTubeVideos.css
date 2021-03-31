@@ -1,0 +1,38 @@
+.youtube-body {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.youtube-bigVideoCont {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+.youtube-bigVideo {
+  width: 50rem;
+  height: auto;
+  border: 0.5px solid black;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.youtube-smallVideosCont {
+  display: flex;
+  justify-content: center;
+}
+.youtube-smallVideos {
+  display: flex;
+  flex-direction: row;
+}
+.youtube-smallVid {
+  width: 33rem;
+  height: auto;
+  margin: 0rem 1rem 0rem 1rem;
+  border: 0.5px solid black;
+  border-radius: 8px;
+  /* background-size: cover; */
+  /* overflow: hidden; */
+}
+.youtube-moreVids {
+  display: flex;
+  justify-content: center;
+}
