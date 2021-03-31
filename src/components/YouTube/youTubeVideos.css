@@ -24,13 +24,13 @@
   flex-direction: row;
 }
 .youtube-smallVid {
-  width: 30rem;
+  width: 33rem;
   height: auto;
   margin: 0rem 1rem 0rem 1rem;
   border: 0.5px solid black;
   border-radius: 8px;
-  /* background-size: contain; */
-  overflow: hidden;
+  /* background-size: cover; */
+  /* overflow: hidden; */
 }
 .youtube-moreVids {
   display: flex;
