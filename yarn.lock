@@ -2790,6 +2790,11 @@
   "resolved" "https://registry.yarnpkg.com/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.7.tgz"
   "version" "0.3.7"
 
+"babel-plugin-syntax-jsx@6.18.0":
+  "integrity" "sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY="
+  "resolved" "https://registry.npmjs.org/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz"
+  "version" "6.18.0"
+
 "babel-plugin-syntax-object-rest-spread@^6.8.0":
   "integrity" "sha1-/WU28rzhODb/o6VFjEkDpZe7O/U="
   "resolved" "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz"
@@ -2855,13 +2860,23 @@
     "babel-plugin-macros" "2.8.0"
     "babel-plugin-transform-react-remove-prop-types" "0.4.24"
 
-"babel-runtime@^6.26.0":
+"babel-runtime@^6.26.0", "babel-runtime@6.26.0":
   "integrity" "sha1-llxwWGaOgrVde/4E/yM3vItWR/4="
   "resolved" "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz"
   "version" "6.26.0"
   dependencies:
     "core-js" "^2.4.0"
     "regenerator-runtime" "^0.11.0"
+
+"babel-types@6.26.0":
+  "integrity" "sha1-o7Bz+Uq0nrb6Vc1lInozQ4BjJJc="
+  "resolved" "https://registry.npmjs.org/babel-types/-/babel-types-6.26.0.tgz"
+  "version" "6.26.0"
+  dependencies:
+    "babel-runtime" "^6.26.0"
+    "esutils" "^2.0.2"
+    "lodash" "^4.17.4"
+    "to-fast-properties" "^1.0.3"
 
 "babylon@^6.18.0":
   "integrity" "sha512-q/UEjfGJ2Cm3oKV71DJz9d25TPnq5rhBVL2Q4fA5wcC3jcrdn7+SssEybFIxwAvvP+YCsCYNKughoF33GxgycQ=="
@@ -3809,6 +3824,11 @@
   dependencies:
     "safe-buffer" "~5.1.1"
 
+"convert-source-map@1.5.1":
+  "integrity" "sha1-uCeAl7m8IpNl3lxiz1/K7YtVmeU="
+  "resolved" "https://registry.npmjs.org/convert-source-map/-/convert-source-map-1.5.1.tgz"
+  "version" "1.5.1"
+
 "cookie-signature@1.0.6":
   "integrity" "sha1-4wOogrNCzD7oylE6eZmXNNqzriw="
   "resolved" "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz"
@@ -4268,6 +4288,13 @@
 "debug@^2.6.0":
   "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="
   "resolved" "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz"
+  "version" "2.6.9"
+  dependencies:
+    "ms" "2.0.0"
+
+"debug@^2.6.6":
+  "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="
+  "resolved" "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz"
   "version" "2.6.9"
   dependencies:
     "ms" "2.0.0"
@@ -5316,7 +5343,7 @@
   "resolved" "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.3.0.tgz"
   "version" "1.3.0"
 
-"fast-deep-equal@^3.1.1":
+"fast-deep-equal@^3.1.1", "fast-deep-equal@3.1.3":
   "integrity" "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
   "resolved" "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
   "version" "3.1.3"
@@ -7531,6 +7558,11 @@
     "pify" "^2.0.0"
     "strip-bom" "^3.0.0"
 
+"load-script@^1.0.0":
+  "integrity" "sha1-BJGTngvuVkPuSUp+PaPSuscMbKQ="
+  "resolved" "https://registry.npmjs.org/load-script/-/load-script-1.0.0.tgz"
+  "version" "1.0.0"
+
 "loader-runner@^2.4.0":
   "integrity" "sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw=="
   "resolved" "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz"
@@ -7679,7 +7711,7 @@
   "resolved" "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   "version" "4.5.0"
 
-"lodash@^4.17.11", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.19", "lodash@^4.17.20", "lodash@^4.17.5", "lodash@>=3.5 <5":
+"lodash@^4.17.11", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.19", "lodash@^4.17.20", "lodash@^4.17.4", "lodash@^4.17.5", "lodash@>=3.5 <5":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -9705,7 +9737,7 @@
     "react-is" "^16.3.2"
     "warning" "^4.0.0"
 
-"prop-types@^15.6.2", "prop-types@^15.7.2":
+"prop-types@^15.6.2", "prop-types@^15.7.2", "prop-types@15.7.2":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -10110,13 +10142,38 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@^17.0.1":
+"react-youtube-embed@^1.0.3":
+  "integrity" "sha512-QvD9F+im+NvNT4M6OEDMAaWsoPntONHeEP6J079b/wX/VgfYVLKOCbBEEEjpYtv9PuLrjkDsghFWRxdkZRWsig=="
+  "resolved" "https://registry.npmjs.org/react-youtube-embed/-/react-youtube-embed-1.0.3.tgz"
+  "version" "1.0.3"
+  dependencies:
+    "styled-jsx" "^2.2.4"
+
+"react-youtube@^7.13.1":
+  "integrity" "sha512-b++TLHmHDpd0ZBS1wcbYabbuchU+W4jtx5A2MUQX0BINNKKsaIQX29sn/aLvZ9v5luwAoceia3VGtyz9blaB9w=="
+  "resolved" "https://registry.npmjs.org/react-youtube/-/react-youtube-7.13.1.tgz"
+  "version" "7.13.1"
+  dependencies:
+    "fast-deep-equal" "3.1.3"
+    "prop-types" "15.7.2"
+    "youtube-player" "5.5.2"
+
+"react@^17.0.1", "react@>=0.14.1":
   "integrity" "sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w=="
   "resolved" "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz"
   "version" "17.0.1"
   dependencies:
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"
+
+"react@15.x.x || 16.x.x":
+  "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
+  "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
+  "version" "16.14.0"
+  dependencies:
+    "loose-envify" "^1.1.0"
+    "object-assign" "^4.1.1"
+    "prop-types" "^15.6.2"
 
 "read-pkg-up@^2.0.0":
   "integrity" "sha1-a3KoBImE4MQeeVEP1en6mbO1Sb4="
@@ -10968,6 +11025,11 @@
   dependencies:
     "is-arrayish" "^0.3.1"
 
+"sister@^3.0.0":
+  "integrity" "sha512-p19rtTs+NksBRKW9qn0UhZ8/TUI9BPw9lmtHny+Y3TinWlOa9jWh9xB0AtPSdmOy49NJJJSSe0Ey4C7h0TrcYA=="
+  "resolved" "https://registry.npmjs.org/sister/-/sister-3.0.2.tgz"
+  "version" "3.0.2"
+
 "sisteransi@^1.0.5":
   "integrity" "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg=="
   "resolved" "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz"
@@ -11298,6 +11360,11 @@
   dependencies:
     "safe-buffer" "~5.1.0"
 
+"string-hash@1.1.3":
+  "integrity" "sha1-6Kr8CsGFW0Zmkp7X3RJ1311sgRs="
+  "resolved" "https://registry.npmjs.org/string-hash/-/string-hash-1.1.3.tgz"
+  "version" "1.1.3"
+
 "string-length@^4.0.1":
   "integrity" "sha512-PKyXUd0LK0ePjSOnWn34V2uD6acUWev9uy0Ft05k0E8xRW+SKcA0F7eMr7h5xlzfn+4O3N+55rduYyet3Jk+jw=="
   "resolved" "https://registry.yarnpkg.com/string-length/-/string-length-4.0.1.tgz"
@@ -11472,6 +11539,20 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^2.7.0"
 
+"styled-jsx@^2.2.4":
+  "integrity" "sha512-L67wypf8ULpAFxbVefl7ccE/rutz9w/Q1eJLg8Szm4KyN+bmmmaHYfSyfogfDn2l/CmzOlf8/bHbVSI6EeWYkQ=="
+  "resolved" "https://registry.npmjs.org/styled-jsx/-/styled-jsx-2.2.7.tgz"
+  "version" "2.2.7"
+  dependencies:
+    "babel-plugin-syntax-jsx" "6.18.0"
+    "babel-runtime" "6.26.0"
+    "babel-types" "6.26.0"
+    "convert-source-map" "1.5.1"
+    "source-map" "0.6.1"
+    "string-hash" "1.1.3"
+    "stylis" "3.5.1"
+    "stylis-rule-sheet" "0.0.10"
+
 "stylehacks@^4.0.0":
   "integrity" "sha512-7GlLk9JwlElY4Y6a/rmbH2MhVlTyVmiJd1PfTCqFaIBEGMYNsrO/v3SeGTdhBThLg4Z+NbOk/qFMwCa+J+3p/g=="
   "resolved" "https://registry.yarnpkg.com/stylehacks/-/stylehacks-4.0.3.tgz"
@@ -11480,6 +11561,16 @@
     "browserslist" "^4.0.0"
     "postcss" "^7.0.0"
     "postcss-selector-parser" "^3.0.0"
+
+"stylis-rule-sheet@0.0.10":
+  "integrity" "sha512-nTbZoaqoBnmK+ptANthb10ZRZOGC+EmTLLUxeYIuHNkEKcmKgXX1XWKkUBT2Ac4es3NybooPe0SmvKdhKJZAuw=="
+  "resolved" "https://registry.npmjs.org/stylis-rule-sheet/-/stylis-rule-sheet-0.0.10.tgz"
+  "version" "0.0.10"
+
+"stylis@^3.5.0", "stylis@3.5.1":
+  "integrity" "sha512-yM4PyeHuwhIOUHNJxi1/Mbq8kVLv4AkyE7IYLP/LK0lIFcr3tRa2H1iZlBYKIxOlf+/jruBTe8DdKSyQX9w4OA=="
+  "resolved" "https://registry.npmjs.org/stylis/-/stylis-3.5.1.tgz"
+  "version" "3.5.1"
 
 "supports-color@^5.3.0":
   "integrity" "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow=="
@@ -11711,6 +11802,11 @@
   "integrity" "sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M="
   "resolved" "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz"
   "version" "1.0.1"
+
+"to-fast-properties@^1.0.3":
+  "integrity" "sha1-uDVx+k2MJbguIxsG46MFXeTKGkc="
+  "resolved" "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz"
+  "version" "1.0.3"
 
 "to-fast-properties@^2.0.0":
   "integrity" "sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4="
@@ -12806,3 +12902,12 @@
   "integrity" "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
   "resolved" "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz"
   "version" "0.1.0"
+
+"youtube-player@5.5.2":
+  "integrity" "sha512-ZGtsemSpXnDky2AUYWgxjaopgB+shFHgXVpiJFeNB5nWEugpW1KWYDaHKuLqh2b67r24GtP6HoSW5swvf0fFIQ=="
+  "resolved" "https://registry.npmjs.org/youtube-player/-/youtube-player-5.5.2.tgz"
+  "version" "5.5.2"
+  dependencies:
+    "debug" "^2.6.6"
+    "load-script" "^1.0.0"
+    "sister" "^3.0.0"
