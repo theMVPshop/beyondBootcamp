@@ -52,7 +52,7 @@ highlight: #F05454 */
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-  .grid {
+  .wrapper {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 125px) 75px 125px;
     grid-auto-rows: minmax(18vh, auto);
