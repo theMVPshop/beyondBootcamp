@@ -1,12 +1,12 @@
 import React from "react";
 import TitleCard from "./TitleCard";
 import "./landingPage.css";
-import blogs from "../blogs.json"
+import blogs from "../blogs.json";
 import BlogCard from "./BlogCard";
 import NavBar from "./NavBar";
 
 const LandingContainer = () => {
-  console.log(blogs)
+  console.log(blogs);
   return (
     <div className="wrapper">
      <TitleCard />
