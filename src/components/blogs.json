@@ -142,5 +142,53 @@
     "description": "Create compelling grid patterns by harnessing specificity.",
     "url": "https://v6.robweychert.com/blog/2019/03/css-grid-sophisticated-partitioning/",
     "image": "./Zollege Chat_files/generic-social.gif"
+  },
+  {
+    "id": 19,
+    "date": "April 3, 2019",
+    "title": "Web inventor Tim Berners-Lee says you should own your data — not Facebook, Google or advertisers",
+    "description": "But in his internet vision, you'll have to pay for services no longer subsidized by advertising.",
+    "url": "https://www.cnet.com/news/web-inventor-tim-berners-lee-wants-to-give-you-your-data-back/#ftag=CAD590a51e",
+    "image": "./Zollege Chat_files/20190402-web-inventor-tim-berners-lee-01.jpg"
+  },
+  {
+    "id": 20,
+    "date": "April 3, 2019",
+    "title": "My Opinionated git Cheat Sheet",
+    "description": "Ben Nadel creates a git cheat sheet for himself so that he can refer to it when he forgets how to execute certain git use cases. This git cheat sheet will also serve as a repository of the git information that he gathers over time.",
+    "url": "https://www.bennadel.com/blog/3587-my-opinionated-git-cheat-sheet.htm",
+    "image": "undefined"
+  },
+  {
+    "id": 21,
+    "date": "April 3, 2019",
+    "title": "5 React Performance Tips",
+    "description": "Improve your React app performance with these simple tips",
+    "url": "https://www.strilliant.com/2019/03/25/5-react-performance-tips/",
+    "image": "https://www.strilliant.com/ms-icon-144x144.png"
+  },
+  {
+    "id": 22,
+    "date": "April 3, 2019",
+    "title": "Make your Google Fonts render faster",
+    "description": "A tiny script that helps your text to appear a couple seconds earlier",
+    "url": "https://googlefonts.3perf.com/",
+    "image": "./Zollege Chat_files/social.png"
+  },
+  {
+    "id": 23,
+    "date": "April 3, 2019",
+    "title": "Sophisticated Partitioning with CSS Grid | Rob Weychert",
+    "description": "Create compelling grid patterns by harnessing specificity.",
+    "url": "https://v6.robweychert.com/blog/2019/03/css-grid-sophisticated-partitioning/",
+    "image": "./Zollege Chat_files/generic-social.gif"
+  },
+  {
+    "id": 24,
+    "date": "April 3, 2019",
+    "title": "Sophisticated Partitioning with CSS Grid | Rob Weychert",
+    "description": "Create compelling grid patterns by harnessing specificity.",
+    "url": "https://v6.robweychert.com/blog/2019/03/css-grid-sophisticated-partitioning/",
+    "image": "./Zollege Chat_files/generic-social.gif"
   }
 ]

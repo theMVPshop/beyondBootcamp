@@ -7,7 +7,7 @@ import { Route, Switch } from "react-router";
 // import About from "./components/About/About";
 import Dashboard from "./components/Dashboard/Dashboard";
 // import SignIn from "./components/SignIn/SignIn";
-// import YouTube from "./components/YouTube/YouTube";
+import YouTubeVideos from "./components/YouTube/YouTubeVideos";
 import LandingPage from "./components/LandingPage/LandingPage";
 
 // --- uncomment both below once protected routes is ready to go
@@ -32,7 +32,7 @@ const Router = () => {
     <Switch>
       <Route exact path="/" component={LandingPage} />
       {/* <Route path="/about" component={About} /> */}
-      {/* <Route path="/youtube" component={YouTube} /> */}
+      <Route path="/youtube" component={YouTubeVideos} />
       {/* <ProtectedRoute path="/dashboard" component={Dashboard} /> */}
       <Route path="/dashboard" component={Dashboard} />
       {/* <ProtectedRoute path="/signin" component={SignIn} /> */}
