@@ -1,0 +1,12 @@
+.gradVideos-body {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.gradVideos-leftSide {
+  display: grid;
+  grid-column: 1/2;
+}
+.gradVideos-rightSide {
+  display: grid;
+  grid-column: 2/3;
+}

@@ -61,7 +61,9 @@ export default function GradVideos() {
           <YouTube videoId={mainVid} opts={opts} />
         </div>
       </div>
-      <div className=""></div>
+      <div className="gradVideos-rightSide">
+        <div className="gradVideos-scrollBar">ScrollBar</div>
+      </div>
     </div>
   );
 }
