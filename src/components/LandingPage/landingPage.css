@@ -4,36 +4,11 @@ secondary background: #1D1D1D
 active: #36CFBA
 highlight: #F05454 */
 
-/* .wrapper {
-  display: grid;
-  width: 100vw;
-  height: 100vh;
-  margin: 2%;
-  grid-template-columns: repeat(4, 23%);
-  grid-template-rows: 21.5% 21.5% 21.5% 5% repeat(21.5%);
-  grid-gap: 10px;
-  font-family: 'Jost', sans-serif;
-}
-
-.main-nav {
-  grid-column: span 4;
-  grid-row: 4/5;
-}
-
-.box1 {
-  border-radius: 5px;
-  padding: 20px;
-}
-
-.box2 {
-  grid-column: 2 / 4;
-  grid-row: 2 / 4;
-  z-index: 10;
-} */
-
 /**
  * Basic styles
  */
+
+
 .box1 {
   color: white;
   border-radius: 5px;
@@ -43,6 +18,7 @@ highlight: #F05454 */
 }
 
 .wrapper {
+  font-family: 'Jost', sans-serif;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
