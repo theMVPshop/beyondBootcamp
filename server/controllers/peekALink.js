@@ -10,12 +10,9 @@ const createPost = (req, res) => {
       { link: url },
       { headers: { "X-API-Key": process.env.PEEKALINK_API_KEY } }
     )
-    .then((response) => {
-      if (response.status === 200) {
-        return res.status(200).json(response.data);
-      } else {
-        res.status(500).json({ error: "error retrieving data" });
-      }
+    .then((res) => {
+      // need to send to front end form
+      console.log("PEEK_RES: ", res.data);
     });
 };
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="keywords.js"></script>
+    <script src="rows.js"></script>
+    <script>
+        for (let row=0; row<rows.length; row++){
+            let keys=[];
+            let text2search = (rows[row][1]+" "+rows[row][2]).toLowerCase();
+            console.log(text2search);
+            for (let keyword=0; keyword<keywordz.length; keyword++){
+                if (text2search.includes(keywordz[keyword])){
+                    keys.push(keywordz[keyword]);
+                }
+            }
+            console.log(keys);
+            rows[row].push
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
