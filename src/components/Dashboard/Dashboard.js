@@ -5,14 +5,22 @@ import "./dashboard.css";
 import axios from "axios";
 import DV from "./DarthVader.png";
 import KeywordTag from "./KeywordTag";
+import BlogCard from "../LandingPage/BlogCard";
 
 export default function Dashboard() {
   // URL that we are sending to API
-  const [peekalinkUrl, setPeekalinkUrl] = useState();
+  const [peekalinkUrl, setPeekalinkUrl] = useState("");
 
   // Response from API
   const [state, setState] = useState({
-    blog: {},
+    blog: {
+      title: "",
+      description: "",
+      url: "",
+      category: "",
+      tags: [],
+      date: "",
+    },
   });
   console.log("state:", state);
   console.log("url", peekalinkUrl);
@@ -27,7 +35,6 @@ export default function Dashboard() {
   // handles changes only for URL that we send to API
   const handleUrlChange = (e) => {
     setPeekalinkUrl(e.target.value);
-    console.log(peekalinkUrl);
   };
 
   // handles changes for inputs we receive from API
@@ -52,9 +59,30 @@ export default function Dashboard() {
           return res.data;
         });
       // Destructing keys being used from API response
-      const { title, description, url } = blog;
+      const {
+        title,
+        description,
+        url,
+        image: { url: image },
+      } = blog;
       // Setting state from API
-      setState({ blog: { title, description, url } });
+      setState({ blog: { title, description, url, image } });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const onSubmitForm = async (e) => {
+    e.preventDefault();
+    try {
+      await axios
+        .post(
+          `http://localhost:4001/blogs`,
+          { ...state.blog },
+          { "Content-Type": "application/json" }
+        )
+        .then((res) => {
+          console.log(res.status);
+        });
     } catch (error) {
       console.log(error);
     }
@@ -72,7 +100,7 @@ export default function Dashboard() {
               onChange={handleUrlChange}
               placeholder="www.website.com"
               className="dash-blog-url-form-control"
-              name="blogUrl"
+              value={peekalinkUrl}
             />
             <Button
               id="blog-url-input-button"
@@ -106,8 +134,13 @@ export default function Dashboard() {
             value={state.blog.url}
           />
           <Form.Label>Category</Form.Label>
-          <Form.Control as="select" onChange={handleChange} name="category">
-            <option value=" " disabled selected hidden>
+          <Form.Control
+            as="select"
+            onChange={handleChange}
+            value={state.blog.category}
+            name="category"
+          >
+            <option defaultValue=" " disabled hidden>
               Select a Category
             </option>
             <option>Tools</option>
@@ -126,12 +159,17 @@ export default function Dashboard() {
             type="date"
             name="date"
             id="date"
+            value={state.blog.date}
           />
           <div className="dash-example-tiles-container">
-            <h2 className="dash-example-tile">Post Tile 2</h2>
+            <BlogCard blog={state.blog} />
           </div>
           <div className="dash-form-submit-button-container">
-            <Button variant="dark" className="dash-form-submit-button">
+            <Button
+              variant="dark"
+              className="dash-form-submit-button"
+              onClick={onSubmitForm}
+            >
               Post blog
             </Button>
           </div>

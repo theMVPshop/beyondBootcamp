@@ -6,7 +6,7 @@ const { handleSQLError } = require("../sql/error");
 //
 //// Code
 const getAllBlogs = (req, res) => {
-  // SELECT ALL USERS
+  // SELECT ALL BLOGS
   pool.query("SELECT * FROM blogs", (err, rows) => {
     if (err) return handleSQLError(res, err);
     return res.json(rows);
@@ -14,6 +14,7 @@ const getAllBlogs = (req, res) => {
 };
 
 const createBlog = (req, res) => {
+  console.log("req body:", req.body);
   let blog = req.body;
   let date = blog.date;
   let title = blog.title;
@@ -21,12 +22,12 @@ const createBlog = (req, res) => {
   let url = blog.url;
   let image = blog.image;
   let category = blog.category;
-  let keyword = blog.keyword;
-  let likes = blog.likes;
+  let keyword = blog.tags;
+  // let likes = blog.likes;
 
   // INSERT INTO USERS FIRST AND LAST NAME
   let sql =
-    "INSERT INTO blogs (date, title, description, url, image, category, keyword, likes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    "INSERT INTO blogs (date, title, description, url, image, category, keyword) VALUES (?, ?, ?, ?, ?, ?, ?)";
   // WHAT GOES IN THE BRACKETS???
   sql = mysql.format(sql, [
     `${date}`,
@@ -36,7 +37,6 @@ const createBlog = (req, res) => {
     `${image}`,
     `${category}`,
     `${keyword}`,
-    `${likes}`,
   ]);
 
   pool.query(sql, (err, results) => {
