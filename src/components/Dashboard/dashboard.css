@@ -52,6 +52,10 @@
   background-image: none;
 }
 
+.dash-toast-message{
+font-size: 6rem;
+}
+
 /* ************** */
 /* KeywordTag CSS */
 /* ************** */
@@ -168,5 +172,4 @@
 #blog-url-input-button:hover {
   color: #fff;
   background-color: #343a40;
-  padding: 10% 30%;
 }

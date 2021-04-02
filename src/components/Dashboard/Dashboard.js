@@ -6,29 +6,105 @@ import axios from "axios";
 import DV from "./DarthVader.png";
 import KeywordTag from "./KeywordTag";
 import BlogCard from "../LandingPage/BlogCard";
+import toast, { toastConfig } from "react-simple-toasts";
 
 export default function Dashboard() {
-  const [url, setUrl] = useState();
+  // URL that we are sending to API
+  const [peekalinkUrl, setPeekalinkUrl] = useState("");
 
+  // Response from API
+  const [state, setState] = useState({
+    blog: {
+      title: "",
+      description: "",
+      url: "",
+      category: "",
+      tags: [],
+      date: "",
+    },
+  });
+  console.log("state:", state);
+  console.log("url", peekalinkUrl);
+
+  // Sets state and handles selected tags in KeywordTag component
+  const selectedTags = (tags) =>
+    setState({
+      ...state,
+      blog: { ...state.blog, tags: [...tags] },
+    });
+
+  // handles changes only for URL that we send to API
   const handleUrlChange = (e) => {
-    setUrl(e.target.value);
-    console.log(url);
+    setPeekalinkUrl(e.target.value);
   };
 
-  const onSubmitToPeekalink = () => {
-    axios
-      .post(
-        `http://localhost:4001/peekalink`,
-        { url },
-        { "Content-Type": "application/json" }
-      )
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
+  // handles changes for inputs we receive from API
+  const handleChange = (evt) => {
+    const value = evt.target.value || "";
+    setState({
+      ...state,
+      blog: { ...state.blog, [evt.target.name]: value },
+    });
   };
 
-  const selectedTags = (tags) => console.log(tags);
+  // call to API
+  const onSubmitToPeekalink = async () => {
+    try {
+      const blog = await axios
+        .post(
+          `http://localhost:4001/peekalink`,
+          { url: peekalinkUrl },
+          { "Content-Type": "application/json" }
+        )
+        .then((res) => {
+          return res.data;
+        });
+      // Destructing keys being used from API response
+      const {
+        title,
+        description,
+        url,
+        image: { url: image },
+      } = blog;
+      // Setting state from API
+      setState({ blog: { title, description, url, image } });
+    } catch (error) {
+      toast(`Woah! There is an error! ${error}`);
+    }
+  };
+  const onSubmitForm = async (e) => {
+    e.preventDefault();
+    try {
+      await axios
+        .post(
+          `http://localhost:4001/blogs`,
+          { ...state.blog },
+          { "Content-Type": "application/json" }
+        )
+        .then((res) => {
+          if (res.status === 200) {
+            toast("Congrats! You just created a new post!");
+            setState({
+              blog: {
+                title: "",
+                description: "",
+                url: "",
+                category: "",
+                tags: [],
+                date: "",
+              },
+            });
+            setPeekalinkUrl("")
+          }
+        });
+    } catch (error) {
+      toast(`Uh oh! There is an error! ${error}`);
+    }
+  };
+
+  toastConfig({
+    position: "right",
+  });
 
   return (
     <div>
@@ -42,6 +118,7 @@ export default function Dashboard() {
               onChange={handleUrlChange}
               placeholder="www.website.com"
               className="dash-blog-url-form-control"
+              value={peekalinkUrl}
             />
             <Button
               id="blog-url-input-button"
@@ -53,24 +130,35 @@ export default function Dashboard() {
           </span>
           <Form.Label>Title</Form.Label>
           <Form.Control
-            // onChange={handleUrlChange}
+            onChange={handleChange}
             placeholder="Title of Article"
+            name="title"
+            value={state.blog.title}
           />
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
             rows={3}
-            // onChange={handleUrlChange}
+            onChange={handleChange}
+            name="description"
             placeholder="Description of Article"
+            value={state.blog.description}
           />
           <Form.Label>Site URL</Form.Label>
           <Form.Control
-            // onChange={handleUrlChange}
-            placeholder="Site of Author"
+            onChange={handleChange}
+            placeholder="URL"
+            name="url"
+            value={state.blog.url}
           />
           <Form.Label>Category</Form.Label>
-          <Form.Control as="select">
-            <option value="" disabled selected hidden>
+          <Form.Control
+            as="select"
+            onChange={handleChange}
+            value={state.blog.category}
+            name="category"
+          >
+            <option defaultValue=" " disabled hidden>
               Select a Category
             </option>
             <option>Tools</option>
@@ -84,17 +172,22 @@ export default function Dashboard() {
           <KeywordTag selectedTags={selectedTags} />
           <Form.Label>Schedule Publish Date</Form.Label> <br />
           <input
+            onChange={handleChange}
             className="scheduler-input"
             type="date"
-            name="dateofbirth"
-            id="dateofbirth"
+            name="date"
+            id="date"
+            value={state.blog.date}
           />
           <div className="dash-example-tiles-container">
-            <BlogCard/>
-            <h2 className="dash-example-tile">Post Tile 2</h2>
+            <BlogCard blog={state.blog} />
           </div>
           <div className="dash-form-submit-button-container">
-            <Button variant="dark" className="dash-form-submit-button">
+            <Button
+              variant="dark"
+              className="dash-form-submit-button"
+              onClick={onSubmitForm}
+            >
               Post blog
             </Button>
           </div>
