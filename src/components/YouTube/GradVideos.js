@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import YouTube from "react-youtube";
+import NavBar from "../LandingPage/NavBar";
 import "./gradVideos.css";
 
 export default function GradVideos() {
   const [backendData, setBackendData] = useState([]);
   const [videoIds, setVideoIds] = useState([]);
-  const [mainVid, setMainVid] = useState([]);
+  const [mainVid, setMainVid] = useState(null);
+  const [vidImage, setVidImage] = useState([]);
 
   // Use useEffect to call the function that will fetch data from backend and set state with response.  Now we have access to all our businesses and can filter through them as needed.  We then call setIdToState() to got through each item in backendData array and pull out the videoId and set it to its own state.
   useEffect(() => {
@@ -36,14 +38,22 @@ export default function GradVideos() {
     setMainVid(videoIds[1]);
   }, [videoIds]);
 
+  useEffect(() => {
+    backendData.forEach((item) => {
+      const image = item.snippet.thumbnails.standard.url;
+      setVidImage((vidImage) => [...vidImage, image]);
+    });
+  }, [videoIds]);
+
   console.log(backendData);
   console.log(videoIds);
+  console.log(vidImage);
 
   // Find random number between 0 and length of VideoIds array.  Used to get a random video in array.
-  const randomNumber = () => {
-    const length = videoIds.length;
-    return Math.floor(Math.random() * length);
-  };
+  //   const randomNumber = () => {
+  //     const length = videoIds.length;
+  //     return Math.floor(Math.random() * length);
+  //   };
 
   const opts = {
     height: "390",
@@ -56,12 +66,23 @@ export default function GradVideos() {
 
   return (
     <div className="gradVideos-body">
+      <div className="gradVideos-navBar">
+        <NavBar />
+      </div>
       <div className="gradVideos-leftSide">
         <div className="gradVideos-mainVid">
           <YouTube videoId={mainVid} opts={opts} />
         </div>
       </div>
-      <div className=""></div>
+      <div className="gradVideos-rightSide">
+        <div className="gradVideos-scrollBar">
+          {vidImage.map((image, idx) => {
+            return (
+              <img key={idx} src={image} alt="Shows snapshot of content"></img>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
