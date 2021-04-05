@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
 import "./dashboard.css";
 import axios from "axios";
 import DV from "./DarthVader.png";
@@ -8,12 +9,12 @@ import KeywordTag from "./KeywordTag";
 import BlogCard from "../LandingPage/BlogCard";
 import toast, { toastConfig } from "react-simple-toasts";
 
-export default function Dashboard() {
-  // URL that we are sending to API
-  const [peekalinkUrl, setPeekalinkUrl] = useState("");
+toastConfig({
+  position: "right",
+});
 
-  // Response from API
-  const [state, setState] = useState({
+export default function Dashboard() {
+  const initialBlogState = {
     blog: {
       title: "",
       description: "",
@@ -22,9 +23,12 @@ export default function Dashboard() {
       tags: [],
       date: "",
     },
-  });
-  console.log("state:", state);
-  console.log("url", peekalinkUrl);
+  };
+  // URL that we are sending to API
+  const [peekalinkUrl, setPeekalinkUrl] = useState("");
+
+  // Response from API
+  const [state, setState] = useState(initialBlogState);
 
   // Sets state and handles selected tags in KeywordTag component
   const selectedTags = (tags) =>
@@ -84,57 +88,54 @@ export default function Dashboard() {
         .then((res) => {
           if (res.status === 200) {
             toast("Congrats! You just created a new post!");
-            setState({
-              blog: {
-                title: "",
-                description: "",
-                url: "",
-                category: "",
-                tags: [],
-                date: "",
-              },
-            });
-            setPeekalinkUrl("")
+            setState(initialBlogState);
+            setPeekalinkUrl("");
           }
         });
     } catch (error) {
       toast(`Uh oh! There is an error! ${error}`);
     }
   };
-
-  toastConfig({
-    position: "right",
-  });
-
+  const { title, description, url, category, date } = state.blog;
   return (
-    <div>
+    <>
       <img src={DV} alt="Darth Vader emoji" className="dash-image" />
       <h3 className="dash-title"> Keith! I am your Dashboard.</h3>
       <Form className="dash-body">
+        <Form.Group>
+          <Form.Row className="dash-form">
+            <Form.Label>Blog URL</Form.Label>
+          </Form.Row>
+          <Form.Row className="dash-form">
+            <Col sm={10}>
+              <Form.Control
+                onChange={handleUrlChange}
+                placeholder="www.website.com"
+                className="dash-blog-url-form-control"
+                value={peekalinkUrl}
+              />
+            </Col>
+            <Col sm={2}>
+              <Button
+                id="blog-url-input-button"
+                variant="outline-dark"
+                onClick={onSubmitToPeekalink}
+              >
+                Peekalink
+              </Button>
+            </Col>
+          </Form.Row>
+        </Form.Group>
         <Form.Group className="dash-form">
-          <Form.Label>Blog URL</Form.Label>
-          <span className="blog-url-input-group">
-            <Form.Control
-              onChange={handleUrlChange}
-              placeholder="www.website.com"
-              className="dash-blog-url-form-control"
-              value={peekalinkUrl}
-            />
-            <Button
-              id="blog-url-input-button"
-              variant="outline-dark"
-              onClick={onSubmitToPeekalink}
-            >
-              Peekalink
-            </Button>
-          </span>
           <Form.Label>Title</Form.Label>
           <Form.Control
             onChange={handleChange}
             placeholder="Title of Article"
             name="title"
-            value={state.blog.title}
+            value={title}
           />
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
@@ -142,20 +143,24 @@ export default function Dashboard() {
             onChange={handleChange}
             name="description"
             placeholder="Description of Article"
-            value={state.blog.description}
+            value={description}
           />
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Site URL</Form.Label>
           <Form.Control
             onChange={handleChange}
             placeholder="URL"
             name="url"
-            value={state.blog.url}
+            value={url}
           />
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Category</Form.Label>
           <Form.Control
             as="select"
             onChange={handleChange}
-            value={state.blog.category}
+            value={category}
             name="category"
           >
             <option defaultValue=" " disabled hidden>
@@ -168,8 +173,12 @@ export default function Dashboard() {
             <option>Future of Code</option>
             <option>Personal Development</option>
           </Form.Control>
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Keyword</Form.Label>
           <KeywordTag selectedTags={selectedTags} />
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Schedule Publish Date</Form.Label> <br />
           <input
             onChange={handleChange}
@@ -177,23 +186,23 @@ export default function Dashboard() {
             type="date"
             name="date"
             id="date"
-            value={state.blog.date}
+            value={date}
           />
-          <div className="dash-example-tiles-container">
-            <BlogCard blog={state.blog} />
-          </div>
-          <div className="dash-form-submit-button-container">
-            <Button
-              variant="dark"
-              className="dash-form-submit-button"
-              onClick={onSubmitForm}
-            >
-              Post blog
-            </Button>
-          </div>
         </Form.Group>
+        <div className="dash-example-tiles-container">
+          <BlogCard blog={state.blog} />
+        </div>
+        <div className="dash-form-submit-button-container">
+          <Button
+            id="dash-form-submit-button"
+            variant="primary"
+            onClick={onSubmitForm}
+          >
+            Post blog
+          </Button>
+        </div>
       </Form>
-    </div>
+    </>
   );
 }
 
