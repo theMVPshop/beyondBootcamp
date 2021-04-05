@@ -4,7 +4,7 @@ import "./landingPage.css";
 import BlogCard from "./BlogCard";
 import NavBar from "./NavBar";
 import axios from "axios";
-import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
+import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
 
 const LandingContainer = () => {
   const [blogs, setBlogs] = useState([]);
@@ -24,12 +24,12 @@ const LandingContainer = () => {
 
   return (
     <div className="wrapper">
-     <TitleCard />
-     <NavBar />
-     {blogs.map((blog, id) => (
-     <BlogCard key={id} blog={blog}/>
-     ))}
-   <ScrollUpButton style={{backgroundColor: "#36CFBA", border:"none"}} />
+      <TitleCard />
+      <NavBar />
+      {blogs.map((blog, id) => (
+        <BlogCard key={id} blog={blog} />
+      ))}
+      <ScrollUpButton style={{ backgroundColor: "#36CFBA", border: "none" }} />
     </div>
   );
 };
