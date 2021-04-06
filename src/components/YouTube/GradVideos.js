@@ -38,13 +38,12 @@ export default function GradVideos() {
     setMainVid(videoIds[1]);
   }, [videoIds]);
 
-  //TODO: fix dependency array for this useEffect. It throws an error in the console
-  // useEffect(() => {
-  //   backendData.forEach((item) => {
-  //     const image = item.snippet.thumbnails.standard.url;
-  //     setVidImage((vidImage) => [...vidImage, image]);
-  //   });
-  // }, [videoIds]);
+  useEffect(() => {
+    backendData.forEach((item) => {
+      const image = item.snippet.thumbnails.standard.url;
+      setVidImage((vidImage) => [...vidImage, image]);
+    });
+  }, [videoIds]);
 
   console.log(backendData);
   console.log(videoIds);
@@ -81,7 +80,7 @@ export default function GradVideos() {
             return (
               <div className="gradVideos-smallVidWrapper" key={idx}>
                 <img
-                  className="gradVidoes-smallVid"
+                  className="gradVidoes-smallVid rounded img-fluid"
                   src={image}
                   alt="Shows snapshot of content"
                 ></img>

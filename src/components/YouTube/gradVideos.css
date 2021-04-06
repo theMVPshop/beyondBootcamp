@@ -21,6 +21,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+.gradVideos-mainVid iframe {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 5px rgba(146, 146, 146, 0.08),
+    0 6px 20px 6px rgba(146, 146, 146, 0.08);
+}
 .gradVideos-mainVid div {
   width: 700px;
   height: 500px;
@@ -29,8 +34,8 @@ body {
   display: grid;
   justify-content: center;
   grid-column: 2/3;
-  /* background-color: cadetblue; */
   border-left: 2px solid ivory;
+  background-color: whitesmoke;
 }
 .gradVideos-scrollBar {
   display: flex;
@@ -42,12 +47,10 @@ body {
 }
 .gradVideos-smallVidWrapper {
   width: 20rem;
-  /* height: ; */
-  /* border: 1px black solid; */
-  border-radius: 5px;
+  height: auto;
   margin: 1rem;
-  /* overflow: hidden; */
-  object-fit: contain;
+  box-shadow: 0 4px 8px 5px rgba(146, 146, 146, 0.08),
+    0 4px 8px 5px rgba(146, 146, 146, 0.08);
 }
 .gradVidoes-smallVid {
   width: 100%;
