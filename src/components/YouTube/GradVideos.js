@@ -56,7 +56,7 @@ export default function GradVideos() {
   //   };
 
   const opts = {
-    height: "390",
+    height: "100%",
     width: "100%",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
@@ -78,7 +78,13 @@ export default function GradVideos() {
         <div className="gradVideos-scrollBar">
           {vidImage.map((image, idx) => {
             return (
-              <img key={idx} src={image} alt="Shows snapshot of content"></img>
+              <div className="gradVideos-smallVidWrapper" key={idx}>
+                <img
+                  className="gradVidoes-smallVid"
+                  src={image}
+                  alt="Shows snapshot of content"
+                ></img>
+              </div>
             );
           })}
         </div>

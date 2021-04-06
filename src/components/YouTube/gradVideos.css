@@ -1,24 +1,55 @@
+body {
+  overflow: hidden;
+}
 .gradVideos-body {
   display: grid;
   grid-template-columns: 70% 30%;
   background-color: #24282d;
-  height: 100vh;
 }
 .gradVideos-navBar {
   grid-column: 1/3;
 }
 .gradVideos-leftSide {
+  display: grid;
+  justify-content: center;
   grid-column: 1/2;
 }
 .gradVideos-mainVid {
-  padding: 5rem 5rem 10rem 5rem;
+  height: auto;
+  width: 55rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gradVideos-mainVid div {
+  width: 700px;
+  height: 500px;
 }
 .gradVideos-rightSide {
+  display: grid;
+  justify-content: center;
   grid-column: 2/3;
+  /* background-color: cadetblue; */
+  border-left: 2px solid ivory;
 }
 .gradVideos-scrollBar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem;
+  height: 95vh;
+  overflow: scroll;
+  padding: 2rem 0rem;
+}
+.gradVideos-smallVidWrapper {
+  width: 20rem;
+  /* height: ; */
+  /* border: 1px black solid; */
+  border-radius: 5px;
+  margin: 1rem;
+  /* overflow: hidden; */
+  object-fit: contain;
+}
+.gradVidoes-smallVid {
+  width: 100%;
+  height: auto;
 }
