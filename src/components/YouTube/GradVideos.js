@@ -38,12 +38,13 @@ export default function GradVideos() {
     setMainVid(videoIds[1]);
   }, [videoIds]);
 
-  useEffect(() => {
-    backendData.forEach((item) => {
-      const image = item.snippet.thumbnails.standard.url;
-      setVidImage((vidImage) => [...vidImage, image]);
-    });
-  }, [videoIds]);
+  //TODO: fix dependency array for this useEffect. It throws an error in the console
+  // useEffect(() => {
+  //   backendData.forEach((item) => {
+  //     const image = item.snippet.thumbnails.standard.url;
+  //     setVidImage((vidImage) => [...vidImage, image]);
+  //   });
+  // }, [videoIds]);
 
   console.log(backendData);
   console.log(videoIds);

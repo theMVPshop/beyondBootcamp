@@ -1,76 +1,169 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
 import "./dashboard.css";
 import axios from "axios";
 import DV from "./DarthVader.png";
 import KeywordTag from "./KeywordTag";
 import BlogCard from "../LandingPage/BlogCard";
+import toast, { toastConfig } from "react-simple-toasts";
+
+toastConfig({
+  position: "right",
+});
 
 export default function Dashboard() {
-  const [url, setUrl] = useState();
+  const initialBlogState = {
+    blog: {
+      title: "",
+      description: "",
+      url: "",
+      category: "",
+      tags: [],
+      date: "",
+    },
+  };
+  // URL that we are sending to API
+  const [peekalinkUrl, setPeekalinkUrl] = useState("");
 
+  // Response from API
+  const [state, setState] = useState(initialBlogState);
+
+  // Sets state and handles selected tags in KeywordTag component
+  const selectedTags = (tags) =>
+    setState({
+      ...state,
+      blog: { ...state.blog, tags: [...tags] },
+    });
+
+  // handles changes only for URL that we send to API
   const handleUrlChange = (e) => {
-    setUrl(e.target.value);
-    console.log(url);
+    setPeekalinkUrl(e.target.value);
   };
 
-  const onSubmitToPeekalink = () => {
-    axios
-      .post(
-        `http://localhost:4001/peekalink`,
-        { url },
-        { "Content-Type": "application/json" }
-      )
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
+  // handles changes for inputs we receive from API
+  const handleChange = (evt) => {
+    const value = evt.target.value || "";
+    setState({
+      ...state,
+      blog: { ...state.blog, [evt.target.name]: value },
+    });
   };
 
-  const selectedTags = (tags) => console.log(tags);
-
+  // call to API
+  const onSubmitToPeekalink = async () => {
+    try {
+      const blog = await axios
+        .post(
+          `http://localhost:4001/peekalink`,
+          { url: peekalinkUrl },
+          { "Content-Type": "application/json" }
+        )
+        .then((res) => {
+          return res.data;
+        });
+      // Destructing keys being used from API response
+      const {
+        title,
+        description,
+        url,
+        image: { url: image },
+      } = blog;
+      // Setting state from API
+      setState({ blog: { title, description, url, image } });
+    } catch (error) {
+      toast(`Woah! There is an error! ${error}`);
+    }
+  };
+  const onSubmitForm = async (e) => {
+    e.preventDefault();
+    try {
+      await axios
+        .post(
+          `http://localhost:4001/blogs`,
+          { ...state.blog },
+          { "Content-Type": "application/json" }
+        )
+        .then((res) => {
+          if (res.status === 200) {
+            toast("Congrats! You just created a new post!");
+            setState(initialBlogState);
+            setPeekalinkUrl("");
+          }
+        });
+    } catch (error) {
+      toast(`Uh oh! There is an error! ${error}`);
+    }
+  };
+  const { title, description, url, category, date } = state.blog;
   return (
-    <div>
+    <>
       <img src={DV} alt="Darth Vader emoji" className="dash-image" />
       <h3 className="dash-title"> Keith! I am your Dashboard.</h3>
       <Form className="dash-body">
+        <Form.Group>
+          <Form.Row className="dash-form">
+            <Form.Label>Blog URL</Form.Label>
+          </Form.Row>
+          <Form.Row className="dash-form">
+            <Col sm={10}>
+              <Form.Control
+                onChange={handleUrlChange}
+                placeholder="www.website.com"
+                className="dash-blog-url-form-control"
+                value={peekalinkUrl}
+              />
+            </Col>
+            <Col sm={2}>
+              <Button
+                id="blog-url-input-button"
+                variant="outline-dark"
+                onClick={onSubmitToPeekalink}
+              >
+                Peekalink
+              </Button>
+            </Col>
+          </Form.Row>
+        </Form.Group>
         <Form.Group className="dash-form">
-          <Form.Label>Blog URL</Form.Label>
-          <span className="blog-url-input-group">
-            <Form.Control
-              onChange={handleUrlChange}
-              placeholder="www.website.com"
-              className="dash-blog-url-form-control"
-            />
-            <Button
-              id="blog-url-input-button"
-              variant="outline-dark"
-              onClick={onSubmitToPeekalink}
-            >
-              Peekalink
-            </Button>
-          </span>
           <Form.Label>Title</Form.Label>
           <Form.Control
-            // onChange={handleUrlChange}
+            onChange={handleChange}
             placeholder="Title of Article"
+            name="title"
+            value={title}
           />
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
             rows={3}
-            // onChange={handleUrlChange}
+            onChange={handleChange}
+            name="description"
             placeholder="Description of Article"
+            value={description}
           />
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Site URL</Form.Label>
           <Form.Control
-            // onChange={handleUrlChange}
-            placeholder="Site of Author"
+            onChange={handleChange}
+            placeholder="URL"
+            name="url"
+            value={url}
           />
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Category</Form.Label>
-          <Form.Control as="select">
-            <option value="" disabled selected hidden>
+          <Form.Control
+            as="select"
+            onChange={handleChange}
+            value={category}
+            name="category"
+          >
+            <option defaultValue=" " disabled hidden>
               Select a Category
             </option>
             <option>Tools</option>
@@ -80,27 +173,36 @@ export default function Dashboard() {
             <option>Future of Code</option>
             <option>Personal Development</option>
           </Form.Control>
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Keyword</Form.Label>
           <KeywordTag selectedTags={selectedTags} />
+        </Form.Group>
+        <Form.Group className="dash-form">
           <Form.Label>Schedule Publish Date</Form.Label> <br />
           <input
+            onChange={handleChange}
             className="scheduler-input"
             type="date"
-            name="dateofbirth"
-            id="dateofbirth"
+            name="date"
+            id="date"
+            value={date}
           />
-          <div className="dash-example-tiles-container">
-            <BlogCard/>
-            <h2 className="dash-example-tile">Post Tile 2</h2>
-          </div>
-          <div className="dash-form-submit-button-container">
-            <Button variant="dark" className="dash-form-submit-button">
-              Post blog
-            </Button>
-          </div>
         </Form.Group>
+        <div className="dash-example-tiles-container">
+          <BlogCard blog={state.blog} />
+        </div>
+        <div className="dash-form-submit-button-container">
+          <Button
+            id="dash-form-submit-button"
+            variant="primary"
+            onClick={onSubmitForm}
+          >
+            Post blog
+          </Button>
+        </div>
       </Form>
-    </div>
+    </>
   );
 }
 

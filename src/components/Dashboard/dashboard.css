@@ -4,6 +4,7 @@
 
 .dash-body {
   padding: 2% 25%;
+  color: white;
 }
 
 .dash-image {
@@ -14,41 +15,39 @@
 .dash-title {
   text-align: center;
   padding: 1rem;
+  color: whitesmoke;
 }
 
 .blog-url-input-group {
   display: flex;
 }
 
-.dash-form-submit-button {
+#dash-form-submit-button {
   width: 15rem;
-  padding: 3% 5%;
+  padding: 2% 4%;
+  background-color: #c7c4c4;
+  color: #343a40;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
-.dash-example-tiles-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.dash-example-tile {
-  margin: 20px 10px 20px 0px;
-  border: #d6d8da solid 1px;
-  padding: 80px 15px;
-  width: 15rem;
-  height: 15rem;
-  border-radius: 0.25rem;
+#dash-form-submit-button:hover {
+  color: whitesmoke;
+  background-color: #343a40;
 }
 
 .dash-form-submit-button-container {
   display: flex;
   justify-content: center;
+  margin: 2rem 0;
 }
 
-#dash-blog-url{
+#dash-blog-url {
   background-image: none;
 }
 
-.dash-blog-url-form-control{
+.dash-blog-url-form-control {
   background-image: none;
 }
 
@@ -65,7 +64,7 @@
   padding: 0 8px;
   border: 1px solid #d6d8da;
   border-radius: 6px;
-  background-color: white;
+  background-color: whitesmoke;
 }
 .tags-input:focus-within {
   border-color: #80bdff;
@@ -98,7 +97,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: whitesmoke;
   padding: 0 8px;
   font-size: 14px;
   list-style: none;
@@ -119,7 +118,7 @@
   margin-left: 8px;
   color: #0052cc;
   border-radius: 50%;
-  background: #fff;
+  background: whitesmoke;
   cursor: pointer;
 }
 
@@ -128,7 +127,7 @@
 /* ************** */
 
 [type="date"] {
-  background: #fff
+  background: whitesmoke
     url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
     97% 50% no-repeat;
 }
@@ -143,7 +142,7 @@
 .scheduler-input {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  background-color: #fff;
+  background-color: whitesmoke;
   padding: 3px 5px;
   width: 220px;
   height: calc(1.5em + 0.75rem + 2px);
@@ -162,11 +161,10 @@
 }
 
 #blog-url-input-button {
-  background-color: #e5e5e5;
+  background-color: #c7c4c4;
 }
 
 #blog-url-input-button:hover {
-  color: #fff;
+  color: whitesmoke;
   background-color: #343a40;
-  padding: 10% 30%;
 }

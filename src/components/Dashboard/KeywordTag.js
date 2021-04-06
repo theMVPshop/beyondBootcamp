@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./dashboard.css";
 
 const Keyword = (props) => {
-  const [tags, setTags] = React.useState([]);
+  const [tags, setTags] = useState([]);
   const addTags = (event) => {
     if (event.key === "Enter" && event.target.value !== "") {
-      setTags([...tags, event.target.value]);
-      props.selectedTags([...tags, event.target.value]);
+      const addTag = [...tags, event.target.value];
+      setTags(addTag);
+      props.selectedTags(addTag);
       event.target.value = "";
     }
   };
   const removeTags = (index) => {
-    setTags([...tags.filter((tag) => tags.indexOf(tag) !== index)]);
+    const removeTag = [...tags.filter((tag) => tags.indexOf(tag) !== index)];
+    setTags(removeTag);
+    props.selectedTags(removeTag);
   };
 
   return (
