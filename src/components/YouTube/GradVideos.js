@@ -34,30 +34,44 @@ export default function GradVideos() {
     });
   }, [backendData]);
 
+  // Find random number between 0 and length of VideoIds array.  Used to get a random video in array.
+  const randomNumber = () => {
+    const length = videoIds.length;
+    return videoIds[Math.floor(Math.random() * length)];
+  };
+
+  // Sets big main video to a random video.
   useEffect(() => {
-    setMainVid(videoIds[1]);
+    setMainVid(randomNumber);
+    // eslint-disable-next-line
   }, [videoIds]);
 
-  //TODO: fix dependency array for this useEffect. It throws an error in the console
-  // useEffect(() => {
-  //   backendData.forEach((item) => {
-  //     const image = item.snippet.thumbnails.standard.url;
-  //     setVidImage((vidImage) => [...vidImage, image]);
-  //   });
-  // }, [videoIds]);
+  // Populates VidImage state with thumbnail images pulled from backendData
+  useEffect(() => {
+    backendData.forEach((item) => {
+      const image = item.snippet.thumbnails.standard.url;
+      setVidImage((vidImage) => [...vidImage, image]);
+    });
+    // eslint-disable-next-line
+  }, [videoIds]);
 
-  console.log(backendData);
-  console.log(videoIds);
-  console.log(vidImage);
+  //   console.log(backendData);
+  //   console.log(videoIds);
+  //   console.log(vidImage);
 
-  // Find random number between 0 and length of VideoIds array.  Used to get a random video in array.
-  //   const randomNumber = () => {
-  //     const length = videoIds.length;
-  //     return Math.floor(Math.random() * length);
-  //   };
+  // Enables user to set the main video on the page to whatever video they click on the scroll bar.
+  const setCurrentVideo = (idx) => {
+    setMainVid(videoIds[idx]);
+  };
 
+  // After main video is done playing this sets a new random video.
+  const pickNewVideo = () => {
+    setMainVid(randomNumber);
+  };
+
+  // Default settings that are required with react-youtube.  Height and width are the size of the iframe.
   const opts = {
-    height: "390",
+    height: "100%",
     width: "100%",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
@@ -72,14 +86,24 @@ export default function GradVideos() {
       </div>
       <div className="gradVideos-leftSide">
         <div className="gradVideos-mainVid">
-          <YouTube videoId={mainVid} opts={opts} />
+          <YouTube videoId={mainVid} opts={opts} onEnd={pickNewVideo} />
         </div>
       </div>
       <div className="gradVideos-rightSide">
         <div className="gradVideos-scrollBar">
           {vidImage.map((image, idx) => {
             return (
-              <img key={idx} src={image} alt="Shows snapshot of content"></img>
+              <div
+                className="gradVideos-smallVidWrapper"
+                key={idx}
+                onClick={(index) => setCurrentVideo(idx, index)}
+              >
+                <img
+                  className="gradVidoes-smallVid rounded img-fluid"
+                  src={image}
+                  alt="Shows snapshot of content"
+                ></img>
+              </div>
             );
           })}
         </div>
