@@ -33,6 +33,7 @@ const Keyword = (props) => {
         type="text"
         onKeyUp={(event) => addTags(event)}
         placeholder="Press enter to add tags"
+        required
       />
     </div>
   );

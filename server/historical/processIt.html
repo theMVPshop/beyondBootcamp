@@ -8,18 +8,41 @@
     <script src="keywords.js"></script>
     <script src="rows.js"></script>
     <script>
-        for (let row=0; row<rows.length; row++){
-            let keys=[];
-            let text2search = (rows[row][1]+" "+rows[row][2]).toLowerCase();
-            console.log(text2search);
-            for (let keyword=0; keyword<keywordz.length; keyword++){
-                if (text2search.includes(keywordz[keyword])){
-                    keys.push(keywordz[keyword]);
+        window.onload = function() {
+            for (let row=0; row<rows.length; row++){
+                let keys=[];
+                let text2search = (rows[row][1]+" "+rows[row][2]).toLowerCase();
+                
+                for (let keyword=0; keyword<keywordz.length; keyword++){
+                    if (text2search.includes(keywordz[keyword])){
+                        keys.push(keywordz[keyword]);
+                    }
                 }
+                // reformat date from "April 2, 2019" to "2019-04-2"
+
+                // "ID","01/22/2020","title","description","url","image","category","keyword","likes"
+                // "126","April 7, 2019","CSSBattle","CSS Code Golfing is Here!","https://cssbattle.dev/","./Zollege Chat_files/banner.png",["css"]
+                document.getElementsByTagName("body")[0].innerHTML+= 
+                "&quot;"+
+                (row+100)+ // ID
+                "&quot;~&quot;"+
+                rows[row][0]+ // DATE
+                "&quot;~&quot;"+
+                rows[row][1]+ // TITLE
+                "&quot;~&quot;"+
+                rows[row][2]+ // DESCRIPTION
+                "&quot;~&quot;"+
+                rows[row][3]+ // URL
+                "&quot;~&quot;"+
+                rows[row][4]+ // IMAGE
+                "&quot;~"+
+                "NULL"+ //
+                "~"+
+                keys+
+                "~NULL <br>";
             }
-            console.log(keys);
-            rows[row].push
-        }
+            console.log(rows);
+        };
     </script>
 </head>
 <body>

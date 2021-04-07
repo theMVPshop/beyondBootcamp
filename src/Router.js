@@ -6,7 +6,7 @@ import { Route, Switch } from "react-router";
 //Components
 // import About from "./components/About/About";
 import Dashboard from "./components/Dashboard/Dashboard";
-// import SignIn from "./components/SignIn/SignIn";
+import SignIn from "./components/SignIn/SignIn";
 import YouTubeVideos from "./components/YouTube/YouTubeVideos";
 import GradVideos from "./components/YouTube/GradVideos";
 import LandingPage from "./components/LandingPage/LandingPage";
@@ -38,7 +38,7 @@ const Router = () => {
       {/* <ProtectedRoute path="/dashboard" component={Dashboard} /> */}
       <Route path="/dashboard" component={Dashboard} />
       {/* <ProtectedRoute path="/signin" component={SignIn} /> */}
-      {/* <Route path="/signin" component={SignIn} /> */}
+      <Route path="/signin" component={SignIn} />
     </Switch>
   );
 };

@@ -113,6 +113,7 @@ export default function Dashboard() {
                 placeholder="www.website.com"
                 className="dash-blog-url-form-control"
                 value={peekalinkUrl}
+                required
               />
             </Col>
             <Col sm={2}>
@@ -133,6 +134,7 @@ export default function Dashboard() {
             placeholder="Title of Article"
             name="title"
             value={title}
+            required
           />
         </Form.Group>
         <Form.Group className="dash-form">
@@ -144,6 +146,7 @@ export default function Dashboard() {
             name="description"
             placeholder="Description of Article"
             value={description}
+            required
           />
         </Form.Group>
         <Form.Group className="dash-form">
@@ -153,6 +156,7 @@ export default function Dashboard() {
             placeholder="URL"
             name="url"
             value={url}
+            required
           />
         </Form.Group>
         <Form.Group className="dash-form">
@@ -162,6 +166,7 @@ export default function Dashboard() {
             onChange={handleChange}
             value={category}
             name="category"
+            required
           >
             <option defaultValue=" " disabled hidden>
               Select a Category
@@ -187,6 +192,7 @@ export default function Dashboard() {
             name="date"
             id="date"
             value={date}
+            required
           />
         </Form.Group>
         <div className="dash-example-tiles-container">
