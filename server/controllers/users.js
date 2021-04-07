@@ -7,9 +7,6 @@ const jwt = require("jsonwebtoken");
 // for bycrypt
 const saltRounds = 10;
 
-//
-//
-//
 //// Queries for user to sign in.  First, the signIn command reaches out to DB and verifies that the password entered matches the hashed password in the DB.
 //// Second, we user the getUserFromSignIn command to retrieve all the information (password redacted) from the DB and allow user to sign in.
 
@@ -50,40 +47,42 @@ const getUserFromSignIn = (id) => {
   });
 };
 
-//
-//
+//FOR ADMIN USE ONLY
+const getAllUsers = (req, res) => {
+  let sql = "SELECT * FROM users";
+  sql = mysql.format(sql, []);
+
+  pool.query("SELECT * FROM users", (err, rows) => {
+    if (err) return handleSQLError(res, err);
+    return res.json(rows);
+  });
+};
+
 //// Queries to create a new user and hash the password.  This also will return the new user Id in the process.
 const createUser = (req, res) => {
-    const { email, password } = req.body;
-    let sql =
-      "INSERT INTO ?? (??, ??) VALUES (?, ?); ";
+  const { email, password } = req.body;
+  let sql = "INSERT INTO ?? (??, ??) VALUES (?, ?); ";
 
-    let getID = "SELECT MAX(id) FROM users;";
+  let getID = "SELECT MAX(id) FROM users;";
 
-    bcrypt.hash(password, saltRounds, function (err, hash) {
-      sql = mysql.format(sql, [
-        "users",
-        "email",
-        "password",
-        email,
-        hash,
-      ]);
+  bcrypt.hash(password, saltRounds, function (err, hash) {
+    sql = mysql.format(sql, ["users", "email", "password", email, hash]);
 
-      pool.query(getID, (err, rows) => {
-        if (err) {
-          return handleSQLError(err);
-        }
-        const userId = rows[0]["MAX(businessOwnerId)"];
-        return res.json({ userId: userId });
-      });
-      pool.query(sql, (err, rows) => {
-        if (err) {
-          if (err.code === "ER_DUP_ENTRY")
-            return res.status(409).send("UserName is taken");
-          return handleSQLError(res, err);
-        }
-      });
+    pool.query(getID, (err, rows) => {
+      if (err) {
+        return handleSQLError(err);
+      }
+      const userId = rows[0]["MAX(businessOwnerId)"];
+      return res.json({ userId: userId });
     });
-  };
+    pool.query(sql, (err, rows) => {
+      if (err) {
+        if (err.code === "ER_DUP_ENTRY")
+          return res.status(409).send("UserName is taken");
+        return handleSQLError(res, err);
+      }
+    });
+  });
+};
 
-module.exports = { signIn, createUser };
+module.exports = { signIn, createUser, getAllUsers };

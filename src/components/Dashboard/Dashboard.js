@@ -76,6 +76,7 @@ export default function Dashboard() {
       toast(`Woah! There is an error! ${error}`);
     }
   };
+
   const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
@@ -96,6 +97,7 @@ export default function Dashboard() {
       toast(`Uh oh! There is an error! ${error}`);
     }
   };
+
   const { title, description, url, category, date } = state.blog;
   return (
     <>
