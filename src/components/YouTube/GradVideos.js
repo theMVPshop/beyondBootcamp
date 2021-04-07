@@ -34,8 +34,14 @@ export default function GradVideos() {
     });
   }, [backendData]);
 
+  // Find random number between 0 and length of VideoIds array.  Used to get a random video in array.
+  const randomNumber = () => {
+    const length = videoIds.length;
+    return videoIds[Math.floor(Math.random() * length)];
+  };
+
   useEffect(() => {
-    setMainVid(videoIds[1]);
+    setMainVid(randomNumber);
   }, [videoIds]);
 
   useEffect(() => {
@@ -45,9 +51,17 @@ export default function GradVideos() {
     });
   }, [videoIds]);
 
-  console.log(backendData);
-  console.log(videoIds);
-  console.log(vidImage);
+  //   console.log(backendData);
+  //   console.log(videoIds);
+  //   console.log(vidImage);
+
+  const setCurrentVideo = (idx) => {
+    setMainVid(videoIds[idx]);
+  };
+
+  const pickNewVideo = () => {
+    setMainVid(randomNumber);
+  };
 
   // Find random number between 0 and length of VideoIds array.  Used to get a random video in array.
   //   const randomNumber = () => {
@@ -71,14 +85,18 @@ export default function GradVideos() {
       </div>
       <div className="gradVideos-leftSide">
         <div className="gradVideos-mainVid">
-          <YouTube videoId={mainVid} opts={opts} />
+          <YouTube videoId={mainVid} opts={opts} onEnd={pickNewVideo} />
         </div>
       </div>
       <div className="gradVideos-rightSide">
         <div className="gradVideos-scrollBar">
           {vidImage.map((image, idx) => {
             return (
-              <div className="gradVideos-smallVidWrapper" key={idx}>
+              <div
+                className="gradVideos-smallVidWrapper"
+                key={idx}
+                onClick={(index) => setCurrentVideo(idx, index)}
+              >
                 <img
                   className="gradVidoes-smallVid rounded img-fluid"
                   src={image}
