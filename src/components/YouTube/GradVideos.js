@@ -40,10 +40,12 @@ export default function GradVideos() {
     return videoIds[Math.floor(Math.random() * length)];
   };
 
+  // Sets big main video to a random video.
   useEffect(() => {
     setMainVid(randomNumber);
   }, [videoIds]);
 
+  // Populates VidImage state with thumbnail images pulled from backendData
   useEffect(() => {
     backendData.forEach((item) => {
       const image = item.snippet.thumbnails.standard.url;
@@ -55,20 +57,17 @@ export default function GradVideos() {
   //   console.log(videoIds);
   //   console.log(vidImage);
 
+  // Enables user to set the main video on the page to whatever video they click on the scroll bar.
   const setCurrentVideo = (idx) => {
     setMainVid(videoIds[idx]);
   };
 
+  // After main video is done playing this sets a new random video.
   const pickNewVideo = () => {
     setMainVid(randomNumber);
   };
 
-  // Find random number between 0 and length of VideoIds array.  Used to get a random video in array.
-  //   const randomNumber = () => {
-  //     const length = videoIds.length;
-  //     return Math.floor(Math.random() * length);
-  //   };
-
+  // Default settings that are required with react-youtube.  Height and width are the size of the iframe.
   const opts = {
     height: "100%",
     width: "100%",
