@@ -43,6 +43,7 @@ export default function GradVideos() {
   // Sets big main video to a random video.
   useEffect(() => {
     setMainVid(randomNumber);
+    // eslint-disable-next-line
   }, [videoIds]);
 
   // Populates VidImage state with thumbnail images pulled from backendData
@@ -51,6 +52,7 @@ export default function GradVideos() {
       const image = item.snippet.thumbnails.standard.url;
       setVidImage((vidImage) => [...vidImage, image]);
     });
+    // eslint-disable-next-line
   }, [videoIds]);
 
   //   console.log(backendData);
