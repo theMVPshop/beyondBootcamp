@@ -1,10 +1,7 @@
 const mysql = require("mysql");
 const pool = require("../sql/connection");
 const { handleSQLError } = require("../sql/error");
-//
-//
-//
-//// Code
+
 const getAllBlogs = (req, res) => {
   // SELECT ALL BLOGS
   pool.query("SELECT * FROM blogs", (err, rows) => {
@@ -28,7 +25,7 @@ const createBlog = (req, res) => {
   // INSERT INTO USERS FIRST AND LAST NAME
   let sql =
     "INSERT INTO blogs (date, title, description, url, image, category, keyword) VALUES (?, ?, ?, ?, ?, ?, ?)";
-  // WHAT GOES IN THE BRACKETS???
+  
   sql = mysql.format(sql, [
     `${date}`,
     `${title}`,
@@ -41,7 +38,7 @@ const createBlog = (req, res) => {
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);
-    return res.json({ newId: results.insertId });
+    return res.status(200).json({ newId: results.insertId });
   });
 };
 

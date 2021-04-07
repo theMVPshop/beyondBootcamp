@@ -1,24 +1,36 @@
 /* text: #E8E8E8
-background: #0F0F0F
-secondary background: #1D1D1D
+background: #24282D
+secondary background: #31363F
 active: #36CFBA
-highlight: #F05454 */
+highlight: #F05454 
+font-family: 'Jost', sans-serif;
+border-radius: 5px 
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+*/
 
 /**
  * Basic styles
  */
 
+ body {
+   margin: 0;
+   background-color: #24282D;
+ }
+
+ .landing-body {
+  background-color: #24282D;
+  font-family: 'Jost', sans-serif;
+ }
 
 .box1 {
   color: white;
   border-radius: 5px;
-  font: bold 2rem Lato, sans-serif;
   padding: 1rem;
   margin: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .wrapper {
-  font-family: 'Jost', sans-serif;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
@@ -32,7 +44,7 @@ highlight: #F05454 */
 }
 
 .box2 {
-  background-color: #333B3F;
+  background-color: #31363F;
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 2;
@@ -51,8 +63,8 @@ highlight: #F05454 */
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
-  .grid {
+@media only screen and (max-width: 900px) {
+  .wrapper {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 125px) 75px 125px;
     grid-auto-rows: minmax(18vh, auto);

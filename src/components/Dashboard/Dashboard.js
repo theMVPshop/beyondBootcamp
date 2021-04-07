@@ -6,6 +6,7 @@ import axios from "axios";
 import DV from "./DarthVader.png";
 import KeywordTag from "./KeywordTag";
 import BlogCard from "../LandingPage/BlogCard";
+import toast, { toastConfig } from "react-simple-toasts";
 
 export default function Dashboard() {
   // URL that we are sending to API
@@ -68,7 +69,7 @@ export default function Dashboard() {
       // Setting state from API
       setState({ blog: { title, description, url, image } });
     } catch (error) {
-      console.log(error);
+      toast(`Woah! There is an error! ${error}`);
     }
   };
   const onSubmitForm = async (e) => {
@@ -81,12 +82,29 @@ export default function Dashboard() {
           { "Content-Type": "application/json" }
         )
         .then((res) => {
-          console.log(res.status);
+          if (res.status === 200) {
+            toast("Congrats! You just created a new post!");
+            setState({
+              blog: {
+                title: "",
+                description: "",
+                url: "",
+                category: "",
+                tags: [],
+                date: "",
+              },
+            });
+            setPeekalinkUrl("")
+          }
         });
     } catch (error) {
-      console.log(error);
+      toast(`Uh oh! There is an error! ${error}`);
     }
   };
+
+  toastConfig({
+    position: "right",
+  });
 
   return (
     <div>

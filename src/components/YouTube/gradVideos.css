@@ -1,0 +1,24 @@
+.gradVideos-body {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  background-color: #24282d;
+  height: 100vh;
+}
+.gradVideos-navBar {
+  grid-column: 1/3;
+}
+.gradVideos-leftSide {
+  grid-column: 1/2;
+}
+.gradVideos-mainVid {
+  padding: 5rem 5rem 10rem 5rem;
+}
+.gradVideos-rightSide {
+  grid-column: 2/3;
+}
+.gradVideos-scrollBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
