@@ -8,6 +8,9 @@ export default function GradVideos() {
   const [videoIds, setVideoIds] = useState([]);
   const [mainVid, setMainVid] = useState(null);
   const [vidImage, setVidImage] = useState([]);
+  const [title, setTitle] = useState([]);
+  const [description, setDescription] = useState([]);
+  const [randomNumber, setRandomNumber] = useState();
 
   // Use useEffect to call the function that will fetch data from backend and set state with response.  Now we have access to all our businesses and can filter through them as needed.  We then call setIdToState() to got through each item in backendData array and pull out the videoId and set it to its own state.
   useEffect(() => {
@@ -35,16 +38,22 @@ export default function GradVideos() {
   }, [backendData]);
 
   // Find random number between 0 and length of VideoIds array.  Used to get a random video in array.
-  const randomNumber = () => {
+  const random = () => {
     const length = videoIds.length;
-    return videoIds[Math.floor(Math.random() * length)];
+    setRandomNumber(Math.floor(Math.random() * length));
   };
 
   // Sets big main video to a random video.
   useEffect(() => {
-    setMainVid(randomNumber);
+    random();
     // eslint-disable-next-line
   }, [videoIds]);
+
+  useEffect(() => {
+    setMainVid(videoIds[randomNumber]);
+    setTitle();
+    // eslint-disable-next-line
+  }, [randomNumber]);
 
   // Populates VidImage state with thumbnail images pulled from backendData
   useEffect(() => {
@@ -55,14 +64,20 @@ export default function GradVideos() {
     // eslint-disable-next-line
   }, [videoIds]);
 
-  //   console.log(backendData);
-  //   console.log(videoIds);
-  //   console.log(vidImage);
+  // console.log(backendData);
+  // console.log(videoIds);
+  // console.log(vidImage);
 
   // Enables user to set the main video on the page to whatever video they click on the scroll bar.
   const setCurrentVideo = (idx) => {
+    const title = backendData[idx].snippet.title;
+    const description = backendData[idx].snippet.description;
     setMainVid(videoIds[idx]);
+    setTitle(title);
+    setDescription(description);
   };
+  //   console.log(title);
+  //   console.log(description);
 
   // After main video is done playing this sets a new random video.
   const pickNewVideo = () => {
@@ -86,7 +101,15 @@ export default function GradVideos() {
       </div>
       <div className="gradVideos-leftSide">
         <div className="gradVideos-mainVid">
+          <p className="gradVideos-title">GradTV</p>
           <YouTube videoId={mainVid} opts={opts} onEnd={pickNewVideo} />
+          <p className="gradVideos-name">{title}</p>
+          <a
+            className="gradVideos-description gradVideos-linkAnimate "
+            href={description}
+          >
+            Github
+          </a>
         </div>
       </div>
       <div className="gradVideos-rightSide">
@@ -96,7 +119,9 @@ export default function GradVideos() {
               <div
                 className="gradVideos-smallVidWrapper"
                 key={idx}
-                onClick={(index) => setCurrentVideo(idx, index)}
+                onClick={(index) => {
+                  setCurrentVideo(idx, index);
+                }}
               >
                 <img
                   className="gradVidoes-smallVid rounded img-fluid"

@@ -14,10 +14,19 @@ body {
   justify-content: center;
   grid-column: 1/2;
 }
+.gradVideos-title {
+  color: whitesmoke;
+  text-align: center;
+  font-size: xx-large;
+  font-family: "Jost", sans-serif;
+  margin: 0;
+  padding: 2rem;
+}
 .gradVideos-mainVid {
   height: auto;
   width: 55rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -29,6 +38,39 @@ body {
 .gradVideos-mainVid div {
   width: 700px;
   height: 500px;
+}
+.gradVideos-name {
+  color: whitesmoke;
+  text-align: center;
+  font-size: x-large;
+  font-family: "Jost", sans-serif;
+  margin: 0;
+  margin-top: 1rem;
+}
+.gradVideos-description {
+  color: whitesmoke;
+  text-align: center;
+  font-size: x-large;
+  font-family: "Jost", sans-serif;
+}
+.gradVideos-linkAnimate {
+  background: radial-gradient(
+        circle closest-side,
+        currentColor 80%,
+        transparent
+      )
+      bottom var(--p1, 0px) left 50% /100% var(--p, 12px) no-repeat,
+    linear-gradient(currentColor 0 0) bottom 4px left 50% / var(--d, 0%) 3px
+      no-repeat;
+  transition: 0.5s;
+  padding: 0.5rem;
+}
+.gradVideos-linkAnimate:hover {
+  --d: 100%;
+  --p: 3px;
+  --p1: 4px;
+  text-decoration: none;
+  color: whitesmoke;
 }
 .gradVideos-rightSide {
   display: grid;
@@ -55,4 +97,5 @@ body {
 .gradVidoes-smallVid {
   width: 100%;
   height: auto;
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import YouTube from "react-youtube";
+import NavBar from "../LandingPage/NavBar";
 import "./youTubeVideos.css";
 
 export default function YouTubeVideos() {
@@ -39,12 +40,18 @@ export default function YouTubeVideos() {
     width: "100%",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
+      //   autoplay: 1,
     },
   };
 
   return (
     <div className="youtube-body">
+      <div className="youtube-navBar">
+        <NavBar />
+      </div>
+      <div className="youtube-navBar">
+        <p className="youtube-title">Youtube Videos</p>
+      </div>
       <div className="youtube-bigVideoCont">
         <div className="youtube-bigVideo">
           <div>
