@@ -9,11 +9,6 @@ import LazyLoad from 'react-lazyload';
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-const Loading = () => (
-  <div className="post loading">
-    <h4>Loading...</h4>
-  </div>
-)
 
 const LandingContainer = () => {
   const [blogs, setBlogs] = useState([]);
@@ -32,14 +27,14 @@ const LandingContainer = () => {
   }, []);
 
   return (
+    <Suspense fallback={<Loader
+      type="Puff"
+      color="#00BFFF"
+      height={100}
+      width={100}
+      timeout={3000} //3 secs
+    />}>
     <div className="wrapper">
-       <Suspense fallback={<Loader
-        type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
-        timeout={3000} //3 secs
-      />}>
            {/* <Loader
         type="Puff"
         color="#00BFFF"
@@ -55,8 +50,8 @@ const LandingContainer = () => {
         </LazyLoad>
       ))}
       <ScrollUpButton style={{ backgroundColor: "#36CFBA", border: "none" }} />
-      </Suspense>
     </div>
+    </Suspense>
   );
 };
 
