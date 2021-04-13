@@ -67,12 +67,13 @@ body {
 
 #blog-card-image {
   height: 20vh;
+  border-radius: 5px;
 }
 
 .blog-card-title {
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 15px;
   overflow: hidden;
 }
 

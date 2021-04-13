@@ -5,7 +5,7 @@ import Image from "react-bootstrap/Image";
 // import WhatshotIcon from '@material-ui/icons/Whatshot';
 
 const BlogCard = (props) => {
-  //   console.log("BLOGS", blogs);
+  const image = props.blog.image ?? "https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80";
   return (
     <>
       {/* <a href={props.blog.url}> */}
@@ -18,7 +18,7 @@ const BlogCard = (props) => {
           >
             {props.blog.category}
           </Card.Text>
-          <Image id="blog-card-image" src={props.blog.image} fluid />
+          <Image id="blog-card-image" src={image} fluid />
           <Card.Title className="blog-card-title">
             {props.blog.title}
           </Card.Title>
