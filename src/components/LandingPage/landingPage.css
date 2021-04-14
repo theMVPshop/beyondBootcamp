@@ -89,7 +89,7 @@ body {
   width: 50%;
   height: 20px;
   font-weight: bold;
-  padding: 3px 3px 3px 5px;
+  /* padding: 0 0 0 5px; */
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
