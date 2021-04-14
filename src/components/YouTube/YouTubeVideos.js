@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import YouTube from "react-youtube";
 import "./youTubeVideos.css";
+import NavBar from "./../LandingPage/NavBar";
 
 export default function YouTubeVideos() {
   const [backendData, setBackendData] = useState([]);
@@ -44,6 +45,8 @@ export default function YouTubeVideos() {
   };
 
   return (
+    <>
+    <NavBar/>
     <div className="youtube-body">
       <div className="youtube-bigVideoCont">
         <div className="youtube-bigVideo">
@@ -72,5 +75,6 @@ export default function YouTubeVideos() {
         {/* <button onClick={consoleLogs()}>Console Log Vids</button> */}
       </div>
     </div>
+    </>
   );
 }
