@@ -7,9 +7,9 @@ const NavBar = () => {
   return (
     <div className="main-nav sticky-top">
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Beyond Bootcamp</Navbar.Brand>
+        <Navbar.Brand href="/">Beyond Bootcamp</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">About</Nav.Link>
+          <Nav.Link href="/about">About</Nav.Link>
           <Nav.Link href="#features">Tutorials</Nav.Link>
           <Nav.Link href="#pricing">Socials</Nav.Link>
         </Nav>

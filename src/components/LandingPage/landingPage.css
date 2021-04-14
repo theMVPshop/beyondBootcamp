@@ -80,7 +80,10 @@ body {
 .blog-card-category {
   font-size: 0.9rem;
   border: 2px solid rgb(65, 214, 225);
+  background-color: rgb(65, 214, 225);
+  border-radius: 5px;
   width: 50%;
+  height: 20px;
   font-weight: bold;
   padding: 3px 3px 3px 5px;
 }
