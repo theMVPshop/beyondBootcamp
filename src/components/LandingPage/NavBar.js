@@ -9,9 +9,9 @@ const NavBar = () => {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/">Beyond Bootcamp</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="#features">Tutorials</Nav.Link>
-          <Nav.Link href="#pricing">Socials</Nav.Link>
+          <Nav.Link href="/about">About Us</Nav.Link>
+          <Nav.Link href="/youtube">Tutorials</Nav.Link>
+          <Nav.Link href="/gradVideos">GradTV</Nav.Link>
         </Nav>
         <NavDropdown title="Filter" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Tools</NavDropdown.Item>
