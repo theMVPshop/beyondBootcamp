@@ -1,0 +1,245 @@
+/* about page */
+.about-title-container {
+  background-image: url(./images/about-title-image.jpeg);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  height: 60vh;
+  width: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#about-title {
+  text-align: center;
+  font-size: 7vw;
+  color: #e3bc35;
+  text-shadow: 15px 12px black;
+  padding-top: 15rem;
+  font-family: "Sarina", cursive;
+  width: inherit;
+}
+
+.about-subtitle {
+  text-align: center;
+  font-size: 2.5vw;
+  color: #e3bc35;
+  text-shadow: 15px 10px black;
+  font-weight: bolder;
+  margin-left: 0% 5rem;
+  font-family: "Spinnaker", sans-serif;
+  width: inherit;
+}
+
+.about-main {
+  color: whitesmoke;
+  margin: 1% 5rem;
+  font-family: "Spinnaker", sans-serif;
+  text-align: justify;
+  font-size: 1.35vw;
+}
+
+.crew-container-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* crew card */
+.crew-card-container {
+  border-radius: 25px;
+  display: flex;
+  width: 35%;
+  justify-content: center;
+  margin: 5rem;
+  background-color: black;
+  padding: 2rem;
+  box-shadow: 2em 1em #e3bc35, -0.4em 0 0.6em whitesmoke;
+}
+
+.crew-card-name {
+  font-size: 4vw;
+}
+
+.crew-card-image {
+  border-radius: 25px;
+  padding: 0.5rem;
+  width: 40%;
+  height: auto;
+  margin-left: 2rem;
+}
+
+.crew-card-position {
+  font-size: 1.5rem;
+}
+
+.crew-card-text-container {
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.crew-card-icon-image {
+  border-radius: 4px;
+  padding: 0.3rem;
+  width: 65px;
+}
+
+.crew-card-icon {
+  text-decoration: none;
+  color: whitesmoke;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.crew-card-icon-text {
+  margin: auto;
+  margin-left: 0px;
+  font-size: 1vw;
+}
+
+@media only screen and (max-width: 1500px) {
+  .about-title-container {
+    height: 40vh;
+    width: auto;
+    background-position: center bottom;
+  }
+
+  #about-title {
+    padding-top: 10rem;
+  }
+
+  .about-subtitle {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+
+  .about-main {
+    margin: 1rem 2.5rem;
+    font-size: 2.2vw;
+  }
+
+  .crew-card-container {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  .crew-card-text-container {
+    margin: 0.2em;
+  }
+
+  .crew-card-icon-text {
+    font-size: 2vw;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .about-title-container {
+    height: 30vh;
+    width: auto;
+    background-position: center bottom;
+  }
+
+  #about-title {
+    padding-top: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+
+  .about-main {
+    margin: 1rem 2rem;
+    font-size: 2.5vw;
+  }
+
+  .crew-card-container {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  .crew-card-text-container {
+    margin: 0.2em;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .about-title-container {
+    height: 30vh;
+    width: auto;
+    background-position: center bottom;
+  }
+
+  #about-title {
+    padding-top: 1rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+    margin: 1rem;
+  }
+
+  .about-main {
+    margin: 1% 1rem;
+    font-size: 2.5vw;
+  }
+
+  .crew-card-container {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .crew-card-text-container {
+    margin: 0.2em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .about-title-container {
+    height: 11em;
+    width: auto;
+    background-position: center bottom;
+  }
+
+  #about-title {
+    padding-top: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+    margin: 1rem;
+  }
+
+  .about-main {
+    margin: 1% 1rem;
+    font-size: 2.5vw;
+  }
+
+  .crew-card-container {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  .crew-card-position {
+    font-size: 0.8rem;
+  }
+
+  .crew-card-text-container {
+    margin: 0.2em;
+  }
+}

@@ -77,8 +77,6 @@ const createUser = (req, res) => {
     });
     pool.query(sql, (err, rows) => {
       if (err) {
-        if (err.code === "ER_DUP_ENTRY")
-          return res.status(409).send("UserName is taken");
         return handleSQLError(res, err);
       }
     });

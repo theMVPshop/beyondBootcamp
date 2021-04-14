@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import "./signIn.css";
 import yoda from "./yoda.png";
 import { Redirect } from "react-router-dom";
-// import cookie from "cookie";
+import cookie from "cookie";
 import axios from "axios";
-import e from 'cors';
 
 export default function Dashboard() {
-  // const cookies = cookie.parse(document.cookie);
+  const cookies = cookie.parse(document.cookie);
 
   // set state for creds
   const [credentials, setCredentials] = useState({
@@ -26,36 +25,31 @@ export default function Dashboard() {
   const [redirectToSignIn, setRedirectToSignIn] = useState(false);
 
   // Sign in function and validate creds
-  const onSignIn = async (e) => {
-    e.preventDefault();
-    try {
-      await axios
-        .post(
-          `http://localhost:4001/signin`,
-          { ...credentials },
-          { "Content-Type": "application/json" }
-        )
-        .then((res) => {
-          if (!res.ok) {
-            if (res.status === 404) {
-              setErrMsg(
-                "Who sent you? Account does not exist with this email or password."
-              );
-            }
-          } else {
-            document.cookie = `token=${res.token}`;
-            document.cookie = "loggedIn=true";
-            setRedirectToDash(true);
-          }
-        });
-    } catch (error) {
-      setErrMsg(`There is an error! ${error}`);
-    }
+  const onSignIn = async () => {
+    await axios
+      .post(
+        `http://localhost:4001/signin`,
+        { ...credentials },
+        { "Content-Type": "application/json" }
+      )
+      .then((res) => {
+        document.cookie = `token=${res.data.token}`;
+        document.cookie = "loggedIn=true";
+        setRedirectToDash(true);
+      })
+      .catch((error) => {
+        if (error.response.status === 404) {
+          setErrMsg(
+            "Who sent you? Account does not exist with this email or password."
+          );
+        } else {
+          setErrMsg(`There is an error! ${error}`);
+        }
+      });
   };
 
   // Sign up fucntion and create/save creds
-  const onRegister = async (e) => {
-    e.preventDefault();
+  const onRegister = async () => {
     try {
       await axios
         .post(
@@ -73,11 +67,10 @@ export default function Dashboard() {
   };
 
   // Redirects for each function
-  if (redirectToSignIn) {
+  if (redirectToDash) {
     return <Redirect to="/dashboard" />;
   }
-
-  if (redirectToDash) {
+  if (redirectToSignIn) {
     return <Redirect to="/dashboard" />;
   }
 
@@ -90,7 +83,7 @@ export default function Dashboard() {
 
   // switch between register and log in button functions
   const submitButtonSwitch = (e) => {
-    console.log("e", e.target.name)
+    e.preventDefault();
     if (e.target.name === "sign-in") {
       onSignIn();
     } else {
@@ -137,15 +130,15 @@ export default function Dashboard() {
         <div className="sign-in-panel__visible">
           <div className="sign-in-panel__content">
             <h1 className="sign-in-panel__title"> Sign Up </h1>
-            <form className="sign-in-form" onSubmit={this.submitButtonSwitch}>
-              <label className="sign-in-form__label" htmlFor="username">
-                Username
+            <form className="sign-in-form">
+              <label className="sign-in-form__label" htmlFor="email">
+                Email
               </label>
               <input
                 className="sign-in-form__input"
                 type="text"
-                id="username"
-                name="username"
+                id="email"
+                name="email"
                 placeholder="Email"
                 onChange={handleTextChange}
               />
@@ -162,9 +155,10 @@ export default function Dashboard() {
               />
               <button
                 className="sign-in-form__btn"
-                type="submit"
+                type="button"
                 name="register"
                 value="register"
+                onClick={(e) => submitButtonSwitch(e)}
               >
                 Submit
               </button>
@@ -180,14 +174,14 @@ export default function Dashboard() {
           <div className="sign-in-panel__content sign-in-panel__content--overlay sign-in-js-panel__content ">
             <h1 className="sign-in-panel__title"> Sign In </h1>
             <form className="sign-in-form">
-              <label className="sign-in-form__label" htmlFor="usernameIn">
-                Username
+              <label className="sign-in-form__label" htmlFor="emailIn">
+                Email
               </label>
               <input
                 className="sign-in-form__input"
                 type="text"
-                id="usernameIn"
-                name="usernameIn"
+                id="email"
+                name="email"
                 placeholder="Email"
                 onChange={handleTextChange}
               />
@@ -197,16 +191,17 @@ export default function Dashboard() {
               <input
                 className="sign-in-form__input "
                 type="password"
-                id="passwordIn"
-                name="passwordIn"
+                id="password"
+                name="password"
                 placeholder="Password"
                 onChange={handleTextChange}
               />
               <button
                 className="sign-in-form__btn"
-                type="submit"
+                type="button"
                 value="sign-in"
                 name="sign-in"
+                onClick={(e) => submitButtonSwitch(e)}
               >
                 Sign In
               </button>

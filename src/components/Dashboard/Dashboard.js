@@ -103,7 +103,7 @@ export default function Dashboard() {
     <>
       <img src={DV} alt="Darth Vader emoji" className="dash-image" />
       <h3 className="dash-title"> Keith! I am your Dashboard.</h3>
-      <Form className="dash-body">
+      <Form className="dash-body" onSubmit={onSubmitToPeekalink}>
         <Form.Group>
           <Form.Row className="dash-form">
             <Form.Label>Blog URL</Form.Label>
@@ -115,20 +115,22 @@ export default function Dashboard() {
                 placeholder="www.website.com"
                 className="dash-blog-url-form-control"
                 value={peekalinkUrl}
-                required
+                required={true}
               />
             </Col>
             <Col sm={2}>
               <Button
                 id="blog-url-input-button"
                 variant="outline-dark"
-                onClick={onSubmitToPeekalink}
+                type={"submit"}
               >
                 Peekalink
               </Button>
             </Col>
           </Form.Row>
         </Form.Group>
+      </Form>
+      <Form className="dash-body" onSubmit={onSubmitForm}>
         <Form.Group className="dash-form">
           <Form.Label>Title</Form.Label>
           <Form.Control
@@ -136,7 +138,7 @@ export default function Dashboard() {
             placeholder="Title of Article"
             name="title"
             value={title}
-            required
+            required={true}
           />
         </Form.Group>
         <Form.Group className="dash-form">
@@ -148,7 +150,7 @@ export default function Dashboard() {
             name="description"
             placeholder="Description of Article"
             value={description}
-            required
+            required={true}
           />
         </Form.Group>
         <Form.Group className="dash-form">
@@ -158,7 +160,7 @@ export default function Dashboard() {
             placeholder="URL"
             name="url"
             value={url}
-            required
+            required={true}
           />
         </Form.Group>
         <Form.Group className="dash-form">
@@ -168,7 +170,7 @@ export default function Dashboard() {
             onChange={handleChange}
             value={category}
             name="category"
-            required
+            required={true}
           >
             <option defaultValue=" " disabled hidden>
               Select a Category
@@ -204,7 +206,7 @@ export default function Dashboard() {
           <Button
             id="dash-form-submit-button"
             variant="primary"
-            onClick={onSubmitForm}
+            type={"submit"}
           >
             Post blog
           </Button>
