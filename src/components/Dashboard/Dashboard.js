@@ -21,7 +21,6 @@ export default function Dashboard() {
       url: "",
       category: "",
       tags: [],
-      date: "",
     },
   };
   // URL that we are sending to API
@@ -76,6 +75,7 @@ export default function Dashboard() {
       toast(`Woah! There is an error! ${error}`);
     }
   };
+
   const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
@@ -96,12 +96,17 @@ export default function Dashboard() {
       toast(`Uh oh! There is an error! ${error}`);
     }
   };
-  const { title, description, url, category, date } = state.blog;
+
+  // Need to add date below once functionality is created.
+  const { title, description, url, category,tags } = state.blog;
   return (
     <>
       <img src={DV} alt="Darth Vader emoji" className="dash-image" />
       <h3 className="dash-title"> Keith! I am your Dashboard.</h3>
-      <Form className="dash-body">
+      <Form
+        className="dash-body"
+        id="dash-api-submit-form"
+      >
         <Form.Group>
           <Form.Row className="dash-form">
             <Form.Label>Blog URL</Form.Label>
@@ -113,7 +118,7 @@ export default function Dashboard() {
                 placeholder="www.website.com"
                 className="dash-blog-url-form-control"
                 value={peekalinkUrl}
-                required
+                required={true}
               />
             </Col>
             <Col sm={2}>
@@ -127,6 +132,8 @@ export default function Dashboard() {
             </Col>
           </Form.Row>
         </Form.Group>
+      </Form>
+      <Form className="dash-body">
         <Form.Group className="dash-form">
           <Form.Label>Title</Form.Label>
           <Form.Control
@@ -134,7 +141,7 @@ export default function Dashboard() {
             placeholder="Title of Article"
             name="title"
             value={title}
-            required
+            required={true}
           />
         </Form.Group>
         <Form.Group className="dash-form">
@@ -146,7 +153,7 @@ export default function Dashboard() {
             name="description"
             placeholder="Description of Article"
             value={description}
-            required
+            required={true}
           />
         </Form.Group>
         <Form.Group className="dash-form">
@@ -156,7 +163,7 @@ export default function Dashboard() {
             placeholder="URL"
             name="url"
             value={url}
-            required
+            required={true}
           />
         </Form.Group>
         <Form.Group className="dash-form">
@@ -166,24 +173,30 @@ export default function Dashboard() {
             onChange={handleChange}
             value={category}
             name="category"
-            required
+            required={true}
+            placeholder="Select a Category"
           >
-            <option defaultValue=" " disabled hidden>
+            <option value="" disabled hidden>
               Select a Category
             </option>
-            <option>Tools</option>
-            <option>Front End</option>
-            <option>Back End</option>
-            <option>Tech News</option>
-            <option>Future of Code</option>
-            <option>Personal Development</option>
+            <option value="tools">Tools</option>
+            <option value="front_end">Front End</option>
+            <option value="back_end">Back End</option>
+            <option value="tech_news">Tech News</option>
+            <option value="future_of_code">Future of Code</option>
+            <option value="personal_development">Personal Development</option>
           </Form.Control>
         </Form.Group>
         <Form.Group className="dash-form">
           <Form.Label>Keyword</Form.Label>
-          <KeywordTag selectedTags={selectedTags} />
+          <KeywordTag
+            className="dash-form-keyword"
+            selectedTags={selectedTags}
+            value={tags}
+          />
         </Form.Group>
-        <Form.Group className="dash-form">
+        {/* ***** Hidden until functionality is given ******* */}
+        {/* <Form.Group className="dash-form">
           <Form.Label>Schedule Publish Date</Form.Label> <br />
           <input
             onChange={handleChange}
@@ -192,10 +205,10 @@ export default function Dashboard() {
             name="date"
             id="date"
             value={date}
-            required
+            required={true}
           />
-        </Form.Group>
-        <div className="dash-example-tiles-container">
+        </Form.Group> */}
+        <div id="dash-example-tiles-container">
           <BlogCard blog={state.blog} />
         </div>
         <div className="dash-form-submit-button-container">

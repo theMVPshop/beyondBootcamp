@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Ariel Holman",
+    "position": "Full Stack Engineer",
+    "linkedin": "https://www.linkedin.com/in/ariel-holman/",
+    "linkedinHandle": "ariel-holman",
+    "github": "https://github.com/ArielHolman",
+    "githubHandle": "ArielHolman",
+    "image": "images/ariel.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Jason Mcgee",
+    "position": "Backend Engineer",
+    "linkedin": "https://www.linkedin.com/in/jasonmcgee0715/",
+    "linkedinHandle": "jasonmcgee0715",
+    "github": "https://github.com/JasonMcGee0715",
+    "githubHandle": "JasonMcGee0715",
+    "image": "images/jason.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Destiny Setzer",
+    "position": "Frontend Engineer",
+    "linkedin": "https://www.linkedin.com/in/destinyfsetzer/",
+    "linkedinHandle": "destinyfsetzer",
+    "github": "https://github.com/destinyfsetzer",
+    "githubHandle": "destinyfsetzer",
+    "image": "images/destiny.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Keith Kritselis",
+    "position": "Project Manager",
+    "linkedin": "https://www.linkedin.com/in/keith-kritselis/",
+    "linkedinHandle": "keith-kritselis",
+    "github": "https://github.com/kkritselis",
+    "githubHandle": "kkritselis",
+    "image": "images/keith.jpeg"
+  }
+]

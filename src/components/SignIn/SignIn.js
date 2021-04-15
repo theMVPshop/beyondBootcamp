@@ -1,19 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
 import "./signIn.css";
 import yoda from "./yoda.png";
+import { Redirect } from "react-router-dom";
+import cookie from "cookie";
+import axios from "axios";
 
 export default function Dashboard() {
-// set state for creds
+  const cookies = cookie.parse(document.cookie);
 
-// create/validate creds
+  // set state for creds
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+  });
 
-//toggle from signin to signup
+  // set state to create an id for new users
+  const [userId, setUserId] = useState(null);
+
+  // state for error handling
+  const [errMsg, setErrMsg] = useState("");
+
+  // state for redirect
+  const [redirectToDash, setRedirectToDash] = useState(false);
+  const [redirectToSignIn, setRedirectToSignIn] = useState(false);
+
+  // Sign in function and validate creds
+  const onSignIn = async () => {
+    await axios
+      .post(
+        `http://localhost:4001/signin`,
+        { ...credentials },
+        { "Content-Type": "application/json" }
+      )
+      .then((res) => {
+        document.cookie = `token=${res.data.token}`;
+        document.cookie = "loggedIn=true";
+        setRedirectToDash(true);
+      })
+      .catch((error) => {
+        if (error.response.status === 404) {
+          setErrMsg(
+            "Who sent you? Account does not exist with this email or password."
+          );
+        } else {
+          setErrMsg(`There is an error! ${error}`);
+        }
+      });
+  };
+
+  // Sign up fucntion and create/save creds
+  const onRegister = async () => {
+    try {
+      await axios
+        .post(
+          `http://localhost:4001/createuser`,
+          { ...credentials },
+          { "Content-Type": "application/json" }
+        )
+        .then((res) => {
+          setUserId(res.userId);
+          setRedirectToSignIn(true);
+        });
+    } catch (error) {
+      setErrMsg(`There is an error! ${error}`);
+    }
+  };
+
+  // Redirects for each function
+  if (redirectToDash) {
+    return <Redirect to="/dashboard" />;
+  }
+  if (redirectToSignIn) {
+    return <Redirect to="/dashboard" />;
+  }
+
+  // handle changes to the inputs and saves creds to state
+  const handleTextChange = (e) => {
+    const creds = { ...credentials };
+    creds[e.target.id] = e.target.value;
+    setCredentials(creds);
+  };
+
+  // switch between register and log in button functions
+  const submitButtonSwitch = (e) => {
+    e.preventDefault();
+    if (e.target.name === "sign-in") {
+      onSignIn();
+    } else {
+      onRegister();
+    }
+  };
+
+  //toggle buttons for signin and signup
   var toggleBtns = document.querySelectorAll("sign-in-.js-formToggle");
   for (var i = 0; i < toggleBtns.length; i++) {
-    toggleBtns[i].addEventListener("click", toggleForm);
+    toggleBtns[i].addEventListener("click", toggleFormAnimation);
   }
+
+  //animation for signin and signup button clicks
   var firstClick = true;
-  function toggleForm() {
+  function toggleFormAnimation() {
     if (!firstClick) {
       document
         .querySelector(".sign-in-js-imageAnimate")
@@ -37,6 +123,7 @@ export default function Dashboard() {
         .classList.add("animate");
     }
   }
+
   return (
     <div className="sign-in-page">
       <div className="sign-in-panel">
@@ -44,14 +131,16 @@ export default function Dashboard() {
           <div className="sign-in-panel__content">
             <h1 className="sign-in-panel__title"> Sign Up </h1>
             <form className="sign-in-form">
-              <label className="sign-in-form__label" htmlFor="username">
-                Username
+              <label className="sign-in-form__label" htmlFor="email">
+                Email
               </label>
               <input
                 className="sign-in-form__input"
                 type="text"
-                id="username"
-                name="username"
+                id="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleTextChange}
               />
               <label className="sign-in-form__label" htmlFor="password">
                 Password
@@ -61,37 +150,40 @@ export default function Dashboard() {
                 type="password"
                 id="password"
                 name="password"
+                placeholder="Password"
+                onChange={handleTextChange}
               />
               <button
                 className="sign-in-form__btn"
                 type="button"
-                value="Submit"
+                name="register"
+                value="register"
+                onClick={(e) => submitButtonSwitch(e)}
               >
                 Submit
               </button>
               <button
                 className="sign-in-form__toggle sign-in-js-formToggle"
                 type="button"
-                onClick={toggleForm}
+                onClick={toggleFormAnimation}
               >
                 Or, Sign In
               </button>
             </form>
           </div>
-          <div
-            className="sign-in-panel__content sign-in-panel__content--overlay sign-in-js-panel__content "
-            onClick={toggleForm}
-          >
+          <div className="sign-in-panel__content sign-in-panel__content--overlay sign-in-js-panel__content ">
             <h1 className="sign-in-panel__title"> Sign In </h1>
             <form className="sign-in-form">
-              <label className="sign-in-form__label" htmlFor="usernameIn">
-                Username
+              <label className="sign-in-form__label" htmlFor="emailIn">
+                Email
               </label>
               <input
                 className="sign-in-form__input"
                 type="text"
-                id="usernameIn"
-                name="usernameIn"
+                id="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleTextChange}
               />
               <label className="sign-in-form__label" htmlFor="passwordIn">
                 Password
@@ -99,13 +191,17 @@ export default function Dashboard() {
               <input
                 className="sign-in-form__input "
                 type="password"
-                id="passwordIn"
-                name="passwordIn"
+                id="password"
+                name="password"
+                placeholder="Password"
+                onChange={handleTextChange}
               />
               <button
                 className="sign-in-form__btn"
                 type="button"
-                value="Submit"
+                value="sign-in"
+                name="sign-in"
+                onClick={(e) => submitButtonSwitch(e)}
               >
                 Sign In
               </button>
@@ -113,6 +209,7 @@ export default function Dashboard() {
               <button
                 className="sign-in-form__toggle sign-in-js-formToggle"
                 type="button"
+                onClick={toggleFormAnimation}
               >
                 Or, Sign Up
               </button>

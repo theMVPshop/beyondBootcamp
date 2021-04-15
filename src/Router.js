@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router";
 // import cookie from "cookie"; --- uncomment once protected routes is ready to go
 
 //Components
-// import About from "./components/About/About";
+import About from "./components/About/About";
 import Dashboard from "./components/Dashboard/Dashboard";
 import SignIn from "./components/SignIn/SignIn";
 import YouTubeVideos from "./components/YouTube/YouTubeVideos";
@@ -32,7 +32,7 @@ const Router = () => {
   return (
     <Switch>
       <Route exact path="/" component={LandingPage} />
-      {/* <Route path="/about" component={About} /> */}
+      <Route path="/about" component={About} />
       <Route path="/youtube" component={YouTubeVideos} />
       <Route path="/gradVideos" component={GradVideos} />
       {/* <ProtectedRoute path="/dashboard" component={Dashboard} /> */}
