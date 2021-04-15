@@ -5,7 +5,7 @@ import BlogCard from "./BlogCard";
 import NavBar from "./NavBar";
 import axios from "axios";
 import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
-import LazyLoad from 'react-lazy-load';
+// import LazyLoad from 'react-lazy-load';
 
 const LandingContainer = () => {
   const [blogs, setBlogs] = useState([]);
@@ -25,13 +25,13 @@ const LandingContainer = () => {
 
   return (
     <div className="wrapper">
-      <LazyLoad>
+      {/* <LazyLoad> */}
       <TitleCard />
       <NavBar />
       {blogs.map((blog, id) => (
         <BlogCard key={id} blog={blog} />
       ))}
-      </LazyLoad>
+      {/* </LazyLoad> */}
       <ScrollUpButton style={{ backgroundColor: "#36CFBA", border: "none" }} />
     </div>
   );
