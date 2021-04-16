@@ -14,16 +14,18 @@ const BlogCard = (props) => {
           >
             {props.blog.category}
           </Card.Text>
-          <Image id="blog-card-image" src={blogImage} fluid style={{display: "block", width: "100%"}} />
+          <div className="overlay-description">
+          <Card.Text className="blog-description" style={{ fontSize:".8rem", overflow: "hidden", width: "90%" }}>
+                  {props.blog.description}
+                </Card.Text>
+                </div>
+          <Image id="blog-card-image" src={blogImage} fluid style={{display: "block", width: "100%", textOverflow: "ellipsis"}} />
           <a href={props.blog.url} target="_blank" rel="noreferrer" id="title-link-hover" style={{textDecoration: "none"}}>
           <Card.Title className="blog-card-title">
             {props.blog.title} 
           </Card.Title>
           </a>
-          <Card.Text className="blog-description" style={{ fontSize:".8rem", overflow: "hidden" }}>
-                  {props.blog.description}
-                </Card.Text>
-                <Card.Text style={{color: "#999D9F"}}>{props.blog.date}</Card.Text>
+                {/* <Card.Text style={{color: "#999D9F"}}>{props.blog.date}</Card.Text> */}
         </Card>
     </>
   );

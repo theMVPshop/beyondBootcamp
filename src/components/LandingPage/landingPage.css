@@ -95,8 +95,38 @@ a:visited {
  text-decoration: none;
 }
 
+.overlay-description:hover {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .9;
+    transition: .5s ease;
+    background-color: #31363F;
+}
+
 .blog-description {
-  display: none;
+  visibility: hidden;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+}
+
+.blog-description:hover {
+  visibility: visible;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .blog-card-category {
@@ -104,8 +134,8 @@ a:visited {
   border: 2px solid rgb(54,207,186);
   background-color: rgb(54,207,186);
   border-radius: 5px;
-  width: 50%;
-  height: 20px;
+  width: 40%;
+  height: 30px;
   font-weight: bold;
   /* padding: 0 0 0 5px; */
 }
