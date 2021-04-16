@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import YouTube from "react-youtube";
 import NavBar from "../LandingPage/NavBar";
 import "./youTubeVideos.css";
-import NavBar from "./../LandingPage/NavBar";
 
 export default function YouTubeVideos() {
   const [backendData, setBackendData] = useState([]);
@@ -47,41 +46,41 @@ export default function YouTubeVideos() {
 
   return (
     <>
-    <NavBar/>
-    <div className="youtube-body">
-      <div className="youtube-navBar">
-        <NavBar />
-      </div>
-      <div className="youtube-navBar">
-        <p className="youtube-title">Youtube Videos</p>
-      </div>
-      <div className="youtube-bigVideoCont">
-        <div className="youtube-bigVideo">
+      <NavBar />
+      <div className="youtube-body">
+        <div className="youtube-navBar">
+          <NavBar />
+        </div>
+        <div className="youtube-navBar">
+          <p className="youtube-title">Youtube Videos</p>
+        </div>
+        <div className="youtube-bigVideoCont">
+          <div className="youtube-bigVideo">
+            <div>
+              <YouTube videoId={videoIds[0]} opts={opts} />
+            </div>
+          </div>
+        </div>
+        <div className="youtube-smallVideosCont">
           <div>
-            <YouTube videoId={videoIds[0]} opts={opts} />
-          </div>
-        </div>
-      </div>
-      <div className="youtube-smallVideosCont">
-        <div>
-          <div className="youtube-smallVideos">
-            <div className="youtube-smallVid">
-              <YouTube videoId={videoIds[1]} opts={opts} />
-            </div>
-            <div className="youtube-smallVid">
-              <YouTube videoId={videoIds[2]} opts={opts} />
-            </div>
-            <div className="youtube-smallVid">
-              <YouTube videoId={videoIds[3]} opts={opts} />
+            <div className="youtube-smallVideos">
+              <div className="youtube-smallVid">
+                <YouTube videoId={videoIds[1]} opts={opts} />
+              </div>
+              <div className="youtube-smallVid">
+                <YouTube videoId={videoIds[2]} opts={opts} />
+              </div>
+              <div className="youtube-smallVid">
+                <YouTube videoId={videoIds[3]} opts={opts} />
+              </div>
             </div>
           </div>
         </div>
+        <div className="youtube-moreVids">
+          <a href="http://www.youtube.com">See More Videos</a>
+          {/* <button onClick={consoleLogs()}>Console Log Vids</button> */}
+        </div>
       </div>
-      <div className="youtube-moreVids">
-        <a href="http://www.youtube.com">See More Videos</a>
-        {/* <button onClick={consoleLogs()}>Console Log Vids</button> */}
-      </div>
-    </div>
     </>
   );
 }
