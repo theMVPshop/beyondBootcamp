@@ -6,7 +6,7 @@ const TitleCard = () => {
   return (
       <Card className="bg-dark text-white box2 box1">
         <Card.Body>
-          <Card.Title style={{ fontSize: "4rem", padding: "2% 2%"}}>Beyond <br/> Bootcamp</Card.Title>
+          <Card.Title style={{ fontSize: "5rem", padding: "2% 2%"}}>Beyond <br/> Bootcamp</Card.Title>
         </Card.Body>
       </Card>
   );

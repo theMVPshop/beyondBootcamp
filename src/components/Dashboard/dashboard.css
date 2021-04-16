@@ -51,6 +51,21 @@
   background-image: none;
 }
 
+#dash-example-tiles-container {
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 50px;
+}
+
+#dash-api-submit-form {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.dash-form-keyword {
+  height: 4px;
+}
+
 /* ************** */
 /* KeywordTag CSS */
 /* ************** */
@@ -122,23 +137,34 @@
   cursor: pointer;
 }
 
+#blog-url-input-button {
+  background-color: #c7c4c4;
+}
+
+#blog-url-input-button:hover {
+  color: whitesmoke;
+  background-color: #343a40;
+}
+
 /* ************** */
 /* Scheduler CSS */
 /* ************** */
+/* uncomment the below to add styles for front end date scheduler */
 
-[type="date"] {
+/* [type="date"] {
   background: whitesmoke
     url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
     97% 50% no-repeat;
 }
+
 [type="date"]::-webkit-inner-spin-button {
   display: none;
 }
+
 [type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
 
-/* custom styles */
 .scheduler-input {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -158,13 +184,4 @@
   color: #495057;
   outline: 0;
   box-shadow: 0 0 0 0.2rem #cee6ff;
-}
-
-#blog-url-input-button {
-  background-color: #c7c4c4;
-}
-
-#blog-url-input-button:hover {
-  color: whitesmoke;
-  background-color: #343a40;
-}
+} */

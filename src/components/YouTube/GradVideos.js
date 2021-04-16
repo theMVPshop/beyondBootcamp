@@ -108,7 +108,7 @@ export default function GradVideos() {
             className="gradVideos-description gradVideos-linkAnimate "
             href={description}
           >
-            Github
+            Link to Github
           </a>
         </div>
       </div>
