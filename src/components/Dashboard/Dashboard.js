@@ -7,11 +7,9 @@ import axios from "axios";
 import DV from "./DarthVader.png";
 import KeywordTag from "./KeywordTag";
 import BlogCard from "../LandingPage/BlogCard";
-import toast, { toastConfig } from "react-simple-toasts";
+import { toastWrapper } from "../../utils";
 
-toastConfig({
-  position: "right",
-});
+import NavBar from "../LandingPage/NavBar";
 
 export default function Dashboard() {
   const initialBlogState = {
@@ -51,7 +49,8 @@ export default function Dashboard() {
   };
 
   // call to API
-  const onSubmitToPeekalink = async () => {
+  const onSubmitToPeekalink = async (e) => {
+    e.preventDefault();
     try {
       const blog = await axios
         .post(
@@ -70,9 +69,9 @@ export default function Dashboard() {
         image: { url: image },
       } = blog;
       // Setting state from API
-      setState({ blog: { title, description, url, image } });
+      setState({ blog: { ...state.blog, title, description, url, image } });
     } catch (error) {
-      toast(`Woah! There is an error! ${error}`);
+      toastWrapper(`Woah! There is an error! ${error}`);
     }
   };
 
@@ -87,25 +86,27 @@ export default function Dashboard() {
         )
         .then((res) => {
           if (res.status === 200) {
-            toast("Congrats! You just created a new post!");
+            toastWrapper("Congrats! You just created a new post!");
             setState(initialBlogState);
             setPeekalinkUrl("");
           }
         });
     } catch (error) {
-      toast(`Uh oh! There is an error! ${error}`);
+      toastWrapper(`Uh oh! There is an error! ${error}`);
     }
   };
 
   // Need to add date below once functionality is created.
-  const { title, description, url, category,tags } = state.blog;
+  const { title, description, url, category, tags } = state.blog;
   return (
     <>
+      <NavBar />
       <img src={DV} alt="Darth Vader emoji" className="dash-image" />
       <h3 className="dash-title"> Keith! I am your Dashboard.</h3>
       <Form
         className="dash-body"
         id="dash-api-submit-form"
+        onSubmit={onSubmitToPeekalink}
       >
         <Form.Group>
           <Form.Row className="dash-form">
@@ -125,7 +126,7 @@ export default function Dashboard() {
               <Button
                 id="blog-url-input-button"
                 variant="outline-dark"
-                onClick={onSubmitToPeekalink}
+                type="submit"
               >
                 Peekalink
               </Button>
@@ -192,7 +193,7 @@ export default function Dashboard() {
           <KeywordTag
             className="dash-form-keyword"
             selectedTags={selectedTags}
-            value={tags}
+            tags={tags}
           />
         </Form.Group>
         {/* ***** Hidden until functionality is given ******* */}

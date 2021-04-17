@@ -4,21 +4,17 @@ import yoda from "./yoda.png";
 import { Redirect } from "react-router-dom";
 import cookie from "cookie";
 import axios from "axios";
+import NavBar from "../LandingPage/NavBar";
+import toast from "react-simple-toasts";
 
 export default function Dashboard() {
-  const cookies = cookie.parse(document.cookie);
+  cookie.parse(document.cookie);
 
   // set state for creds
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
-
-  // set state to create an id for new users
-  const [userId, setUserId] = useState(null);
-
-  // state for error handling
-  const [errMsg, setErrMsg] = useState("");
 
   // state for redirect
   const [redirectToDash, setRedirectToDash] = useState(false);
@@ -38,32 +34,32 @@ export default function Dashboard() {
         setRedirectToDash(true);
       })
       .catch((error) => {
-        if (error.response.status === 404) {
-          setErrMsg(
-            "Who sent you? Account does not exist with this email or password."
-          );
-        } else {
-          setErrMsg(`There is an error! ${error}`);
+        const { status } = error.response;
+        if (status === 404) {
+          toast("Who sent you? Account does not exist with this email.");
+        }
+        if (status === 400) {
+          toast("Wrong password buddy. Try again!");
         }
       });
   };
 
   // Sign up fucntion and create/save creds
   const onRegister = async () => {
-    try {
-      await axios
-        .post(
-          `http://localhost:4001/createuser`,
-          { ...credentials },
-          { "Content-Type": "application/json" }
-        )
-        .then((res) => {
-          setUserId(res.userId);
-          setRedirectToSignIn(true);
-        });
-    } catch (error) {
-      setErrMsg(`There is an error! ${error}`);
-    }
+    await axios
+      .post(
+        `http://localhost:4001/createuser`,
+        { ...credentials },
+        { "Content-Type": "application/json" }
+      )
+      .then(() => {
+        setRedirectToSignIn(true);
+      })
+      .catch((error) => {
+        if (error.response.status !== 200) {
+          return toast(`Woah! There is an error! ${error}`);
+        }
+      });
   };
 
   // Redirects for each function
@@ -125,106 +121,116 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="sign-in-page">
-      <div className="sign-in-panel">
-        <div className="sign-in-panel__visible">
-          <div className="sign-in-panel__content">
-            <h1 className="sign-in-panel__title"> Sign Up </h1>
-            <form className="sign-in-form">
-              <label className="sign-in-form__label" htmlFor="email">
-                Email
-              </label>
-              <input
-                className="sign-in-form__input"
-                type="text"
-                id="email"
-                name="email"
-                placeholder="Email"
-                onChange={handleTextChange}
-              />
-              <label className="sign-in-form__label" htmlFor="password">
-                Password
-              </label>
-              <input
-                className="sign-in-form__input "
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Password"
-                onChange={handleTextChange}
-              />
-              <button
-                className="sign-in-form__btn"
-                type="button"
-                name="register"
-                value="register"
-                onClick={(e) => submitButtonSwitch(e)}
+    <>
+      <NavBar />
+      <div className="sign-in-page">
+        <div className="sign-in-panel">
+          <div className="sign-in-panel__visible">
+            <div className="sign-in-panel__content">
+              <h1 className="sign-in-panel__title"> Sign Up </h1>
+              <form
+                className="sign-in-form"
+                onSubmit={(e) => submitButtonSwitch(e)}
               >
-                Submit
-              </button>
-              <button
-                className="sign-in-form__toggle sign-in-js-formToggle"
-                type="button"
-                onClick={toggleFormAnimation}
+                <label className="sign-in-form__label" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  className="sign-in-form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  required={true}
+                  onChange={handleTextChange}
+                />
+                <label className="sign-in-form__label" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  className="sign-in-form__input "
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={handleTextChange}
+                  required={true}
+                />
+                <button
+                  className="sign-in-form__btn"
+                  type="submit"
+                  name="register"
+                  value="register"
+                >
+                  Submit
+                </button>
+                <button
+                  className="sign-in-form__toggle sign-in-js-formToggle"
+                  type="button"
+                  onClick={toggleFormAnimation}
+                >
+                  Or, Sign In
+                </button>
+              </form>
+            </div>
+            <div className="sign-in-panel__content sign-in-panel__content--overlay sign-in-js-panel__content ">
+              <h1 className="sign-in-panel__title"> Sign In </h1>
+              <form
+                className="sign-in-form"
+                onSubmit={(e) => submitButtonSwitch(e)}
               >
-                Or, Sign In
-              </button>
-            </form>
+                <label className="sign-in-form__label" htmlFor="emailIn">
+                  Email
+                </label>
+                <input
+                  className="sign-in-form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  onChange={handleTextChange}
+                  required={true}
+                />
+                <label className="sign-in-form__label" htmlFor="passwordIn">
+                  Password
+                </label>
+                <input
+                  className="sign-in-form__input "
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={handleTextChange}
+                  required={true}
+                />
+                <button
+                  className="sign-in-form__btn"
+                  type="submit"
+                  value="sign-in"
+                  name="sign-in"
+                >
+                  Sign In
+                </button>
+                <button
+                  className="sign-in-form__toggle sign-in-js-formToggle"
+                  type="button"
+                  onClick={toggleFormAnimation}
+                >
+                  Or, Sign Up
+                </button>
+              </form>
+            </div>
           </div>
-          <div className="sign-in-panel__content sign-in-panel__content--overlay sign-in-js-panel__content ">
-            <h1 className="sign-in-panel__title"> Sign In </h1>
-            <form className="sign-in-form">
-              <label className="sign-in-form__label" htmlFor="emailIn">
-                Email
-              </label>
-              <input
-                className="sign-in-form__input"
-                type="text"
-                id="email"
-                name="email"
-                placeholder="Email"
-                onChange={handleTextChange}
-              />
-              <label className="sign-in-form__label" htmlFor="passwordIn">
-                Password
-              </label>
-              <input
-                className="sign-in-form__input "
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Password"
-                onChange={handleTextChange}
-              />
-              <button
-                className="sign-in-form__btn"
-                type="button"
-                value="sign-in"
-                name="sign-in"
-                onClick={(e) => submitButtonSwitch(e)}
-              >
-                Sign In
-              </button>
-              {/* <br /> */}
-              <button
-                className="sign-in-form__toggle sign-in-js-formToggle"
-                type="button"
-                onClick={toggleFormAnimation}
-              >
-                Or, Sign Up
-              </button>
-            </form>
+          <div className="sign-in-panel__back sign-in-js-imageAnimate">
+            <img
+              className="sign-in-panel__img"
+              src={yoda}
+              alt="yoda, protector of the page"
+              height="500"
+            />
           </div>
-        </div>
-        <div className="sign-in-panel__back sign-in-js-imageAnimate">
-          <img
-            className="sign-in-panel__img"
-            src={yoda}
-            alt="yoda, protector of the page"
-            height="500"
-          />
         </div>
       </div>
-    </div>
+    </>
   );
 }

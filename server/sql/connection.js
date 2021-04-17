@@ -12,7 +12,6 @@ class Connection {
         password: process.env.DB_PASSWORD,
         database: process.env.DEFAULT_DB,
       });
-
       return this.pool;
     }
 
