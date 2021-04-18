@@ -1,21 +1,34 @@
 .youtube-body {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
   background-color: #0f0f0f;
+  /* background-color: whitesmoke; */
   height: 100vh;
+}
+.youtube-title {
+  color: whitesmoke;
+  text-align: center;
+  font-size: xx-large;
+  font-family: "Jost", sans-serif;
+  margin: auto;
+  padding-top: 0.5rem;
 }
 .youtube-bigVideoCont {
   display: flex;
   justify-content: center;
-  padding-bottom: 2rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
 }
 .youtube-bigVideo {
   width: 50rem;
   height: auto;
-  border: 0.5px solid black;
+  /* border: 0.5px solid black;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: hidden; */
+}
+.youtube-bigVideo iframe {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 5px rgba(146, 146, 146, 0.08),
+    0 6px 20px 6px rgba(146, 146, 146, 0.08);
 }
 .youtube-smallVideosCont {
   display: flex;
@@ -29,12 +42,22 @@
   width: 33rem;
   height: auto;
   margin: 0rem 1rem 0rem 1rem;
-  border: 0.5px solid black;
-  border-radius: 8px;
+  /* border: 0.5px solid black;
+  border-radius: 8px; */
   /* background-size: cover; */
   /* overflow: hidden; */
+}
+.youtube-smallVid iframe {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 5px rgba(146, 146, 146, 0.08),
+    0 6px 20px 6px rgba(146, 146, 146, 0.08);
 }
 .youtube-moreVids {
   display: flex;
   justify-content: center;
+}
+.youtube-moreVids a {
+  display: flex;
+  justify-content: center;
+  color: whitesmoke;
 }
