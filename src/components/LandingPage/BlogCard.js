@@ -14,7 +14,9 @@ const BlogCard = (props) => {
           >
             {props.blog.category}
           </Card.Text>
-          <Image id="blog-card-image" src={blogImage} fluid style={{display: "block", width: "100%"}} />
+          <div id="blog-card-image" >
+            <Image src={blogImage} fluid style={{display: "block", width: "100%"}} />
+          </div>
           <a href={props.blog.url} target="_blank" rel="noreferrer" id="title-link-hover" style={{textDecoration: "none"}}>
           <Card.Title className="blog-card-title">
             {props.blog.title} 
