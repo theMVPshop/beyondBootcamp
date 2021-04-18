@@ -28,7 +28,7 @@ const LandingContainer = () => {
       {/* <LazyLoad> */}
       <TitleCard />
       <NavBar />
-      {blogs.map((blog, id) => (
+      {blogs.reverse().map((blog, id) => (
         <BlogCard key={id} blog={blog} />
       ))}
       {/* </LazyLoad> */}
