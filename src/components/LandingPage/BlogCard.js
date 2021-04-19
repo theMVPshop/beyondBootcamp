@@ -14,6 +14,8 @@ const BlogCard = (props) => {
           >
             {props.blog.category}
           </Card.Text>
+          <a href={props.blog.url} target="_blank" rel="noreferrer" id="title-link-hover" style={{textDecoration: "none"}}>
+         
           <div className="container">
           <div id="blog-card-image" >
             <Image src={blogImage} fluid style={{display: "block", width: "100%"}} />
@@ -22,11 +24,11 @@ const BlogCard = (props) => {
                  <div className="text">{props.blog.description}</div>
                 </Card.Text>
           </div>
-          <a href={props.blog.url} target="_blank" rel="noreferrer" id="title-link-hover" style={{textDecoration: "none"}}>
-          <Card.Title className="blog-card-title">
+          </a>
+         <Card.Title className="blog-card-title">
             {props.blog.title} 
           </Card.Title>
-          </a>
+         
         </Card>
     </>
   );
