@@ -11,7 +11,6 @@ const getAllBlogs = (req, res) => {
 };
 
 const createBlog = (req, res) => {
-  console.log("req body:", req.body);
   let blog = req.body;
   let date = blog.date;
   let title = blog.title;
