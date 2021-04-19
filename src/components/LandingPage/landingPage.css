@@ -87,12 +87,13 @@ a:link {
   font-weight: bold;
   margin-top: 15px;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.blog-card-title:hover {
+/* .blog-card-title:hover {
  color: #F05454;
  text-decoration: none;
-}
+} */
 
 /* .blog-description {
   display: none;
