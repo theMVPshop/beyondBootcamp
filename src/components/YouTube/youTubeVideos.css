@@ -1,9 +1,10 @@
 .youtube-body {
   display: flex;
   flex-direction: column;
-  background-color: #0f0f0f;
+  /* background-color: #0f0f0f; */
   /* background-color: whitesmoke; */
-  height: 100vh;
+  height: auto;
+  width: 100vw;
 }
 .youtube-title {
   color: whitesmoke;
@@ -17,9 +18,10 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  height: auto;
+  width: 100%;
 }
 .youtube-bigVideo {
-  width: 50rem;
   height: auto;
   /* border: 0.5px solid black;
   border-radius: 8px;
@@ -29,6 +31,8 @@
   border-radius: 5px;
   box-shadow: 0 4px 8px 5px rgba(146, 146, 146, 0.08),
     0 6px 20px 6px rgba(146, 146, 146, 0.08);
+  width: 45rem;
+  height: 25rem;
 }
 .youtube-smallVideosCont {
   display: flex;
@@ -39,7 +43,7 @@
   flex-direction: row;
 }
 .youtube-smallVid {
-  width: 33rem;
+  width: 28rem;
   height: auto;
   margin: 0rem 1rem 0rem 1rem;
   /* border: 0.5px solid black;
