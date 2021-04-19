@@ -109,13 +109,14 @@ a:visited {
 
 .blog-card-category {
   font-size: 0.9rem;
+  letter-spacing: 2px;
   border: 2px solid rgb(54,207,186);
   background-color: rgb(54,207,186);
   border-radius: 5px;
-  width: 50%;
-  height: 20px;
+  width: 100%;
+  height: 30px;
   font-weight: bold;
-  /* padding: 0 0 0 5px; */
+  padding: 0 0 0 5px;
 }
 
 .sticky-top {
@@ -144,6 +145,21 @@ a:visited {
     grid-row: 4/5;
   }
 }
+
+/* .title-card-text{
+  font-size: 15rem;
+  line-height: 90vh;
+  letter-spacing: 2px;
+  color: #E8E8E8;
+  font-weight: 900;
+  text-shadow: 4px 4px 0px #eb452b, 
+              8px 8px 0px #efa032, 
+              11px 11px 0px #46b59b, 
+              12px 12px 0px #017e7f, 
+              16px 16px 0px #052939, 
+              18px 18px 0px #c11a2b;
+} */
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

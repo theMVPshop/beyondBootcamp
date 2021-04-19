@@ -10,7 +10,7 @@ const BlogCard = (props) => {
         <Card className="bg-dark text-white box1 desc-btn-1">
           <Card.Text
             className="blog-card-category"
-            style={{ fontSize: ".8rem" }}
+            style={{ fontSize: "1rem", color: "#31363F" }}
           >
             {props.blog.category}
           </Card.Text>
@@ -25,7 +25,6 @@ const BlogCard = (props) => {
           <Card.Text className="blog-description" style={{ fontSize:".8rem", overflow: "hidden" }}>
                   {props.blog.description}
                 </Card.Text>
-                <Card.Text style={{color: "#999D9F"}}>{props.blog.date}</Card.Text>
         </Card>
     </>
   );
