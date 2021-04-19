@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/theMVPshop/DT01/static/css/main.ede11af2.chunk.css",
+    "main.js": "/theMVPshop/DT01/static/js/main.2acd7de2.chunk.js",
+    "main.js.map": "/theMVPshop/DT01/static/js/main.2acd7de2.chunk.js.map",
+    "runtime-main.js": "/theMVPshop/DT01/static/js/runtime-main.29eae753.js",
+    "runtime-main.js.map": "/theMVPshop/DT01/static/js/runtime-main.29eae753.js.map",
+    "static/css/2.150d169a.chunk.css": "/theMVPshop/DT01/static/css/2.150d169a.chunk.css",
+    "static/js/2.587c9d3b.chunk.js": "/theMVPshop/DT01/static/js/2.587c9d3b.chunk.js",
+    "static/js/2.587c9d3b.chunk.js.map": "/theMVPshop/DT01/static/js/2.587c9d3b.chunk.js.map",
+    "index.html": "/theMVPshop/DT01/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/theMVPshop/DT01/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.ede11af2.chunk.css.map": "/theMVPshop/DT01/static/css/main.ede11af2.chunk.css.map",
+    "static/js/2.587c9d3b.chunk.js.LICENSE.txt": "/theMVPshop/DT01/static/js/2.587c9d3b.chunk.js.LICENSE.txt",
+    "static/media/DarthVader.9f9000a3.png": "/theMVPshop/DT01/static/media/DarthVader.9f9000a3.png",
+    "static/media/about.css": "/theMVPshop/DT01/static/media/about-title-image.605806c9.jpeg",
+    "static/media/github-icon.d5ae73fc.png": "/theMVPshop/DT01/static/media/github-icon.d5ae73fc.png",
+    "static/media/linkedin-icon.acd946de.png": "/theMVPshop/DT01/static/media/linkedin-icon.acd946de.png",
+    "static/media/yoda.38ad3a64.png": "/theMVPshop/DT01/static/media/yoda.38ad3a64.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.29eae753.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.587c9d3b.chunk.js",
+    "static/css/main.ede11af2.chunk.css",
+    "static/js/main.2acd7de2.chunk.js"
+  ]
+}
