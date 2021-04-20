@@ -13,7 +13,7 @@ const NavBar = () => {
           <Nav.Link href="/youtube">Tutorials</Nav.Link>
           <Nav.Link href="/gradVideos">GradTV</Nav.Link>
         </Nav>
-        <NavDropdown title="Filter" id="basic-nav-dropdown">
+        <NavDropdown title="Filter" id="basic-nav-dropdown" drop={'left'}>
           <NavDropdown.Item href="#action/3.1">Tools</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Front End</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.3">Back End</NavDropdown.Item>
