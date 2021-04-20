@@ -1,58 +1,56 @@
-gradVideos-body {
-  overflow: hidden;
-}
 .gradVideos-body {
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 75% 25%;
   background-color: #24282d;
+  overflow: hidden;
+  font-family: "Jost", sans-serif;
 }
+
 .gradVideos-navBar {
   grid-column: 1/3;
 }
+
 .gradVideos-leftSide {
   display: grid;
   justify-content: center;
   grid-column: 1/2;
+  margin: 0% 2%;
 }
+
 .gradVideos-title {
   color: whitesmoke;
   text-align: center;
-  font-size: xx-large;
-  font-family: "Jost", sans-serif;
-  margin: 0;
-  padding: 2rem;
+  padding-top: 15px;
+  margin-bottom: 0%;
+  font-size: 4vw;
 }
+
+.gradVideos-text {
+  color: whitesmoke;
+  font-size: 1.25vw;
+  margin-bottom: 0%;
+}
+
 .gradVideos-mainVid {
-  height: auto;
-  width: 55rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 55vh;
+  width: 100%;
 }
+
 .gradVideos-mainVid iframe {
   border-radius: 5px;
-  box-shadow: 0 4px 8px 5px rgba(146, 146, 146, 0.08),
-    0 6px 20px 6px rgba(146, 146, 146, 0.08);
+  box-shadow: -0.1em 0em 0.5em 0.3em rgba(224, 223, 223, 0.336);
+  height: 50vh;
+  width: 50vw;
+  margin-left: 5%;
 }
-.gradVideos-mainVid div {
-  width: 700px;
-  height: 500px;
-}
+
 .gradVideos-name {
   color: whitesmoke;
-  text-align: center;
-  font-size: x-large;
-  font-family: "Jost", sans-serif;
-  margin: 0;
-  margin-top: 1rem;
+  font-size: 2.25vw;
+  font-weight: bolder;
+  margin-left: 5%;
 }
-.gradVideos-description {
-  color: whitesmoke;
-  text-align: center;
-  font-size: x-large;
-  font-family: "Jost", sans-serif;
-}
+
 .gradVideos-linkAnimate {
   background: radial-gradient(
         circle closest-side,
@@ -65,6 +63,7 @@ gradVideos-body {
   transition: 0.5s;
   padding: 0.5rem;
 }
+
 .gradVideos-linkAnimate:hover {
   --d: 100%;
   --p: 3px;
@@ -72,21 +71,22 @@ gradVideos-body {
   text-decoration: none;
   color: whitesmoke;
 }
+
 .gradVideos-rightSide {
   display: grid;
   justify-content: center;
   grid-column: 2/3;
-  border-left: 2px solid ivory;
-  background-color: whitesmoke;
+  background-color: #333b3f;
 }
+
 .gradVideos-scrollBar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 95vh;
+  height: 92vh;
   overflow: scroll;
-  padding: 2rem 0rem;
 }
+
 .gradVideos-smallVidWrapper {
   width: 20rem;
   height: auto;
@@ -94,8 +94,39 @@ gradVideos-body {
   box-shadow: 0 4px 8px 5px rgba(146, 146, 146, 0.08),
     0 4px 8px 5px rgba(146, 146, 146, 0.08);
 }
+
 .gradVidoes-smallVid {
   width: 100%;
   height: auto;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1500px) {
+  .gradVideos-mainVid iframe {
+    height: 25vh;
+    width: 60vw;
+  }
+  .gradVideos-text {
+    font-size: 2.5vw;
+  }
+  .gradVideos-title {
+    font-size: 5vw;
+  }
+  .gradVideos-name {
+    font-size: 4vw;
+  }
+  .gradVideos-body {
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+  .gradVidoes-smallVid {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+
+/* .gradVideos-description {
+  color: whitesmoke;
+  text-align: center;
+  font-size: x-large;
+} */

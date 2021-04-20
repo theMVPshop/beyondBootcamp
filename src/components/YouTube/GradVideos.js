@@ -6,7 +6,7 @@ import "./gradVideos.css";
 export default function GradVideos() {
   const [backendData, setBackendData] = useState([]);
   const [videoIds, setVideoIds] = useState([]);
-  const [mainVid, setMainVid] = useState(null);
+  const [mainVidId, setMainVidId] = useState(null);
   const [vidImage, setVidImage] = useState([]);
   const [title, setTitle] = useState([]);
   const [description, setDescription] = useState([]);
@@ -33,55 +33,41 @@ export default function GradVideos() {
   useEffect(() => {
     backendData.forEach((item) => {
       const id = item.snippet.resourceId.videoId;
+      const image = item.snippet.thumbnails.standard.url;
+
       setVideoIds((videoIds) => [...videoIds, id]);
+      setVidImage((vidImage) => [...vidImage, image]);
     });
   }, [backendData]);
 
-  // Find random number between 0 and length of VideoIds array.  Used to get a random video in array.
-  const random = () => {
-    const length = videoIds.length;
-    setRandomNumber(Math.floor(Math.random() * length));
-  };
-
   // Sets big main video to a random video.
   useEffect(() => {
-    random();
-    // eslint-disable-next-line
+    const length = videoIds.length;
+    setRandomNumber(Math.floor(Math.random() * length));
   }, [videoIds]);
 
+  //set initial video
   useEffect(() => {
-    setMainVid(videoIds[randomNumber]);
-    setTitle();
-    // eslint-disable-next-line
-  }, [randomNumber]);
-
-  // Populates VidImage state with thumbnail images pulled from backendData
-  useEffect(() => {
-    backendData.forEach((item) => {
-      const image = item.snippet.thumbnails.standard.url;
-      setVidImage((vidImage) => [...vidImage, image]);
-    });
-    // eslint-disable-next-line
-  }, [videoIds]);
-
-  // console.log(backendData);
-  // console.log(videoIds);
-  // console.log(vidImage);
+    const randomVideoId = videoIds[randomNumber];
+    const initialMainVideo = backendData.find(
+      (vid) => vid.snippet.resourceId.videoId === randomVideoId
+    );
+    setMainVidId(randomVideoId);
+    setTitle(initialMainVideo?.snippet.title);
+    setDescription(initialMainVideo?.snippet.description);
+  }, [randomNumber, videoIds, backendData]);
 
   // Enables user to set the main video on the page to whatever video they click on the scroll bar.
   const setCurrentVideo = (idx) => {
-    const title = backendData[idx].snippet.title;
-    const description = backendData[idx].snippet.description;
-    setMainVid(videoIds[idx]);
+    const { title, description } = backendData[idx].snippet;
+    setMainVidId(videoIds[idx]);
     setTitle(title);
     setDescription(description);
   };
-  //   console.log(title);
-  //   console.log(description);
 
   // After main video is done playing this sets a new random video.
   const pickNewVideo = () => {
-    setMainVid(randomNumber);
+    setMainVidId(randomNumber);
   };
 
   // Default settings that are required with react-youtube.  Height and width are the size of the iframe.
@@ -100,16 +86,24 @@ export default function GradVideos() {
         <NavBar />
       </div>
       <div className="gradVideos-leftSide">
+        <h2 className="gradVideos-title">Welcome to GradTV</h2>
+        <p className="gradVideos-text">Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+        yardarm hempen halter furl. Swab barque interloper chantey doubloon
+        starboard grog black jack gangway rutters. Deadlights jack lad schooner
+        scallywag dance the hempen jig carouser broadside cable strike colors.
+        Bring a spring upon her cable holystone blow the man down spanker Shiver
+        me timbers to go on account lookout.</p>
         <div className="gradVideos-mainVid">
-          <p className="gradVideos-title">GradTV</p>
-          <YouTube videoId={mainVid} opts={opts} onEnd={pickNewVideo} />
           <p className="gradVideos-name">{title}</p>
-          <a
-            className="gradVideos-description gradVideos-linkAnimate "
+          <YouTube videoId={mainVidId} opts={opts} onEnd={pickNewVideo} />
+          {/* <a
+            className="gradVideos-description gradVideos-linkAnimate"
             href={description}
           >
-            Link to Github
+            Link to Projects Github
           </a>
+          <p className="gradVideos-description">{description}</p> */}
         </div>
       </div>
       <div className="gradVideos-rightSide">

@@ -10,12 +10,11 @@ const BlogCard = (props) => {
         <Card className="bg-dark text-white box1 desc-btn-1">
           <Card.Text
             className="blog-card-category"
-            style={{ fontSize: "1rem", color: "#31363F" }}
+            style={{ fontSize: ".9rem", color: "#31363F" }}
           >
             {props.blog.category}
           </Card.Text>
           <a href={props.blog.url} target="_blank" rel="noreferrer" id="title-link-hover" style={{textDecoration: "none"}}>
-         
           <div className="container">
           <div id="blog-card-image" >
             <Image src={blogImage} fluid style={{display: "block", width: "100%"}} />

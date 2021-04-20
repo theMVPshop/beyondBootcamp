@@ -47,7 +47,7 @@ export default function YouTubeVideos() {
   return (
     <>
       <NavBar />
-      <p className="youtube-title">Youtube Videos</p>
+      <p className="youtube-title">Video Tutorials</p>
       <div className="youtube-body">
         <div className="youtube-bigVideoCont">
           <div className="youtube-bigVideo">
@@ -72,8 +72,13 @@ export default function YouTubeVideos() {
           </div>
         </div>
         <div className="youtube-moreVids">
-          <a href="http://www.youtube.com">See More Videos</a>
-          {/* <button onClick={consoleLogs()}>Console Log Vids</button> */}
+          <a
+            href="https://www.youtube.com/playlist?list=PLp2I-bH91nkn2EAJmkrj_SsIkIn8BG0ZN"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Visit our page for more videos!
+          </a>
         </div>
       </div>
     </>

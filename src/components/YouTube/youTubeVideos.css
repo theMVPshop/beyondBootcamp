@@ -1,11 +1,10 @@
 .youtube-body {
   display: flex;
   flex-direction: column;
-  /* background-color: #0f0f0f; */
-  /* background-color: whitesmoke; */
   height: auto;
   width: 100vw;
 }
+
 .youtube-title {
   color: whitesmoke;
   text-align: center;
@@ -14,54 +13,82 @@
   margin: auto;
   padding-top: 0.5rem;
 }
+
 .youtube-bigVideoCont {
   display: flex;
   justify-content: center;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   height: auto;
-  width: 100%;
+  width: 100vw;
 }
+
 .youtube-bigVideo {
   height: auto;
-  /* border: 0.5px solid black;
-  border-radius: 8px;
-  overflow: hidden; */
 }
+
 .youtube-bigVideo iframe {
   border-radius: 5px;
   box-shadow: 0 4px 8px 5px rgba(146, 146, 146, 0.08),
     0 6px 20px 6px rgba(146, 146, 146, 0.08);
-  width: 45rem;
-  height: 25rem;
+  width: 45vw;
+  height: 45vh;
 }
+
 .youtube-smallVideosCont {
   display: flex;
   justify-content: center;
 }
+
 .youtube-smallVideos {
   display: flex;
   flex-direction: row;
 }
-.youtube-smallVid {
-  width: 28rem;
-  height: auto;
-  margin: 0rem 1rem 0rem 1rem;
-  /* border: 0.5px solid black;
-  border-radius: 8px; */
-  /* background-size: cover; */
-  /* overflow: hidden; */
-}
+
 .youtube-smallVid iframe {
   border-radius: 5px;
   box-shadow: 0 4px 8px 5px rgba(146, 146, 146, 0.08),
     0 6px 20px 6px rgba(146, 146, 146, 0.08);
+  width: 28vw;
+  height: 30vh;
+  margin: .5rem 1em;
 }
+
 .youtube-moreVids {
   display: flex;
   justify-content: center;
+  color: whitesmoke;
+  margin-bottom: 5px;
 }
 .youtube-moreVids a {
-  display: flex;
-  justify-content: center;
   color: whitesmoke;
+}
+
+.youtube-moreVids a:hover {
+  color: whitesmoke;
+}
+
+@media only screen and (max-width: 1500px) {
+  .youtube-smallVideos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .youtube-bigVideo iframe,
+  .youtube-smallVid iframe {
+    width: 75vw;
+    height: 45vh;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .youtube-smallVideos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .youtube-bigVideo iframe,
+  .youtube-smallVid iframe {
+    width: 85vw;
+    height: 30vh;
+  }
 }
