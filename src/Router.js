@@ -33,8 +33,8 @@ const Router = () => {
     <Switch>
       <Route exact path="/" component={LandingPage} />
       <Route path="/about" component={About} />
-      <Route path="/youtube" component={YouTubeVideos} />
-      <Route path="/gradVideos" component={GradVideos} />
+      <Route path="/videoTutorials" component={YouTubeVideos} />
+      <Route path="/gradTv" component={GradVideos} />
       {/* <ProtectedRoute path="/dashboard" component={Dashboard} /> */}
       <Route path="/dashboard" component={Dashboard} />
       {/* <ProtectedRoute path="/signin" component={SignIn} /> */}
