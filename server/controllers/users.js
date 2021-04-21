@@ -7,8 +7,7 @@ const jwt = require("jsonwebtoken");
 // for bycrypt
 const saltRounds = 10;
 
-//// Queries for user to sign in.  First, the signIn command reaches out to DB and verifies that the password entered matches the hashed password in the DB.
-//// Second, we user the getUserFromSignIn command to retrieve all the information (password redacted) from the DB and allow user to sign in.
+// First, the signIn command reaches out to DB and verifies match. Second, allow user to sign in.
 
 const signIn = (req, res) => {
   const { email, password } = req.body;
@@ -58,7 +57,7 @@ const getAllUsers = (req, res) => {
   });
 };
 
-//// Queries to create a new user and hash the password.  This also will return the new user Id in the process.
+//Create a new user and hash the password.
 const createUser = (req, res) => {
   const { email, password } = req.body;
   let sql = "INSERT INTO ?? (??, ??) VALUES (?, ?); ";

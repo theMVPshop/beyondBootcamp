@@ -14,7 +14,7 @@ const createPost = (req, res) => {
       if (response.status === 200) {
         return res.status(200).json(response.data);
       } else {
-        res.status(500).json({ error: "error retrieving data" })
+        res.status(500).json({ error: "error retrieving data" });
       }
     });
 };
