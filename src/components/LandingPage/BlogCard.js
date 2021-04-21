@@ -7,7 +7,7 @@ const BlogCard = (props) => {
   const blogImage = props.blog.image ?? "https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80";
   return (
     <>
-        <Card className="bg-dark text-white box1 desc-btn-1">
+        <Card className="text-white box1 desc-btn-1" style={{backgroundColor:"#24282d"}}>
           <Card.Text
             className="blog-card-category"
             style={{ fontSize: ".9rem", color: "#31363F" }}

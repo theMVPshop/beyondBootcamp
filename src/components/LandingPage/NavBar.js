@@ -6,7 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 const NavBar = () => {
   return (
     <div className="main-nav sticky-top">
-      <Navbar bg="dark" variant="dark">
+      <Navbar style={{backgroundColor:"#24282d"}} variant="dark">
         <Navbar.Brand href="/">Beyond Bootcamp</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/about">About Us</Nav.Link>
@@ -14,12 +14,12 @@ const NavBar = () => {
           <Nav.Link href="/gradTv">GradTV</Nav.Link>
         </Nav>
         <NavDropdown title="Filter" id="basic-nav-dropdown" drop={'left'}>
-          <NavDropdown.Item href="#action/3.1">Tools</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Front End</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Back End</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.4">Tech News</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.5">Future of Code</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.6">
+          <NavDropdown.Item value="tools">Tools</NavDropdown.Item>
+          <NavDropdown.Item value="front_end">Front End</NavDropdown.Item>
+          <NavDropdown.Item value="back_end">Back End</NavDropdown.Item>
+          <NavDropdown.Item value="tech_news">Tech News</NavDropdown.Item>
+          <NavDropdown.Item value="future_of_code">Future of Code</NavDropdown.Item>
+          <NavDropdown.Item value="personal_development">
             Personal Development
           </NavDropdown.Item>
         </NavDropdown>
