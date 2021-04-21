@@ -19,6 +19,7 @@
 
   overflow: hidden;
 }
+
 .sign-in-panel__title {
   margin-top: 0.5em;
   margin-bottom: 1.2em;
@@ -30,6 +31,7 @@
   z-index: 10;
   position: relative;
 }
+
 .sign-in-panel__content--overlay {
   position: absolute;
   top: 0;
@@ -51,9 +53,11 @@
     transform: translateX(-100%);
   }
 }
+
 .sign-in-panel__content.animateOut {
   animation: movePanelOut 2s forwards;
 }
+
 @keyframes movePanelOut {
   0%,
   30% {
@@ -64,6 +68,7 @@
     transform: translateX(0%);
   }
 }
+
 .sign-in-panel__back {
   position: absolute;
   z-index: 0;
@@ -95,10 +100,12 @@
     z-index: 0;
   }
 }
+
 .sign-in-panel__back.animateOut {
   transform: translate(-50%, -50%);
   animation: moveOut 2s forwards;
 }
+
 @keyframes moveOut {
   0% {
     transform: translate(-50%, -50%);
@@ -117,6 +124,7 @@
     z-index: 0;
   }
 }
+
 .sign-in-panel__img {
   width: 100%;
   display: block;
@@ -126,12 +134,14 @@
 .sign-in-form {
   box-sizing: border-box;
 }
+
 .sign-in-form__label {
   display: block;
   color: #3d3d3d;
   font-weight: 600;
   margin-bottom: 5px;
 }
+
 .sign-in-form__input {
   border-radius: 3px;
   background-color: #f2f2f2;
@@ -143,6 +153,7 @@
   box-sizing: border-box;
   position: relative;
 }
+
 .sign-in-form__input:focus {
   box-shadow: none;
   outline-color: #33a192;
@@ -158,6 +169,7 @@
   width: 50px;
   background-color: red;
 }
+
 .sign-in-form__btn {
   margin-top: 1.2em;
   margin-bottom: 2em;
@@ -184,9 +196,11 @@
   border-bottom: 1px solid transparent;
   cursor: pointer;
 }
+
 .sign-in-form__toggle:hover {
   border-bottom: 1px solid #33a192;
 }
+
 .sign-in-form__toggle:focus {
   outline: none;
   border-bottom: 1px solid #33a192;

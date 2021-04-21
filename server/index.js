@@ -10,10 +10,7 @@ const emailsRouter = require("./routes/emails");
 const peekalinkRouter = require("./routes/peekALink");
 const youtubeRouter = require("./routes/youtube");
 
-//Server Port 4001
-
 const port = process.env.PORT || 4001;
-// express.static line 15 tells host what to run regarding the react app
 app.use(express.static("build"));
 app.use(bodyParser.json());
 

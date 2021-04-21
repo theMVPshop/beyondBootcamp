@@ -1,6 +1,4 @@
-/* ************** */
 /* Dashboard CSS */
-/* ************** */
 
 .dash-body {
   padding: 2% 25%;
@@ -66,9 +64,7 @@
   height: 4px;
 }
 
-/* ************** */
 /* KeywordTag CSS */
-/* ************** */
 
 .tags-input {
   display: flex;
@@ -81,12 +77,14 @@
   border-radius: 6px;
   background-color: whitesmoke;
 }
+
 .tags-input:focus-within {
   border-color: #80bdff;
   color: #495057;
   outline: 0;
   box-shadow: 0 0 0 0.2rem #cee6ff;
 }
+
 .tags-input input {
   flex: 1;
   border: none;
@@ -95,6 +93,7 @@
   font-size: 1rem;
   padding: 0.375rem 0.75rem;
 }
+
 .tags-input input:focus {
   outline: transparent;
 }
@@ -120,9 +119,11 @@
   margin: 0 8px 8px 0;
   background: #0052cc;
 }
+
 .tag .tag-title {
   margin-top: 3px;
 }
+
 .tag .tag-close-icon {
   display: block;
   width: 16px;
@@ -146,10 +147,7 @@
   background-color: #343a40;
 }
 
-/* ************** */
 /* Scheduler CSS */
-/* ************** */
-/* uncomment the below to add styles for front end date scheduler */
 
 /* [type="date"] {
   background: whitesmoke

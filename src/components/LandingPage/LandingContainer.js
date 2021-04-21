@@ -1,18 +1,20 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import TitleCard from "./TitleCard";
 import "./landingPage.css";
 import NavBar from "./NavBar";
-import Blogs from "./Blogs";
+import InitialBlogs from "./InitialBlogs";
 import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
-// import LazyLoad from 'react-lazy-load';
+const Blogs = React.lazy(() => import("./Blogs"));
+
 const LandingContainer = () => {
   return (
     <div className="wrapper">
       <TitleCard />
       <NavBar />
-      {/* <LazyLoad> */}
-      <Blogs />
-      {/* </LazyLoad> */}
+      <InitialBlogs />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Blogs />
+      </Suspense>
       <ScrollUpButton style={{ backgroundColor: "#36CFBA", border: "none" }} />
     </div>
   );

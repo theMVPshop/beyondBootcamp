@@ -7,7 +7,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:4001/blogs`, {
+      .get(`http://localhost:4001/initialBlogs`, {
         "Content-Type": "application/json",
       })
       .then((res) => {

@@ -14,7 +14,6 @@ export default function GradVideos() {
 
   // Use useEffect to call the function that will fetch data from backend and set state with response.  Now we have access to all our businesses and can filter through them as needed.  We then call setIdToState() to got through each item in backendData array and pull out the videoId and set it to its own state.
   useEffect(() => {
-    // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
     const callBackendAPI = async () => {
       const response = await fetch(`http://localhost:4001/gradVideos`);
       const body = await response.json();
@@ -87,13 +86,15 @@ export default function GradVideos() {
       </div>
       <div className="gradVideos-leftSide">
         <h2 className="gradVideos-title">Welcome to GradTV</h2>
-        <p className="gradVideos-text">Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper chantey doubloon
-        starboard grog black jack gangway rutters. Deadlights jack lad schooner
-        scallywag dance the hempen jig carouser broadside cable strike colors.
-        Bring a spring upon her cable holystone blow the man down spanker Shiver
-        me timbers to go on account lookout.</p>
+        <p className="gradVideos-text">
+          Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+          yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin
+          grog yardarm hempen halter furl. Swab barque interloper chantey
+          doubloon starboard grog black jack gangway rutters. Deadlights jack
+          lad schooner scallywag dance the hempen jig carouser broadside cable
+          strike colors. Bring a spring upon her cable holystone blow the man
+          down spanker Shiver me timbers to go on account lookout.
+        </p>
         <div className="gradVideos-mainVid">
           <p className="gradVideos-name">{title}</p>
           <YouTube videoId={mainVidId} opts={opts} onEnd={pickNewVideo} />
