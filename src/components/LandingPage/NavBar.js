@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
+// import NavDropdown from "react-bootstrap/NavDropdown";
 
 const NavBar = () => {
   return (
@@ -13,7 +13,7 @@ const NavBar = () => {
           <Nav.Link href="/videoTutorials">Video Tutorials</Nav.Link>
           <Nav.Link href="/gradTv">GradTV</Nav.Link>
         </Nav>
-        <NavDropdown title="Filter" id="basic-nav-dropdown" drop={"left"}>
+        {/* <NavDropdown title="Filter" id="basic-nav-dropdown" drop={"left"}>
           <NavDropdown.Item href="#action/3.1">Tools</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Front End</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.3">Back End</NavDropdown.Item>
@@ -22,7 +22,7 @@ const NavBar = () => {
           <NavDropdown.Item href="#action/3.6">
             Personal Development
           </NavDropdown.Item>
-        </NavDropdown>
+        </NavDropdown> */}
       </Navbar>
     </div>
   );

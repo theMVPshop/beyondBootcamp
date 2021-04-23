@@ -4,7 +4,7 @@ import "./landingPage.css";
 import NavBar from "./NavBar";
 import InitialBlogs from "./InitialBlogs";
 import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
-const Blogs = React.lazy(() => import("./Blogs"));
+const Blogs = lazy(() => import("./Blogs"));
 
 const LandingContainer = () => {
   return (
