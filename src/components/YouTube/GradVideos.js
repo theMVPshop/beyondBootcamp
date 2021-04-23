@@ -108,6 +108,7 @@ export default function GradVideos() {
         </div>
       </div>
       <div className="gradVideos-rightSide">
+        <h4 className="playList-subtitle">Video Playlist</h4>
         <div className="gradVideos-scrollBar">
           {vidImage.map((image, idx) => {
             return (
@@ -117,7 +118,7 @@ export default function GradVideos() {
                 onClick={(index) => {
                   setCurrentVideo(idx, index);
                 }}
-              >
+                >
                 <img
                   className="gradVidoes-smallVid rounded img-fluid"
                   src={image}

@@ -101,6 +101,12 @@
   cursor: pointer;
 }
 
+.playList-subtitle {
+  text-align: center;
+  color: whitesmoke;
+  padding-top: 2%;
+}
+
 @media only screen and (max-width: 1500px) {
   .gradVideos-mainVid iframe {
     height: 25vh;
