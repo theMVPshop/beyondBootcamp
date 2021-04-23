@@ -15,7 +15,7 @@ const LandingContainer = () => {
       <Suspense fallback={<h1>Loading...</h1>}>
         <Blogs />
       </Suspense>
-      <ScrollUpButton style={{ backgroundColor: "#36CFBA", border: "none" }} />
+      <ScrollUpButton style={{ backgroundColor: "#36CFBA", border: "5px solid #205C6F" }} />
     </div>
   );
 };

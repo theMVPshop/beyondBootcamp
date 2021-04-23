@@ -8,18 +8,17 @@ border-radius: 5px
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 */
 
-/**
- * Basic styles
 
+/* 
 body {
   margin: 0;
   background-color: #24282d;
-}
+} 
 
 .landing-body {
   background-color: #24282d;
   font-family: "Jost", sans-serif;
-}
+} 
 
 .box1 {
   color: white;
@@ -27,7 +26,11 @@ body {
   padding: 1rem;
   margin: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /* height: 35vh; }*/
+  height: 35vh; } */
+
+.body {
+  font-family: 'Oswald', sans-serif;
+  }
 
 .wrapper {
   display: grid;
@@ -59,6 +62,8 @@ body {
   grid-row-end: 5;
   grid-column: 1/5;
   grid-row: 3/5;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 3px;
 }
 
 /* Blog Card CSS */
@@ -136,15 +141,20 @@ a:link {
   text-align: center;
 }
 
+.title-card-text {
+  font-weight: 900;
+}
+
 .blog-card-category {
   font-size: 0.9rem;
-  border: 2px solid rgb(54, 207, 186);
-  background-color: rgb(54, 207, 186);
-  border-radius: 5px;
+  letter-spacing: 3px;
+  border: 2px solid rgb(30,96,116);
+  background-color: rgb(30,96,116);
+  border-radius: 5px 5px 0px 0px;
   width: 100%;
   height: 35px;
-  font-weight: bold;
-  padding: 0 0 0 10px;
+  font-weight: 400;
+  padding: 5px 0 0 10px;
   opacity: 0.9;
 }
 

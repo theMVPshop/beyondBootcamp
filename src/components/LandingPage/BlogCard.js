@@ -12,7 +12,7 @@ const BlogCard = (props) => {
       <Card className="bg-dark text-white box1 desc-btn-1">
         <Card.Text
           className="blog-card-category"
-          style={{ fontSize: ".9rem", color: "#31363F" }}
+          style={{ fontSize: ".9rem", color: "white" }}
         >
           {props.blog.category}
         </Card.Text>
