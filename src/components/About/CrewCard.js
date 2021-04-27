@@ -22,11 +22,7 @@ export default function CrewCard(props) {
               src={linkedin}
               alt="linkedin icon"
             />
-
-            <p className="crew-card-icon-text">
-              <span>@</span>
-              {crew.linkedinHandle}
-            </p>
+            <p className="crew-card-icon-text">@{crew.linkedinHandle}</p>
           </a>
           <a
             className="crew-card-icon"
@@ -39,18 +35,10 @@ export default function CrewCard(props) {
               src={github}
               alt="github icon"
             />
-            <p className="crew-card-icon-text">
-              <span>@</span>
-              {crew.githubHandle}
-            </p>
+            <p className="crew-card-icon-text">@{crew.githubHandle}</p>
           </a>
         </div>
-        <img
-          className="crew-card-image"
-          style={{ borderRadius: "15px" }}
-          src={crew.image}
-          alt="team member"
-        />
+        <img className="crew-card-image" src={crew.image} alt="team member" />
       </div>
     </>
   );

@@ -6,14 +6,12 @@
 }
 
 .youtube-title {
-  color:  rgb(30, 96, 116);
+  color: whitesmoke;
   text-align: center;
-  font-size: 3rem;
-  font-family: "Oswald", sans-serif;
+  font-size: xx-large;
+  font-family: "Jost", sans-serif;
   margin: auto;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  letter-spacing: 5px;
+  padding-top: 0.5rem;
 }
 
 .youtube-bigVideoCont {
@@ -59,10 +57,8 @@
   display: flex;
   justify-content: center;
   color: whitesmoke;
-  margin: 20px 0px 30px 0px;
-  font-family: "Jost", sans-serif;
+  margin-bottom: 5px;
 }
-
 .youtube-moreVids a {
   color: whitesmoke;
 }
