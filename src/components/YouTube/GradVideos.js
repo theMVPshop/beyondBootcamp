@@ -85,7 +85,7 @@ export default function GradVideos() {
         <NavBar />
       </div>
       <div className="gradVideos-leftSide">
-        <h2 className="gradVideos-title">Welcome to GradTV</h2>
+        <h2 className="gradVideos-title">WELCOME TO GRADTV</h2>
         <p className="gradVideos-text">
           Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
           yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin
@@ -98,17 +98,10 @@ export default function GradVideos() {
         <div className="gradVideos-mainVid">
           <p className="gradVideos-name">{title}</p>
           <YouTube videoId={mainVidId} opts={opts} onEnd={pickNewVideo} />
-          {/* <a
-            className="gradVideos-description gradVideos-linkAnimate"
-            href={description}
-          >
-            Link to Projects Github
-          </a>
-          <p className="gradVideos-description">{description}</p> */}
         </div>
       </div>
       <div className="gradVideos-rightSide">
-        <h4 className="playList-subtitle">Video Playlist</h4>
+        <h4 className="playList-subtitle">VIDEO PLAYLIST</h4>
         <div className="gradVideos-scrollBar">
           {vidImage.map((image, idx) => {
             return (
