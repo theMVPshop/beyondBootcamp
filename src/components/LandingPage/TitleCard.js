@@ -7,9 +7,9 @@ const TitleCard = () => {
       <Card.Body>
         <Card.Title
           className="title-card-text"
-          style={{ fontSize: "5rem", padding: "2% 2%" }}
+          style={{ fontSize: "5.3rem", padding: "2% 2%", fontWeight: "900" }}
         >
-          Beyond <br /> Bootcamp
+          BEYOND <br /> BOOTCAMP
         </Card.Title>
       </Card.Body>
     </Card>
