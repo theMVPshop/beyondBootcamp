@@ -12,7 +12,7 @@ const BlogCard = (props) => {
       <Card className="bg-dark text-white box1 desc-btn-1">
         <Card.Text
           className="blog-card-category"
-          style={{ fontSize: ".9rem", color: "#31363F" }}
+          style={{ fontSize: ".9rem", color: "white" }}
         >
           {props.blog.category}
         </Card.Text>
@@ -33,13 +33,15 @@ const BlogCard = (props) => {
             </div>
             <Card.Text
               className="blog-description"
-              style={{ fontSize: ".8rem", overflow: "hidden" }}
+              style={{ fontSize: ".7rem", overflow: "hidden" }}
             >
               <div className="text">{props.blog.description}</div>
             </Card.Text>
           </div>
         </a>
-        <Card.Title className="blog-card-title">{props.blog.title}</Card.Title>
+        <Card.Title className="blog-card-title" style={{ fontSize: ".9rem" }}>
+          {props.blog.title}
+        </Card.Title>
       </Card>
     </>
   );
