@@ -18,21 +18,17 @@
 }
 
 .gradVideos-title {
-  color: #215b6d;
+  color: whitesmoke;
   text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 15px;
   margin-bottom: 0%;
   font-size: 4vw;
-  font-family: "Oswald", sans-serif;
-  letter-spacing: 5px;
 }
 
 .gradVideos-text {
   color: whitesmoke;
   font-size: 1.25vw;
-  margin-bottom: 10%;
-  margin-left: 5%;
+  margin-bottom: 0%;
 }
 
 .gradVideos-mainVid {
@@ -49,12 +45,10 @@
 }
 
 .gradVideos-name {
-  color: #215b6d;
-  font-size: 4vw;
+  color: whitesmoke;
+  font-size: 2.25vw;
   font-weight: bolder;
   margin-left: 5%;
-  font-family: "Oswald", sans-serif;
-  letter-spacing: 3px;
 }
 
 .gradVideos-linkAnimate {
@@ -109,10 +103,8 @@
 
 .playList-subtitle {
   text-align: center;
-  font-family: "Oswald", sans-serif;
-  color:whitesmoke;
-  letter-spacing: 5px;
-  padding-top: 2rem;
+  color: whitesmoke;
+  padding-top: 2%;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -139,3 +131,8 @@
   }
 }
 
+/* .gradVideos-description {
+  color: whitesmoke;
+  text-align: center;
+  font-size: x-large;
+} */

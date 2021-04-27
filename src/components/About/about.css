@@ -4,7 +4,7 @@
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 90%;
-  height: 70vh;
+  height: 60vh;
   width: auto;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
@@ -13,33 +13,30 @@
 #about-title {
   text-align: center;
   font-size: 7vw;
-  color: whitesmoke;
-  text-shadow: 5px 4px #333B3F, 7px 6px rgb(30, 96, 116);
-  padding-top: .4rem;
-  font-family: "Oswald", sans-serif;
+  color: #e3bc35;
+  text-shadow: 15px 12px black;
+  padding-top: 15rem;
+  font-family: "Sarina", cursive;
   width: inherit;
-  letter-spacing: 9px;
-  font-weight: 900;
 }
 
 .about-subtitle {
   text-align: center;
-  font-size: 3.5vw;
-  color: rgb(30, 96, 116);
+  font-size: 2.5vw;
+  color: #e3bc35;
+  text-shadow: 15px 10px black;
   font-weight: bolder;
   margin-left: 0% 5rem;
+  font-family: "Spinnaker", sans-serif;
   width: inherit;
-  letter-spacing: 5px;
-  font-family: "Oswald", sans-serif;
-  text-shadow: 1px 1px whitesmoke;
 }
 
 .about-main {
   color: whitesmoke;
   margin: 1% 5rem;
-  font-family: "Jost", sans-serif;
+  font-family: "Spinnaker", sans-serif;
   text-align: justify;
-  padding-bottom: 30px;
+  font-size: 1.35vw;
 }
 
 .crew-container-1 {
@@ -52,25 +49,22 @@
 
 /* crew card */
 .crew-card-container {
-  border-radius: 5px;
+  border-radius: 25px;
   display: flex;
   width: 35%;
   justify-content: center;
   margin: 5rem;
   background-color: black;
   padding: 2rem;
-  box-shadow: 0.3em 0 0.6em rgb(30, 96, 116), -0.4em 0 0.6em rgb(30, 96, 116);
+  box-shadow: 2em 1em #e3bc35, -0.4em 0 0.6em whitesmoke;
 }
 
 .crew-card-name {
   font-size: 4vw;
-  color: #1f6174;
-  font-family: "Oswald", sans-serif;
-  letter-spacing: 5px;
 }
 
 .crew-card-image {
-  border-radius: 5px;
+  border-radius: 25px;
   padding: 0.5rem;
   width: 40%;
   height: auto;
@@ -78,8 +72,7 @@
 }
 
 .crew-card-position {
-  font-size: 1.2rem;
-  letter-spacing: 5px;
+  font-size: 1.5rem;
 }
 
 .crew-card-text-container {
@@ -91,13 +84,12 @@
 }
 
 .crew-card-icon-image {
-  border-radius: 5px;
-  margin: 0.3rem;
-  width: 45px;
+  border-radius: 4px;
+  padding: 0.3rem;
+  width: 65px;
 }
 
 .crew-card-icon {
-  border-radius: 15px;
   text-decoration: none;
   color: whitesmoke;
   display: flex;
@@ -108,12 +100,7 @@
 .crew-card-icon-text {
   margin: auto;
   margin-left: 0px;
-  font-size: 0.6rem;
-  font-family: "Jost", sans-serif;
-}
-
-span {
-  color: #1f6174;
+  font-size: 1vw;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -162,7 +149,7 @@ span {
   }
 
   #about-title {
-    padding-top: 3rem;
+    padding-top: 2rem;
   }
 
   .about-subtitle {
@@ -196,7 +183,7 @@ span {
   }
 
   #about-title {
-    padding-top: 3rem;
+    padding-top: 1rem;
   }
 
   .about-subtitle {
@@ -218,10 +205,9 @@ span {
   }
 
   .crew-card-text-container {
-    margin: 0.4em;
+    margin: 0.2em;
   }
 }
-
 @media only screen and (max-width: 600px) {
   .about-title-container {
     height: 11em;
@@ -230,11 +216,11 @@ span {
   }
 
   #about-title {
-    padding-top: 3rem;
+    padding-top: 2rem;
   }
 
   .about-subtitle {
-    font-size: 1.4rem;
+    font-size: 1rem;
     margin: 1rem;
   }
 
@@ -256,6 +242,6 @@ span {
   }
 
   .crew-card-text-container {
-    margin: .7em;
+    margin: 0.2em;
   }
 }

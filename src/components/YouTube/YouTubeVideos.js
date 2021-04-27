@@ -47,7 +47,7 @@ export default function YouTubeVideos() {
   return (
     <>
       <NavBar />
-      <p className="youtube-title">VIDEO TUTORIALS</p>
+      <p className="youtube-title">Video Tutorials</p>
       <div className="youtube-body">
         <div className="youtube-bigVideoCont">
           <div className="youtube-bigVideo">
