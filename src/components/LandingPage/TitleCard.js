@@ -7,7 +7,13 @@ const TitleCard = () => {
       <Card.Body>
         <Card.Title
           className="title-card-text"
-          style={{ fontSize: "5rem", padding: "2% 2%", fontWeight: "800", fontFamily:"'Oswald', sans-serif", letterSpacing: "8px" }}
+          style={{
+            fontSize: "5rem",
+            padding: "2% 2%",
+            fontWeight: "800",
+            fontFamily: "'Oswald', sans-serif",
+            letterSpacing: "8px",
+          }}
         >
           BEYOND <br /> BOOTCAMP
         </Card.Title>

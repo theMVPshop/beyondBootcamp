@@ -33,13 +33,15 @@ const BlogCard = (props) => {
             </div>
             <Card.Text
               className="blog-description"
-              style={{ fontSize: ".7rem", overflow: "hidden"}}
+              style={{ fontSize: ".7rem", overflow: "hidden" }}
             >
               <div className="text">{props.blog.description}</div>
             </Card.Text>
           </div>
         </a>
-        <Card.Title className="blog-card-title" style={{fontSize: ".9rem"}}>{props.blog.title}</Card.Title>
+        <Card.Title className="blog-card-title" style={{ fontSize: ".9rem" }}>
+          {props.blog.title}
+        </Card.Title>
       </Card>
     </>
   );
