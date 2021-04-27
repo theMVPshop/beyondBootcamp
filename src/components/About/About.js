@@ -13,7 +13,7 @@ export default function Dashboard() {
       </div>
       <h2 className="about-subtitle">ABOUT US</h2>
       <p className="about-main">
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+                 Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
         yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
         yardarm hempen halter furl. Swab barque interloper chantey doubloon
         starboard grog black jack gangway rutters. Deadlights jack lad schooner

@@ -13,8 +13,8 @@
 #about-title {
   text-align: center;
   font-size: 7vw;
-  color: rgb(30, 96, 116);
-  text-shadow: 5px 4px #333B3F, 7px 6px white;
+  color: whitesmoke;
+  text-shadow: 5px 4px #333B3F, 7px 6px rgb(30, 96, 116);
   padding-top: .4rem;
   font-family: "Oswald", sans-serif;
   width: inherit;
