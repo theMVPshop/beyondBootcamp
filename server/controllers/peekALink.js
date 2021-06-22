@@ -1,5 +1,5 @@
 const axios = require("axios");
-require("dotenv").config();
+// require("dotenv").config();
 
 const createPost = (req, res) => {
   let url = req.body.url;
