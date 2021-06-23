@@ -1,19 +1,19 @@
-const path = require("path");
+// const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const app = express();
 const cors = require("cors");
 
-const usersRouter = require("./routes/users");
-const blogsRouter = require("./routes/blogs");
-const emailsRouter = require("./routes/emails");
-const peekalinkRouter = require("./routes/peekALink");
-const youtubeRouter = require("./routes/youtube");
+const usersRouter = require("../server/routes/users");
+const blogsRouter = require("../server/routes/blogs");
+const emailsRouter = require("../server/routes/emails");
+const peekalinkRouter = require("../server/routes/peekALink");
+const youtubeRouter = require("../server/routes/youtube");
 
 const port = process.env.PORT || 4001;
-// app.use(express.static("../build"));
-app.use(express.static(path.join("../", "build")));
+app.use(express.static("build"));
+// app.use(express.static(path.join("../", "build")));
 app.use(bodyParser.json());
 
 let corsOptions = {
