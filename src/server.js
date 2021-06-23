@@ -12,7 +12,7 @@ const peekalinkRouter = require("../server/routes/peekALink");
 const youtubeRouter = require("../server/routes/youtube");
 
 const port = process.env.PORT || 4001;
-// app.use(express.static("build"));
+app.use(express.static("build"));
 // app.use(express.static(path.join("../", "build")));
 app.use(bodyParser.json());
 
