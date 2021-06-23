@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config();
@@ -11,7 +12,8 @@ const peekalinkRouter = require("./routes/peekALink");
 const youtubeRouter = require("./routes/youtube");
 
 const port = process.env.PORT || 4001;
-app.use(express.static("../build"));
+// app.use(express.static("../build"));
+app.use(express.static(path.join(__dirname, "../build")));
 app.use(bodyParser.json());
 
 let corsOptions = {
