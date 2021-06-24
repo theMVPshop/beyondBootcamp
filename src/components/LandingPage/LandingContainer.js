@@ -3,7 +3,7 @@ import TitleCard from "./TitleCard";
 import "./landingPage.css";
 import NavBar from "./NavBar";
 import InitialBlogs from "./InitialBlogs";
-// import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
+import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
 const Blogs = lazy(() => import("./Blogs"));
 
 const LandingContainer = () => {
@@ -15,7 +15,7 @@ const LandingContainer = () => {
       <Suspense fallback={<h1>Loading...</h1>}>
         <Blogs />
       </Suspense>
-      {/* <ScrollUpButton style={{ backgroundColor: "#36CFBA", border: "none" }} /> */}
+      <ScrollUpButton style={{ backgroundColor: "#36CFBA", border: "none" }} />
     </div>
   );
 };
