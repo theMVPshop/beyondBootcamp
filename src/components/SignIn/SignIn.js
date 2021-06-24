@@ -24,7 +24,7 @@ export default function Dashboard() {
   const onSignIn = async () => {
     await axios
       .post(
-        `http:///signin`,
+        `/signin`,
         { ...credentials },
         { "Content-Type": "application/json" }
       )
@@ -48,7 +48,7 @@ export default function Dashboard() {
   const onRegister = async () => {
     await axios
       .post(
-        `http:///createuser`,
+        `/createuser`,
         { ...credentials },
         { "Content-Type": "application/json" }
       )
