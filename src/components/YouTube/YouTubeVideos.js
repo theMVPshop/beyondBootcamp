@@ -11,7 +11,7 @@ export default function YouTubeVideos() {
   useEffect(() => {
     // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
     const callBackendAPI = async () => {
-      const response = await fetch(`http://localhost:4001/youtube`);
+      const response = await fetch(`http:///youtube`);
       const body = await response.json();
 
       if (response.status !== 200) {
