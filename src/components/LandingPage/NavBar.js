@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 // import NavDropdown from "react-bootstrap/NavDropdown";
@@ -9,9 +10,9 @@ const NavBar = () => {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/">Beyond Bootcamp</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/about">About Us</Nav.Link>
-          <Nav.Link href="/videoTutorials">Video Tutorials</Nav.Link>
-          <Nav.Link href="/gradTv">GradTV</Nav.Link>
+          <NavLink to="/about">About Us</NavLink>
+          <NavLink to="/videoTutorials">Video Tutorials</NavLink>
+          <NavLink to="/gradTv">GradTV</NavLink>
         </Nav>
         {/* <NavDropdown title="Filter" id="basic-nav-dropdown" drop={"left"}>
           <NavDropdown.Item href="#action/3.1">Tools</NavDropdown.Item>
