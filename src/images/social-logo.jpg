@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Preston Lamb</title>
+		<base href="/"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="description" content="Preston Lamb Consulting provides website consulting services, as well as a technical blog with web developer focused content; specifically Angular and JavaScript."/>
+		<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+	<link rel="stylesheet" href="styles.f131f9e121547de51fc5.css"></head>
+	<body>
+		<app-root></app-root>
+		<!-- <form class="invisible" id="contactForm" netlify netlify-honeypot="bot-field" data-netlify="true">
+			<input name="Name" type="text" id="name" />
+			<input name="email" type="email" />
+			<input name="Phone" type="tel" />
+			<textarea name="Message"></textarea>
+		</form> -->
+	<script src="runtime-es2015.38b29bb703fb4634efce.js" type="module"></script><script src="runtime-es5.38b29bb703fb4634efce.js" nomodule defer></script><script src="polyfills-es5.7493121acbe9bd2a5232.js" nomodule defer></script><script src="polyfills-es2015.bb924981facf8ba73320.js" type="module"></script><script src="main-es2015.7d9e25f9f3f4df203aa3.js" type="module"></script><script src="main-es5.7d9e25f9f3f4df203aa3.js" nomodule defer></script></body>
+</html>
