@@ -54,7 +54,7 @@ export default function Dashboard() {
     try {
       const blog = await axios
         .post(
-          `http://localhost:4001/peekalink`,
+          `/peekalink`,
           { url: peekalinkUrl },
           { "Content-Type": "application/json" }
         )
@@ -80,7 +80,7 @@ export default function Dashboard() {
     try {
       await axios
         .post(
-          `http://localhost:4001/blogs`,
+          `/blogs`,
           { ...state.blog },
           { "Content-Type": "application/json" }
         )

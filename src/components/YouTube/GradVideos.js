@@ -15,7 +15,7 @@ export default function GradVideos() {
   // Use useEffect to call the function that will fetch data from backend and set state with response.  Now we have access to all our businesses and can filter through them as needed.  We then call setIdToState() to got through each item in backendData array and pull out the videoId and set it to its own state.
   useEffect(() => {
     const callBackendAPI = async () => {
-      const response = await fetch(`http://localhost:4001/gradVideos`);
+      const response = await fetch(`/gradVideos`);
       const body = await response.json();
 
       if (response.status !== 200) {
@@ -118,7 +118,7 @@ export default function GradVideos() {
                 onClick={(index) => {
                   setCurrentVideo(idx, index);
                 }}
-                >
+              >
                 <img
                   className="gradVidoes-smallVid rounded img-fluid"
                   src={image}
