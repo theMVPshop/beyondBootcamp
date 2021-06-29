@@ -27,7 +27,7 @@ const BlogCard = (props) => {
           <div className="container">
             <div id="blog-card-image">
               <Image
-                src={`./../../../public/${blogImage}`}
+                src={`./../../../${blogImage}`}
                 fluid
                 style={{ display: "block", width: "100%" }}
               />
