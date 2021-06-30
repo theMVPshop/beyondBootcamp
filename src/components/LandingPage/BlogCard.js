@@ -5,9 +5,10 @@ import Image from "react-bootstrap/Image";
 //
 
 const BlogCard = (props) => {
-  const blogImage =
-    props.blog.image ??
-    "https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80";
+  let imgSrc = `http://www.favasava.com/img/${props.blog.image}`;
+  // const blogImage =
+  //   props.blog.image ??
+  //   "https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80";
   return (
     <>
       <Card className="bg-dark text-white box1 desc-btn-1">
@@ -27,7 +28,8 @@ const BlogCard = (props) => {
           <div className="container">
             <div id="blog-card-image">
               <Image
-                src={`./../../../${blogImage}`}
+                src={imgSrc}
+                // src={`./../../../${blogImage}`}
                 fluid
                 style={{ display: "block", width: "100%" }}
               />
