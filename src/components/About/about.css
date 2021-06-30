@@ -1,6 +1,6 @@
 /* about page */
 .about-title-container {
-  background-image: url(./http://www.favasava.com/img/about-title-image.jpeg);
+  background-image: url(http://www.favasava.com/img/about-title-image.jpeg);
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 90%;
@@ -14,8 +14,8 @@
   text-align: center;
   font-size: 7vw;
   color: whitesmoke;
-  text-shadow: 5px 4px #333B3F, 8px 8px rgb(30, 96, 116);
-  padding-top: .4rem;
+  text-shadow: 5px 4px #333b3f, 8px 8px rgb(30, 96, 116);
+  padding-top: 0.4rem;
   font-family: "Oswald", sans-serif;
   width: inherit;
   letter-spacing: 9px;
@@ -24,7 +24,7 @@
 
 .about-subtitle {
   text-align: center;
-  font-size: 3rem!important;
+  font-size: 3rem !important;
   color: rgb(30, 96, 116);
   font-weight: bolder;
   margin-left: 0% 5rem;
@@ -41,7 +41,7 @@
   font-family: "Jost", sans-serif;
   text-align: justify;
   padding-bottom: 30px;
-  font-size: 1.1rem!important;
+  font-size: 1.1rem !important;
 }
 
 .crew-container-1 {
@@ -165,7 +165,7 @@ span {
 
   #about-title {
     padding-top: 3rem;
-    text-shadow: 3px 2px #333B3F, 5px 5px rgb(30, 96, 116);
+    text-shadow: 3px 2px #333b3f, 5px 5px rgb(30, 96, 116);
   }
 
   .about-subtitle {
@@ -259,6 +259,6 @@ span {
   }
 
   .crew-card-text-container {
-    margin: .7em;
+    margin: 0.7em;
   }
 }
