@@ -2,7 +2,6 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import "./landingPage.css";
 import Image from "react-bootstrap/Image";
-//
 
 const BlogCard = (props) => {
   let imgSrc = `http://www.favasava.com/img/${props.blog.image}`;
