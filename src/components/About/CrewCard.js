@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
-import linkedin from "./https://www.favasava.com/img/linkedin-icon.png";
-import github from "./https://www.favasava.com/img/github-icon.png";
+import linkedin from "./images/linkedin-icon.png";
+import github from "./images/github-icon.png";
 
 export default function CrewCard(props) {
   const crew = props.crew;
