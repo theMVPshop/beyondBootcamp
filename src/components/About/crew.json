@@ -7,7 +7,7 @@
     "linkedinHandle": "ariel-holman",
     "github": "https://github.com/ArielHolman",
     "githubHandle": "ArielHolman",
-    "image": "images/ariel.jpeg"
+    "image": "http://www.favasava.com/img/ariel.jpeg"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "linkedinHandle": "jasonmcgee0715",
     "github": "https://github.com/JasonMcGee0715",
     "githubHandle": "JasonMcGee0715",
-    "image": "images/jason.jpeg"
+    "image": "http://www.favasava.com/img/jason.jpeg"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "linkedinHandle": "destinyfsetzer",
     "github": "https://github.com/destinyfsetzer",
     "githubHandle": "destinyfsetzer",
-    "image": "images/destiny.jpeg"
+    "image": "http://www.favasava.com/img/destiny.jpeg"
   },
   {
     "id": 4,
@@ -37,6 +37,6 @@
     "linkedinHandle": "keith-kritselis",
     "github": "https://github.com/kkritselis",
     "githubHandle": "kkritselis",
-    "image": "images/keith.jpeg"
+    "image": "http://www.favasava.com/img/keith.jpeg"
   }
 ]
