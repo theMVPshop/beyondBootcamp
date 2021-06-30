@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
-import linkedin from "https://www.favasava.com/img/linkedin-icon.png";
-import github from "https://www.favasava.com/img/github-icon.png";
+// import linkedin from "https://www.favasava.com/img/linkedin-icon.png";
+// import github from "https://www.favasava.com/img/github-icon.png";
 
 export default function CrewCard(props) {
   const crew = props.crew;
@@ -19,7 +19,7 @@ export default function CrewCard(props) {
           >
             <img
               className="crew-card-icon-image"
-              src={linkedin}
+              src={"https://www.favasava.com/img/linkedin-icon.png"}
               alt="linkedin icon"
             />
             <p className="crew-card-icon-text">@{crew.linkedinHandle}</p>
@@ -32,7 +32,7 @@ export default function CrewCard(props) {
           >
             <img
               className="crew-card-icon-image"
-              src={github}
+              src={"https://www.favasava.com/img/github-icon.png"}
               alt="github icon"
             />
             <p className="crew-card-icon-text">@{crew.githubHandle}</p>
