@@ -1,6 +1,7 @@
 {
   "homepage": ".",
   "name": "beyond-bootcamp",
+  "proxy": "http://localhost:4001",
   "version": "0.1.0",
   "private": true,
   "description": "A really cool app that scrapes info from urls and creates tiles on page.  Used as a source for bootcamp grads to learn more.",
